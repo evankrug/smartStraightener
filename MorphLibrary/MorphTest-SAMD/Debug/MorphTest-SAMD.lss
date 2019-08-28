@@ -1,0 +1,4775 @@
+
+MorphTest-SAMD.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001dc4  00000000  00000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .ARM.exidx    00000008  00001dc4  00001dc4  00011dc4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  2 .relocate     00000644  20000000  00001dcc  00020000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  3 .bss          0000004c  20000648  00002418  00020648  2**3
+                  ALLOC
+  4 .stack        00002004  20000694  00002464  00020648  2**0
+                  ALLOC
+  5 .ARM.attributes 00000028  00000000  00000000  00020644  2**0
+                  CONTENTS, READONLY
+  6 .comment      00000059  00000000  00000000  0002066c  2**0
+                  CONTENTS, READONLY
+  7 .debug_info   00009035  00000000  00000000  000206c5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000b9a  00000000  00000000  000296fa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    0000112e  00000000  00000000  0002a294  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_aranges 00000380  00000000  00000000  0002b3c2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000340  00000000  00000000  0002b742  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  00012367  00000000  00000000  0002ba82  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_line   000027f2  00000000  00000000  0003dde9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_str    00070e08  00000000  00000000  000405db  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_frame  00000b50  00000000  00000000  000b13e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <exception_table>:
+       0:	98 26 00 20 15 01 00 00 0d 02 00 00 0d 02 00 00     .&. ............
+	...
+      2c:	0d 02 00 00 00 00 00 00 00 00 00 00 0d 02 00 00     ................
+      3c:	09 16 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      4c:	0d 02 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      5c:	0d 02 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      6c:	0d 02 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      7c:	0d 02 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      8c:	0d 02 00 00 0d 02 00 00 00 00 00 00 00 00 00 00     ................
+      9c:	0d 02 00 00 0d 02 00 00 0d 02 00 00 0d 02 00 00     ................
+      ac:	0d 02 00 00 00 00 00 00                             ........
+
+000000b4 <__do_global_dtors_aux>:
+      b4:	b510      	push	{r4, lr}
+      b6:	4c06      	ldr	r4, [pc, #24]	; (d0 <__do_global_dtors_aux+0x1c>)
+      b8:	7823      	ldrb	r3, [r4, #0]
+      ba:	2b00      	cmp	r3, #0
+      bc:	d107      	bne.n	ce <__do_global_dtors_aux+0x1a>
+      be:	4b05      	ldr	r3, [pc, #20]	; (d4 <__do_global_dtors_aux+0x20>)
+      c0:	2b00      	cmp	r3, #0
+      c2:	d002      	beq.n	ca <__do_global_dtors_aux+0x16>
+      c4:	4804      	ldr	r0, [pc, #16]	; (d8 <__do_global_dtors_aux+0x24>)
+      c6:	e000      	b.n	ca <__do_global_dtors_aux+0x16>
+      c8:	bf00      	nop
+      ca:	2301      	movs	r3, #1
+      cc:	7023      	strb	r3, [r4, #0]
+      ce:	bd10      	pop	{r4, pc}
+      d0:	20000648 	.word	0x20000648
+      d4:	00000000 	.word	0x00000000
+      d8:	00001dcc 	.word	0x00001dcc
+
+000000dc <frame_dummy>:
+      dc:	4b08      	ldr	r3, [pc, #32]	; (100 <frame_dummy+0x24>)
+      de:	b510      	push	{r4, lr}
+      e0:	2b00      	cmp	r3, #0
+      e2:	d003      	beq.n	ec <frame_dummy+0x10>
+      e4:	4907      	ldr	r1, [pc, #28]	; (104 <frame_dummy+0x28>)
+      e6:	4808      	ldr	r0, [pc, #32]	; (108 <frame_dummy+0x2c>)
+      e8:	e000      	b.n	ec <frame_dummy+0x10>
+      ea:	bf00      	nop
+      ec:	4807      	ldr	r0, [pc, #28]	; (10c <frame_dummy+0x30>)
+      ee:	6803      	ldr	r3, [r0, #0]
+      f0:	2b00      	cmp	r3, #0
+      f2:	d100      	bne.n	f6 <frame_dummy+0x1a>
+      f4:	bd10      	pop	{r4, pc}
+      f6:	4b06      	ldr	r3, [pc, #24]	; (110 <frame_dummy+0x34>)
+      f8:	2b00      	cmp	r3, #0
+      fa:	d0fb      	beq.n	f4 <frame_dummy+0x18>
+      fc:	4798      	blx	r3
+      fe:	e7f9      	b.n	f4 <frame_dummy+0x18>
+     100:	00000000 	.word	0x00000000
+     104:	2000064c 	.word	0x2000064c
+     108:	00001dcc 	.word	0x00001dcc
+     10c:	00001dcc 	.word	0x00001dcc
+     110:	00000000 	.word	0x00000000
+
+00000114 <Reset_Handler>:
+/**
+ * \brief This is the code that gets called on processor reset.
+ * To initialize the device, and call the main() routine.
+ */
+void Reset_Handler(void)
+{
+     114:	b580      	push	{r7, lr}
+     116:	b082      	sub	sp, #8
+     118:	af00      	add	r7, sp, #0
+        uint32_t *pSrc, *pDest;
+
+        /* Initialize the relocate segment */
+        pSrc = &_etext;
+     11a:	4b2f      	ldr	r3, [pc, #188]	; (1d8 <Reset_Handler+0xc4>)
+     11c:	607b      	str	r3, [r7, #4]
+        pDest = &_srelocate;
+     11e:	4b2f      	ldr	r3, [pc, #188]	; (1dc <Reset_Handler+0xc8>)
+     120:	603b      	str	r3, [r7, #0]
+
+        if (pSrc != pDest) {
+     122:	687a      	ldr	r2, [r7, #4]
+     124:	683b      	ldr	r3, [r7, #0]
+     126:	429a      	cmp	r2, r3
+     128:	d00c      	beq.n	144 <Reset_Handler+0x30>
+                for (; pDest < &_erelocate;) {
+     12a:	e007      	b.n	13c <Reset_Handler+0x28>
+                        *pDest++ = *pSrc++;
+     12c:	683b      	ldr	r3, [r7, #0]
+     12e:	1d1a      	adds	r2, r3, #4
+     130:	603a      	str	r2, [r7, #0]
+     132:	687a      	ldr	r2, [r7, #4]
+     134:	1d11      	adds	r1, r2, #4
+     136:	6079      	str	r1, [r7, #4]
+     138:	6812      	ldr	r2, [r2, #0]
+     13a:	601a      	str	r2, [r3, #0]
+                for (; pDest < &_erelocate;) {
+     13c:	683a      	ldr	r2, [r7, #0]
+     13e:	4b28      	ldr	r3, [pc, #160]	; (1e0 <Reset_Handler+0xcc>)
+     140:	429a      	cmp	r2, r3
+     142:	d3f3      	bcc.n	12c <Reset_Handler+0x18>
+                }
+        }
+
+        /* Clear the zero segment */
+        for (pDest = &_szero; pDest < &_ezero;) {
+     144:	4b27      	ldr	r3, [pc, #156]	; (1e4 <Reset_Handler+0xd0>)
+     146:	603b      	str	r3, [r7, #0]
+     148:	e004      	b.n	154 <Reset_Handler+0x40>
+                *pDest++ = 0;
+     14a:	683b      	ldr	r3, [r7, #0]
+     14c:	1d1a      	adds	r2, r3, #4
+     14e:	603a      	str	r2, [r7, #0]
+     150:	2200      	movs	r2, #0
+     152:	601a      	str	r2, [r3, #0]
+        for (pDest = &_szero; pDest < &_ezero;) {
+     154:	683a      	ldr	r2, [r7, #0]
+     156:	4b24      	ldr	r3, [pc, #144]	; (1e8 <Reset_Handler+0xd4>)
+     158:	429a      	cmp	r2, r3
+     15a:	d3f6      	bcc.n	14a <Reset_Handler+0x36>
+        }
+
+        /* Set the vector table base address */
+        pSrc = (uint32_t *) & _sfixed;
+     15c:	4b23      	ldr	r3, [pc, #140]	; (1ec <Reset_Handler+0xd8>)
+     15e:	607b      	str	r3, [r7, #4]
+        SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+     160:	4b23      	ldr	r3, [pc, #140]	; (1f0 <Reset_Handler+0xdc>)
+     162:	687a      	ldr	r2, [r7, #4]
+     164:	21ff      	movs	r1, #255	; 0xff
+     166:	438a      	bics	r2, r1
+     168:	609a      	str	r2, [r3, #8]
+
+        /* Change default QOS values to have the best performance and correct USB behaviour */
+        SBMATRIX->SFR[SBMATRIX_SLAVE_HMCRAMC0].reg = 2;
+     16a:	4a22      	ldr	r2, [pc, #136]	; (1f4 <Reset_Handler+0xe0>)
+     16c:	2390      	movs	r3, #144	; 0x90
+     16e:	005b      	lsls	r3, r3, #1
+     170:	2102      	movs	r1, #2
+     172:	50d1      	str	r1, [r2, r3]
+#if defined(ID_USB)
+        USB->DEVICE.QOSCTRL.bit.CQOS = 2;
+     174:	4a20      	ldr	r2, [pc, #128]	; (1f8 <Reset_Handler+0xe4>)
+     176:	78d3      	ldrb	r3, [r2, #3]
+     178:	2103      	movs	r1, #3
+     17a:	438b      	bics	r3, r1
+     17c:	1c19      	adds	r1, r3, #0
+     17e:	2302      	movs	r3, #2
+     180:	430b      	orrs	r3, r1
+     182:	70d3      	strb	r3, [r2, #3]
+        USB->DEVICE.QOSCTRL.bit.DQOS = 2;
+     184:	4a1c      	ldr	r2, [pc, #112]	; (1f8 <Reset_Handler+0xe4>)
+     186:	78d3      	ldrb	r3, [r2, #3]
+     188:	210c      	movs	r1, #12
+     18a:	438b      	bics	r3, r1
+     18c:	1c19      	adds	r1, r3, #0
+     18e:	2308      	movs	r3, #8
+     190:	430b      	orrs	r3, r1
+     192:	70d3      	strb	r3, [r2, #3]
+#endif
+        DMAC->QOSCTRL.bit.DQOS = 2;
+     194:	4a19      	ldr	r2, [pc, #100]	; (1fc <Reset_Handler+0xe8>)
+     196:	7b93      	ldrb	r3, [r2, #14]
+     198:	2130      	movs	r1, #48	; 0x30
+     19a:	438b      	bics	r3, r1
+     19c:	1c19      	adds	r1, r3, #0
+     19e:	2320      	movs	r3, #32
+     1a0:	430b      	orrs	r3, r1
+     1a2:	7393      	strb	r3, [r2, #14]
+        DMAC->QOSCTRL.bit.FQOS = 2;
+     1a4:	4a15      	ldr	r2, [pc, #84]	; (1fc <Reset_Handler+0xe8>)
+     1a6:	7b93      	ldrb	r3, [r2, #14]
+     1a8:	210c      	movs	r1, #12
+     1aa:	438b      	bics	r3, r1
+     1ac:	1c19      	adds	r1, r3, #0
+     1ae:	2308      	movs	r3, #8
+     1b0:	430b      	orrs	r3, r1
+     1b2:	7393      	strb	r3, [r2, #14]
+        DMAC->QOSCTRL.bit.WRBQOS = 2;
+     1b4:	4a11      	ldr	r2, [pc, #68]	; (1fc <Reset_Handler+0xe8>)
+     1b6:	7b93      	ldrb	r3, [r2, #14]
+     1b8:	2103      	movs	r1, #3
+     1ba:	438b      	bics	r3, r1
+     1bc:	1c19      	adds	r1, r3, #0
+     1be:	2302      	movs	r3, #2
+     1c0:	430b      	orrs	r3, r1
+     1c2:	7393      	strb	r3, [r2, #14]
+
+        /* Overwriting the default value of the NVMCTRL.CTRLB.MANW bit (errata reference 13134) */
+        NVMCTRL->CTRLB.bit.MANW = 1;
+     1c4:	4a0e      	ldr	r2, [pc, #56]	; (200 <Reset_Handler+0xec>)
+     1c6:	6853      	ldr	r3, [r2, #4]
+     1c8:	2180      	movs	r1, #128	; 0x80
+     1ca:	430b      	orrs	r3, r1
+     1cc:	6053      	str	r3, [r2, #4]
+
+        /* Initialize the C library */
+        __libc_init_array();
+     1ce:	4b0d      	ldr	r3, [pc, #52]	; (204 <Reset_Handler+0xf0>)
+     1d0:	4798      	blx	r3
+
+        /* Branch to main function */
+        main();
+     1d2:	4b0d      	ldr	r3, [pc, #52]	; (208 <Reset_Handler+0xf4>)
+     1d4:	4798      	blx	r3
+
+        /* Infinite loop */
+        while (1);
+     1d6:	e7fe      	b.n	1d6 <Reset_Handler+0xc2>
+     1d8:	00001dcc 	.word	0x00001dcc
+     1dc:	20000000 	.word	0x20000000
+     1e0:	20000644 	.word	0x20000644
+     1e4:	20000648 	.word	0x20000648
+     1e8:	20000694 	.word	0x20000694
+     1ec:	00000000 	.word	0x00000000
+     1f0:	e000ed00 	.word	0xe000ed00
+     1f4:	41007000 	.word	0x41007000
+     1f8:	41005000 	.word	0x41005000
+     1fc:	41004800 	.word	0x41004800
+     200:	41004000 	.word	0x41004000
+     204:	00001b51 	.word	0x00001b51
+     208:	00000341 	.word	0x00000341
+
+0000020c <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+     20c:	b580      	push	{r7, lr}
+     20e:	af00      	add	r7, sp, #0
+        while (1) {
+     210:	e7fe      	b.n	210 <Dummy_Handler+0x4>
+	...
+
+00000214 <SystemInit>:
+ *
+ * @brief  Setup the microcontroller system.
+ *         Initialize the System and update the SystemCoreClock variable.
+ */
+void SystemInit(void)
+{
+     214:	b580      	push	{r7, lr}
+     216:	af00      	add	r7, sp, #0
+        // Keep the default device state after reset
+        SystemCoreClock = __SYSTEM_CLOCK;
+     218:	4b02      	ldr	r3, [pc, #8]	; (224 <SystemInit+0x10>)
+     21a:	4a03      	ldr	r2, [pc, #12]	; (228 <SystemInit+0x14>)
+     21c:	601a      	str	r2, [r3, #0]
+        return;
+     21e:	46c0      	nop			; (mov r8, r8)
+}
+     220:	46bd      	mov	sp, r7
+     222:	bd80      	pop	{r7, pc}
+     224:	20000000 	.word	0x20000000
+     228:	000f4240 	.word	0x000f4240
+
+0000022c <MorphConfig_init>:
+void morph_implementation_test();
+
+// Does the configuration during run-time
+// Configuration only involves setting function pointer values.
+static void MorphConfig_init()
+{
+     22c:	b580      	push	{r7, lr}
+     22e:	af00      	add	r7, sp, #0
+
+	morph_config_init();
+     230:	4b22      	ldr	r3, [pc, #136]	; (2bc <MorphConfig_init+0x90>)
+     232:	4798      	blx	r3
+
+	// GPIO Config
+
+	MorphGPIO_register_set_pin_value_function(&morph_config_gpio_set_pin_value);
+     234:	4b22      	ldr	r3, [pc, #136]	; (2c0 <MorphConfig_init+0x94>)
+     236:	0018      	movs	r0, r3
+     238:	4b22      	ldr	r3, [pc, #136]	; (2c4 <MorphConfig_init+0x98>)
+     23a:	4798      	blx	r3
+
+	MorphGPIO_register_get_pin_value_function(&morph_config_gpio_get_pin_value);
+     23c:	4b22      	ldr	r3, [pc, #136]	; (2c8 <MorphConfig_init+0x9c>)
+     23e:	0018      	movs	r0, r3
+     240:	4b22      	ldr	r3, [pc, #136]	; (2cc <MorphConfig_init+0xa0>)
+     242:	4798      	blx	r3
+	
+	MorphGPIO_register_set_pin_direction_function(&morph_config_gpio_set_pin_direction);
+     244:	4b22      	ldr	r3, [pc, #136]	; (2d0 <MorphConfig_init+0xa4>)
+     246:	0018      	movs	r0, r3
+     248:	4b22      	ldr	r3, [pc, #136]	; (2d4 <MorphConfig_init+0xa8>)
+     24a:	4798      	blx	r3
+	
+	MorphGPIO_register_get_pin_direction_function(&morph_config_gpio_get_pin_direction);
+     24c:	4b22      	ldr	r3, [pc, #136]	; (2d8 <MorphConfig_init+0xac>)
+     24e:	0018      	movs	r0, r3
+     250:	4b22      	ldr	r3, [pc, #136]	; (2dc <MorphConfig_init+0xb0>)
+     252:	4798      	blx	r3
+
+	MorphGPIO_register_set_pin_pull_state_function(&morph_config_gpio_set_pin_pull_state);
+     254:	4b22      	ldr	r3, [pc, #136]	; (2e0 <MorphConfig_init+0xb4>)
+     256:	0018      	movs	r0, r3
+     258:	4b22      	ldr	r3, [pc, #136]	; (2e4 <MorphConfig_init+0xb8>)
+     25a:	4798      	blx	r3
+	
+	MorphGPIO_register_get_pin_pull_state_function(&morph_config_gpio_get_pin_pull_state);	
+     25c:	4b22      	ldr	r3, [pc, #136]	; (2e8 <MorphConfig_init+0xbc>)
+     25e:	0018      	movs	r0, r3
+     260:	4b22      	ldr	r3, [pc, #136]	; (2ec <MorphConfig_init+0xc0>)
+     262:	4798      	blx	r3
+	
+	// UART Config
+	
+	MorphUART_register_setup_channel_function(&morph_config_uart_setup_channel);
+     264:	4b22      	ldr	r3, [pc, #136]	; (2f0 <MorphConfig_init+0xc4>)
+     266:	0018      	movs	r0, r3
+     268:	4b22      	ldr	r3, [pc, #136]	; (2f4 <MorphConfig_init+0xc8>)
+     26a:	4798      	blx	r3
+	
+	//MorphUART_register_disable_channel_function
+	
+	MorphUART_register_send_data_function(&morph_config_uart_send_data);
+     26c:	4b22      	ldr	r3, [pc, #136]	; (2f8 <MorphConfig_init+0xcc>)
+     26e:	0018      	movs	r0, r3
+     270:	4b22      	ldr	r3, [pc, #136]	; (2fc <MorphConfig_init+0xd0>)
+     272:	4798      	blx	r3
+
+	MorphUART_register_read_data_function(&morph_config_uart_read_data);
+     274:	4b22      	ldr	r3, [pc, #136]	; (300 <MorphConfig_init+0xd4>)
+     276:	0018      	movs	r0, r3
+     278:	4b22      	ldr	r3, [pc, #136]	; (304 <MorphConfig_init+0xd8>)
+     27a:	4798      	blx	r3
+	
+	MorphUART_register_write_data_buffer_function(&morph_config_uart_write_data_buffer);
+     27c:	4b22      	ldr	r3, [pc, #136]	; (308 <MorphConfig_init+0xdc>)
+     27e:	0018      	movs	r0, r3
+     280:	4b22      	ldr	r3, [pc, #136]	; (30c <MorphConfig_init+0xe0>)
+     282:	4798      	blx	r3
+	
+	MorphUART_register_read_data_buffer_function(&morph_config_uart_read_data_buffer);
+     284:	4b22      	ldr	r3, [pc, #136]	; (310 <MorphConfig_init+0xe4>)
+     286:	0018      	movs	r0, r3
+     288:	4b22      	ldr	r3, [pc, #136]	; (314 <MorphConfig_init+0xe8>)
+     28a:	4798      	blx	r3
+	
+	MorphUART_register_set_tx_pin_function(&morph_config_uart_set_tx_pin);
+     28c:	4b22      	ldr	r3, [pc, #136]	; (318 <MorphConfig_init+0xec>)
+     28e:	0018      	movs	r0, r3
+     290:	4b22      	ldr	r3, [pc, #136]	; (31c <MorphConfig_init+0xf0>)
+     292:	4798      	blx	r3
+
+	MorphUART_register_set_rx_pin_function(&morph_config_uart_set_rx_pin);
+     294:	4b22      	ldr	r3, [pc, #136]	; (320 <MorphConfig_init+0xf4>)
+     296:	0018      	movs	r0, r3
+     298:	4b22      	ldr	r3, [pc, #136]	; (324 <MorphConfig_init+0xf8>)
+     29a:	4798      	blx	r3
+
+	MorphTime_register_init_function(&morph_config_time_init);
+     29c:	4b22      	ldr	r3, [pc, #136]	; (328 <MorphConfig_init+0xfc>)
+     29e:	0018      	movs	r0, r3
+     2a0:	4b22      	ldr	r3, [pc, #136]	; (32c <MorphConfig_init+0x100>)
+     2a2:	4798      	blx	r3
+	
+	MorphTime_register_init_rtc_function(&morph_config_time_init_rtc);
+     2a4:	4b22      	ldr	r3, [pc, #136]	; (330 <MorphConfig_init+0x104>)
+     2a6:	0018      	movs	r0, r3
+     2a8:	4b22      	ldr	r3, [pc, #136]	; (334 <MorphConfig_init+0x108>)
+     2aa:	4798      	blx	r3
+	
+	MorphTime_register_millis_function(&morph_config_time_millis);
+     2ac:	4b22      	ldr	r3, [pc, #136]	; (338 <MorphConfig_init+0x10c>)
+     2ae:	0018      	movs	r0, r3
+     2b0:	4b22      	ldr	r3, [pc, #136]	; (33c <MorphConfig_init+0x110>)
+     2b2:	4798      	blx	r3
+	
+	
+}
+     2b4:	46c0      	nop			; (mov r8, r8)
+     2b6:	46bd      	mov	sp, r7
+     2b8:	bd80      	pop	{r7, pc}
+     2ba:	46c0      	nop			; (mov r8, r8)
+     2bc:	000016a9 	.word	0x000016a9
+     2c0:	00000595 	.word	0x00000595
+     2c4:	000016d9 	.word	0x000016d9
+     2c8:	0000066d 	.word	0x0000066d
+     2cc:	000016e5 	.word	0x000016e5
+     2d0:	00000725 	.word	0x00000725
+     2d4:	000016f1 	.word	0x000016f1
+     2d8:	00000845 	.word	0x00000845
+     2dc:	000016fd 	.word	0x000016fd
+     2e0:	000008cd 	.word	0x000008cd
+     2e4:	00001709 	.word	0x00001709
+     2e8:	00000a4d 	.word	0x00000a4d
+     2ec:	00001715 	.word	0x00001715
+     2f0:	00000d35 	.word	0x00000d35
+     2f4:	00001789 	.word	0x00001789
+     2f8:	00000fc9 	.word	0x00000fc9
+     2fc:	00001795 	.word	0x00001795
+     300:	00001019 	.word	0x00001019
+     304:	000017a1 	.word	0x000017a1
+     308:	00001055 	.word	0x00001055
+     30c:	000017ad 	.word	0x000017ad
+     310:	000010a1 	.word	0x000010a1
+     314:	000017b9 	.word	0x000017b9
+     318:	000010f1 	.word	0x000010f1
+     31c:	000017c5 	.word	0x000017c5
+     320:	00001375 	.word	0x00001375
+     324:	000017d1 	.word	0x000017d1
+     328:	0000162d 	.word	0x0000162d
+     32c:	00001745 	.word	0x00001745
+     330:	00001649 	.word	0x00001649
+     334:	00001751 	.word	0x00001751
+     338:	00001691 	.word	0x00001691
+     33c:	0000175d 	.word	0x0000175d
+
+00000340 <main>:
+#include <MorphGPIO.h>
+#include <MorphUART.h>
+#include <MorphTime.h>
+
+int main(void)
+{
+     340:	b590      	push	{r4, r7, lr}
+     342:	b08b      	sub	sp, #44	; 0x2c
+     344:	af02      	add	r7, sp, #8
+    /* Initialize the SAM system */
+    SystemInit();
+     346:	4b43      	ldr	r3, [pc, #268]	; (454 <main+0x114>)
+     348:	4798      	blx	r3
+
+	MorphConfig_init();
+     34a:	4b43      	ldr	r3, [pc, #268]	; (458 <main+0x118>)
+     34c:	4798      	blx	r3
+
+	MorphGPIO_set_pin_direction(31, Input);
+     34e:	2100      	movs	r1, #0
+     350:	201f      	movs	r0, #31
+     352:	4b42      	ldr	r3, [pc, #264]	; (45c <main+0x11c>)
+     354:	4798      	blx	r3
+	MorphGPIO_set_pin_pull_state(31, PullHigh);
+     356:	2101      	movs	r1, #1
+     358:	201f      	movs	r0, #31
+     35a:	4b41      	ldr	r3, [pc, #260]	; (460 <main+0x120>)
+     35c:	4798      	blx	r3
+	
+	MorphGPIO_set_pin_direction(36, Output);
+     35e:	2101      	movs	r1, #1
+     360:	2024      	movs	r0, #36	; 0x24
+     362:	4b3e      	ldr	r3, [pc, #248]	; (45c <main+0x11c>)
+     364:	4798      	blx	r3
+	//MorphUART_set_tx_pin(5, 41);
+	//MorphUART_set_rx_pin(5, 42);
+		//
+	//MorphUART_setup_channel(5, 9600, 8, MorphNoParity, 1);
+
+	MorphUART_set_tx_pin(0, 19);
+     366:	2113      	movs	r1, #19
+     368:	2000      	movs	r0, #0
+     36a:	4b3e      	ldr	r3, [pc, #248]	; (464 <main+0x124>)
+     36c:	4798      	blx	r3
+	MorphUART_set_rx_pin(0, 20);
+     36e:	2114      	movs	r1, #20
+     370:	2000      	movs	r0, #0
+     372:	4b3d      	ldr	r3, [pc, #244]	; (468 <main+0x128>)
+     374:	4798      	blx	r3
+	
+	MorphUART_setup_channel(0, 9600, 8, MorphNoParity, 1);
+     376:	2396      	movs	r3, #150	; 0x96
+     378:	0199      	lsls	r1, r3, #6
+     37a:	2301      	movs	r3, #1
+     37c:	9300      	str	r3, [sp, #0]
+     37e:	2302      	movs	r3, #2
+     380:	2208      	movs	r2, #8
+     382:	2000      	movs	r0, #0
+     384:	4c39      	ldr	r4, [pc, #228]	; (46c <main+0x12c>)
+     386:	47a0      	blx	r4
+
+	MorphTime_init_rtc();
+     388:	4b39      	ldr	r3, [pc, #228]	; (470 <main+0x130>)
+     38a:	4798      	blx	r3
+
+	uint8_t count = 0;
+     38c:	2316      	movs	r3, #22
+     38e:	18fb      	adds	r3, r7, r3
+     390:	2200      	movs	r2, #0
+     392:	701a      	strb	r2, [r3, #0]
+
+	uint16_t data[10] = {0};
+     394:	003b      	movs	r3, r7
+     396:	0018      	movs	r0, r3
+     398:	2314      	movs	r3, #20
+     39a:	001a      	movs	r2, r3
+     39c:	2100      	movs	r1, #0
+     39e:	4b35      	ldr	r3, [pc, #212]	; (474 <main+0x134>)
+     3a0:	4798      	blx	r3
+
+
+    while (1) 
+    {
+
+		uint64_t cur_time = MorphTime_millis();
+     3a2:	4b35      	ldr	r3, [pc, #212]	; (478 <main+0x138>)
+     3a4:	4798      	blx	r3
+     3a6:	0003      	movs	r3, r0
+     3a8:	000c      	movs	r4, r1
+     3aa:	61bb      	str	r3, [r7, #24]
+     3ac:	61fc      	str	r4, [r7, #28]
+
+		int8_t i = 0;
+     3ae:	2317      	movs	r3, #23
+     3b0:	18fb      	adds	r3, r7, r3
+     3b2:	2200      	movs	r2, #0
+     3b4:	701a      	strb	r2, [r3, #0]
+
+		do 
+		{
+			uint16_t remainder = cur_time % 10;
+     3b6:	69b8      	ldr	r0, [r7, #24]
+     3b8:	69f9      	ldr	r1, [r7, #28]
+     3ba:	4c30      	ldr	r4, [pc, #192]	; (47c <main+0x13c>)
+     3bc:	220a      	movs	r2, #10
+     3be:	2300      	movs	r3, #0
+     3c0:	47a0      	blx	r4
+     3c2:	001c      	movs	r4, r3
+     3c4:	0013      	movs	r3, r2
+     3c6:	0019      	movs	r1, r3
+     3c8:	0022      	movs	r2, r4
+     3ca:	2314      	movs	r3, #20
+     3cc:	18fb      	adds	r3, r7, r3
+     3ce:	1c0a      	adds	r2, r1, #0
+     3d0:	801a      	strh	r2, [r3, #0]
+			cur_time = cur_time / 10;
+     3d2:	69b8      	ldr	r0, [r7, #24]
+     3d4:	69f9      	ldr	r1, [r7, #28]
+     3d6:	4c29      	ldr	r4, [pc, #164]	; (47c <main+0x13c>)
+     3d8:	220a      	movs	r2, #10
+     3da:	2300      	movs	r3, #0
+     3dc:	47a0      	blx	r4
+     3de:	0003      	movs	r3, r0
+     3e0:	000c      	movs	r4, r1
+     3e2:	61bb      	str	r3, [r7, #24]
+     3e4:	61fc      	str	r4, [r7, #28]
+
+			data[i++] = remainder;
+     3e6:	2317      	movs	r3, #23
+     3e8:	18fb      	adds	r3, r7, r3
+     3ea:	2200      	movs	r2, #0
+     3ec:	569a      	ldrsb	r2, [r3, r2]
+     3ee:	b2d3      	uxtb	r3, r2
+     3f0:	3301      	adds	r3, #1
+     3f2:	b2d9      	uxtb	r1, r3
+     3f4:	2317      	movs	r3, #23
+     3f6:	18fb      	adds	r3, r7, r3
+     3f8:	7019      	strb	r1, [r3, #0]
+     3fa:	003b      	movs	r3, r7
+     3fc:	0052      	lsls	r2, r2, #1
+     3fe:	2114      	movs	r1, #20
+     400:	1879      	adds	r1, r7, r1
+     402:	8809      	ldrh	r1, [r1, #0]
+     404:	52d1      	strh	r1, [r2, r3]
+
+		} while (cur_time > 0);
+     406:	69bb      	ldr	r3, [r7, #24]
+     408:	69fa      	ldr	r2, [r7, #28]
+     40a:	4313      	orrs	r3, r2
+     40c:	d1d3      	bne.n	3b6 <main+0x76>
+		
+		for(; i >= 0; i --)
+     40e:	e016      	b.n	43e <main+0xfe>
+		{
+			MorphUART_send_data(0, data[i] + '0');
+     410:	2317      	movs	r3, #23
+     412:	18fb      	adds	r3, r7, r3
+     414:	2200      	movs	r2, #0
+     416:	569a      	ldrsb	r2, [r3, r2]
+     418:	003b      	movs	r3, r7
+     41a:	0052      	lsls	r2, r2, #1
+     41c:	5ad3      	ldrh	r3, [r2, r3]
+     41e:	3330      	adds	r3, #48	; 0x30
+     420:	b29b      	uxth	r3, r3
+     422:	0019      	movs	r1, r3
+     424:	2000      	movs	r0, #0
+     426:	4b16      	ldr	r3, [pc, #88]	; (480 <main+0x140>)
+     428:	4798      	blx	r3
+		for(; i >= 0; i --)
+     42a:	2317      	movs	r3, #23
+     42c:	18fb      	adds	r3, r7, r3
+     42e:	781b      	ldrb	r3, [r3, #0]
+     430:	b25b      	sxtb	r3, r3
+     432:	b2db      	uxtb	r3, r3
+     434:	3b01      	subs	r3, #1
+     436:	b2da      	uxtb	r2, r3
+     438:	2317      	movs	r3, #23
+     43a:	18fb      	adds	r3, r7, r3
+     43c:	701a      	strb	r2, [r3, #0]
+     43e:	2317      	movs	r3, #23
+     440:	18fb      	adds	r3, r7, r3
+     442:	781b      	ldrb	r3, [r3, #0]
+     444:	2b7f      	cmp	r3, #127	; 0x7f
+     446:	d9e3      	bls.n	410 <main+0xd0>
+		}
+
+		MorphUART_send_data(0, '\n');
+     448:	210a      	movs	r1, #10
+     44a:	2000      	movs	r0, #0
+     44c:	4b0c      	ldr	r3, [pc, #48]	; (480 <main+0x140>)
+     44e:	4798      	blx	r3
+    {
+     450:	e7a7      	b.n	3a2 <main+0x62>
+     452:	46c0      	nop			; (mov r8, r8)
+     454:	00000215 	.word	0x00000215
+     458:	0000022d 	.word	0x0000022d
+     45c:	00001721 	.word	0x00001721
+     460:	00001731 	.word	0x00001731
+     464:	00001805 	.word	0x00001805
+     468:	00001815 	.word	0x00001815
+     46c:	000017dd 	.word	0x000017dd
+     470:	00001769 	.word	0x00001769
+     474:	00001b99 	.word	0x00001b99
+     478:	00001779 	.word	0x00001779
+     47c:	0000193d 	.word	0x0000193d
+     480:	000017f5 	.word	0x000017f5
+
+00000484 <__NVIC_EnableIRQ>:
+  \details Enables a device specific interrupt in the NVIC interrupt controller.
+  \param [in]      IRQn  Device specific interrupt number.
+  \note    IRQn must not be negative.
+ */
+__STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+{
+     484:	b580      	push	{r7, lr}
+     486:	b082      	sub	sp, #8
+     488:	af00      	add	r7, sp, #0
+     48a:	0002      	movs	r2, r0
+     48c:	1dfb      	adds	r3, r7, #7
+     48e:	701a      	strb	r2, [r3, #0]
+  if ((int32_t)(IRQn) >= 0)
+     490:	1dfb      	adds	r3, r7, #7
+     492:	781b      	ldrb	r3, [r3, #0]
+     494:	2b7f      	cmp	r3, #127	; 0x7f
+     496:	d809      	bhi.n	4ac <__NVIC_EnableIRQ+0x28>
+  {
+    NVIC->ISER[0U] = (uint32_t)(1UL << (((uint32_t)(int32_t)IRQn) & 0x1FUL));
+     498:	4b06      	ldr	r3, [pc, #24]	; (4b4 <__NVIC_EnableIRQ+0x30>)
+     49a:	1dfa      	adds	r2, r7, #7
+     49c:	7812      	ldrb	r2, [r2, #0]
+     49e:	0011      	movs	r1, r2
+     4a0:	221f      	movs	r2, #31
+     4a2:	400a      	ands	r2, r1
+     4a4:	2101      	movs	r1, #1
+     4a6:	4091      	lsls	r1, r2
+     4a8:	000a      	movs	r2, r1
+     4aa:	601a      	str	r2, [r3, #0]
+  }
+}
+     4ac:	46c0      	nop			; (mov r8, r8)
+     4ae:	46bd      	mov	sp, r7
+     4b0:	b002      	add	sp, #8
+     4b2:	bd80      	pop	{r7, pc}
+     4b4:	e000e100 	.word	0xe000e100
+
+000004b8 <__NVIC_SetPriority>:
+  \param [in]      IRQn  Interrupt number.
+  \param [in]  priority  Priority to set.
+  \note    The priority cannot be set for every processor exception.
+ */
+__STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+     4b8:	b5b0      	push	{r4, r5, r7, lr}
+     4ba:	b082      	sub	sp, #8
+     4bc:	af00      	add	r7, sp, #0
+     4be:	0002      	movs	r2, r0
+     4c0:	6039      	str	r1, [r7, #0]
+     4c2:	1dfb      	adds	r3, r7, #7
+     4c4:	701a      	strb	r2, [r3, #0]
+  if ((int32_t)(IRQn) >= 0)
+     4c6:	1dfb      	adds	r3, r7, #7
+     4c8:	781b      	ldrb	r3, [r3, #0]
+     4ca:	2b7f      	cmp	r3, #127	; 0x7f
+     4cc:	d828      	bhi.n	520 <__NVIC_SetPriority+0x68>
+  {
+    NVIC->IP[_IP_IDX(IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(IRQn)]  & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+     4ce:	4c2f      	ldr	r4, [pc, #188]	; (58c <__NVIC_SetPriority+0xd4>)
+     4d0:	1dfb      	adds	r3, r7, #7
+     4d2:	781b      	ldrb	r3, [r3, #0]
+     4d4:	b25b      	sxtb	r3, r3
+     4d6:	089b      	lsrs	r3, r3, #2
+     4d8:	492c      	ldr	r1, [pc, #176]	; (58c <__NVIC_SetPriority+0xd4>)
+     4da:	1dfa      	adds	r2, r7, #7
+     4dc:	7812      	ldrb	r2, [r2, #0]
+     4de:	b252      	sxtb	r2, r2
+     4e0:	0892      	lsrs	r2, r2, #2
+     4e2:	32c0      	adds	r2, #192	; 0xc0
+     4e4:	0092      	lsls	r2, r2, #2
+     4e6:	5852      	ldr	r2, [r2, r1]
+     4e8:	1df9      	adds	r1, r7, #7
+     4ea:	7809      	ldrb	r1, [r1, #0]
+     4ec:	0008      	movs	r0, r1
+     4ee:	2103      	movs	r1, #3
+     4f0:	4001      	ands	r1, r0
+     4f2:	00c9      	lsls	r1, r1, #3
+     4f4:	20ff      	movs	r0, #255	; 0xff
+     4f6:	4088      	lsls	r0, r1
+     4f8:	0001      	movs	r1, r0
+     4fa:	43c9      	mvns	r1, r1
+     4fc:	4011      	ands	r1, r2
+       (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+     4fe:	683a      	ldr	r2, [r7, #0]
+     500:	0192      	lsls	r2, r2, #6
+     502:	20ff      	movs	r0, #255	; 0xff
+     504:	4010      	ands	r0, r2
+     506:	1dfa      	adds	r2, r7, #7
+     508:	7812      	ldrb	r2, [r2, #0]
+     50a:	0015      	movs	r5, r2
+     50c:	2203      	movs	r2, #3
+     50e:	402a      	ands	r2, r5
+     510:	00d2      	lsls	r2, r2, #3
+     512:	4090      	lsls	r0, r2
+     514:	0002      	movs	r2, r0
+    NVIC->IP[_IP_IDX(IRQn)]  = ((uint32_t)(NVIC->IP[_IP_IDX(IRQn)]  & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+     516:	430a      	orrs	r2, r1
+     518:	33c0      	adds	r3, #192	; 0xc0
+     51a:	009b      	lsls	r3, r3, #2
+     51c:	511a      	str	r2, [r3, r4]
+  else
+  {
+    SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+       (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+  }
+}
+     51e:	e031      	b.n	584 <__NVIC_SetPriority+0xcc>
+    SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+     520:	4c1b      	ldr	r4, [pc, #108]	; (590 <__NVIC_SetPriority+0xd8>)
+     522:	1dfb      	adds	r3, r7, #7
+     524:	781b      	ldrb	r3, [r3, #0]
+     526:	001a      	movs	r2, r3
+     528:	230f      	movs	r3, #15
+     52a:	4013      	ands	r3, r2
+     52c:	3b08      	subs	r3, #8
+     52e:	0899      	lsrs	r1, r3, #2
+     530:	4a17      	ldr	r2, [pc, #92]	; (590 <__NVIC_SetPriority+0xd8>)
+     532:	1dfb      	adds	r3, r7, #7
+     534:	781b      	ldrb	r3, [r3, #0]
+     536:	0018      	movs	r0, r3
+     538:	230f      	movs	r3, #15
+     53a:	4003      	ands	r3, r0
+     53c:	3b08      	subs	r3, #8
+     53e:	089b      	lsrs	r3, r3, #2
+     540:	3306      	adds	r3, #6
+     542:	009b      	lsls	r3, r3, #2
+     544:	18d3      	adds	r3, r2, r3
+     546:	3304      	adds	r3, #4
+     548:	681b      	ldr	r3, [r3, #0]
+     54a:	1dfa      	adds	r2, r7, #7
+     54c:	7812      	ldrb	r2, [r2, #0]
+     54e:	0010      	movs	r0, r2
+     550:	2203      	movs	r2, #3
+     552:	4002      	ands	r2, r0
+     554:	00d2      	lsls	r2, r2, #3
+     556:	20ff      	movs	r0, #255	; 0xff
+     558:	4090      	lsls	r0, r2
+     55a:	0002      	movs	r2, r0
+     55c:	43d2      	mvns	r2, r2
+     55e:	401a      	ands	r2, r3
+       (((priority << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL) << _BIT_SHIFT(IRQn)));
+     560:	683b      	ldr	r3, [r7, #0]
+     562:	019b      	lsls	r3, r3, #6
+     564:	20ff      	movs	r0, #255	; 0xff
+     566:	4018      	ands	r0, r3
+     568:	1dfb      	adds	r3, r7, #7
+     56a:	781b      	ldrb	r3, [r3, #0]
+     56c:	001d      	movs	r5, r3
+     56e:	2303      	movs	r3, #3
+     570:	402b      	ands	r3, r5
+     572:	00db      	lsls	r3, r3, #3
+     574:	4098      	lsls	r0, r3
+     576:	0003      	movs	r3, r0
+    SCB->SHP[_SHP_IDX(IRQn)] = ((uint32_t)(SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFFUL << _BIT_SHIFT(IRQn))) |
+     578:	431a      	orrs	r2, r3
+     57a:	1d8b      	adds	r3, r1, #6
+     57c:	009b      	lsls	r3, r3, #2
+     57e:	18e3      	adds	r3, r4, r3
+     580:	3304      	adds	r3, #4
+     582:	601a      	str	r2, [r3, #0]
+}
+     584:	46c0      	nop			; (mov r8, r8)
+     586:	46bd      	mov	sp, r7
+     588:	b002      	add	sp, #8
+     58a:	bdb0      	pop	{r4, r5, r7, pc}
+     58c:	e000e100 	.word	0xe000e100
+     590:	e000ed00 	.word	0xe000ed00
+
+00000594 <morph_config_gpio_set_pin_value>:
+enum PMUXTypes {EIC_PMUX = 0, ADC_PMUX = 1, SERCOM_PMUX = 2, SERCOM_ALT_PMUX = 3, TC_PMUX=4, TCC_PMUX=5, COM_PMUX = 6, GCLK_PMUX = 7};
+
+
+
+void morph_config_gpio_set_pin_value(MorphPinNumber pn, enum MorphPinValue pv)
+{
+     594:	b580      	push	{r7, lr}
+     596:	b084      	sub	sp, #16
+     598:	af00      	add	r7, sp, #0
+     59a:	0002      	movs	r2, r0
+     59c:	1dfb      	adds	r3, r7, #7
+     59e:	701a      	strb	r2, [r3, #0]
+     5a0:	1dbb      	adds	r3, r7, #6
+     5a2:	1c0a      	adds	r2, r1, #0
+     5a4:	701a      	strb	r2, [r3, #0]
+	
+	uint8_t value = (pv == High ? 1 : 0);
+     5a6:	1dbb      	adds	r3, r7, #6
+     5a8:	781b      	ldrb	r3, [r3, #0]
+     5aa:	3b01      	subs	r3, #1
+     5ac:	425a      	negs	r2, r3
+     5ae:	4153      	adcs	r3, r2
+     5b0:	b2da      	uxtb	r2, r3
+     5b2:	230f      	movs	r3, #15
+     5b4:	18fb      	adds	r3, r7, r3
+     5b6:	701a      	strb	r2, [r3, #0]
+	
+	if(pn >= 1 && pn <= PIN_COUNT)
+     5b8:	1dfb      	adds	r3, r7, #7
+     5ba:	781b      	ldrb	r3, [r3, #0]
+     5bc:	b25b      	sxtb	r3, r3
+     5be:	2b00      	cmp	r3, #0
+     5c0:	dd4b      	ble.n	65a <morph_config_gpio_set_pin_value+0xc6>
+     5c2:	1dfb      	adds	r3, r7, #7
+     5c4:	781b      	ldrb	r3, [r3, #0]
+     5c6:	b25b      	sxtb	r3, r3
+     5c8:	2b40      	cmp	r3, #64	; 0x40
+     5ca:	dc46      	bgt.n	65a <morph_config_gpio_set_pin_value+0xc6>
+	{
+	
+		int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     5cc:	1dfb      	adds	r3, r7, #7
+     5ce:	781b      	ldrb	r3, [r3, #0]
+     5d0:	b25b      	sxtb	r3, r3
+     5d2:	1e5a      	subs	r2, r3, #1
+     5d4:	230e      	movs	r3, #14
+     5d6:	18f9      	adds	r1, r7, r3
+     5d8:	4822      	ldr	r0, [pc, #136]	; (664 <morph_config_gpio_set_pin_value+0xd0>)
+     5da:	0013      	movs	r3, r2
+     5dc:	005b      	lsls	r3, r3, #1
+     5de:	189b      	adds	r3, r3, r2
+     5e0:	005b      	lsls	r3, r3, #1
+     5e2:	5c1b      	ldrb	r3, [r3, r0]
+     5e4:	700b      	strb	r3, [r1, #0]
+		int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     5e6:	1dfb      	adds	r3, r7, #7
+     5e8:	781b      	ldrb	r3, [r3, #0]
+     5ea:	b25b      	sxtb	r3, r3
+     5ec:	1e5a      	subs	r2, r3, #1
+     5ee:	230d      	movs	r3, #13
+     5f0:	18f9      	adds	r1, r7, r3
+     5f2:	481c      	ldr	r0, [pc, #112]	; (664 <morph_config_gpio_set_pin_value+0xd0>)
+     5f4:	0013      	movs	r3, r2
+     5f6:	005b      	lsls	r3, r3, #1
+     5f8:	189b      	adds	r3, r3, r2
+     5fa:	005b      	lsls	r3, r3, #1
+     5fc:	18c3      	adds	r3, r0, r3
+     5fe:	3301      	adds	r3, #1
+     600:	781b      	ldrb	r3, [r3, #0]
+     602:	700b      	strb	r3, [r1, #0]
+	
+		if(pin_group >= 0)
+     604:	230e      	movs	r3, #14
+     606:	18fb      	adds	r3, r7, r3
+     608:	781b      	ldrb	r3, [r3, #0]
+     60a:	2b7f      	cmp	r3, #127	; 0x7f
+     60c:	d825      	bhi.n	65a <morph_config_gpio_set_pin_value+0xc6>
+		{
+	
+			if(value == 1)
+     60e:	230f      	movs	r3, #15
+     610:	18fb      	adds	r3, r7, r3
+     612:	781b      	ldrb	r3, [r3, #0]
+     614:	2b01      	cmp	r3, #1
+     616:	d110      	bne.n	63a <morph_config_gpio_set_pin_value+0xa6>
+			{
+				PORT->Group[pin_group].OUTSET.reg = (1ul << pin_num);	
+     618:	4913      	ldr	r1, [pc, #76]	; (668 <morph_config_gpio_set_pin_value+0xd4>)
+     61a:	230e      	movs	r3, #14
+     61c:	18fb      	adds	r3, r7, r3
+     61e:	781b      	ldrb	r3, [r3, #0]
+     620:	b25b      	sxtb	r3, r3
+     622:	220d      	movs	r2, #13
+     624:	18ba      	adds	r2, r7, r2
+     626:	7812      	ldrb	r2, [r2, #0]
+     628:	b252      	sxtb	r2, r2
+     62a:	2001      	movs	r0, #1
+     62c:	4090      	lsls	r0, r2
+     62e:	0002      	movs	r2, r0
+     630:	01db      	lsls	r3, r3, #7
+     632:	18cb      	adds	r3, r1, r3
+     634:	3318      	adds	r3, #24
+     636:	601a      	str	r2, [r3, #0]
+		
+		}
+		
+	}
+	
+}
+     638:	e00f      	b.n	65a <morph_config_gpio_set_pin_value+0xc6>
+				PORT->Group[pin_group].OUTCLR.reg = (1ul << pin_num);
+     63a:	490b      	ldr	r1, [pc, #44]	; (668 <morph_config_gpio_set_pin_value+0xd4>)
+     63c:	230e      	movs	r3, #14
+     63e:	18fb      	adds	r3, r7, r3
+     640:	781b      	ldrb	r3, [r3, #0]
+     642:	b25b      	sxtb	r3, r3
+     644:	220d      	movs	r2, #13
+     646:	18ba      	adds	r2, r7, r2
+     648:	7812      	ldrb	r2, [r2, #0]
+     64a:	b252      	sxtb	r2, r2
+     64c:	2001      	movs	r0, #1
+     64e:	4090      	lsls	r0, r2
+     650:	0002      	movs	r2, r0
+     652:	01db      	lsls	r3, r3, #7
+     654:	18cb      	adds	r3, r1, r3
+     656:	3314      	adds	r3, #20
+     658:	601a      	str	r2, [r3, #0]
+}
+     65a:	46c0      	nop			; (mov r8, r8)
+     65c:	46bd      	mov	sp, r7
+     65e:	b004      	add	sp, #16
+     660:	bd80      	pop	{r7, pc}
+     662:	46c0      	nop			; (mov r8, r8)
+     664:	20000004 	.word	0x20000004
+     668:	41004400 	.word	0x41004400
+
+0000066c <morph_config_gpio_get_pin_value>:
+
+enum MorphPinValue morph_config_gpio_get_pin_value(MorphPinNumber pn)
+{
+     66c:	b580      	push	{r7, lr}
+     66e:	b084      	sub	sp, #16
+     670:	af00      	add	r7, sp, #0
+     672:	0002      	movs	r2, r0
+     674:	1dfb      	adds	r3, r7, #7
+     676:	701a      	strb	r2, [r3, #0]
+	
+	int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     678:	1dfb      	adds	r3, r7, #7
+     67a:	781b      	ldrb	r3, [r3, #0]
+     67c:	b25b      	sxtb	r3, r3
+     67e:	1e5a      	subs	r2, r3, #1
+     680:	230f      	movs	r3, #15
+     682:	18f9      	adds	r1, r7, r3
+     684:	4825      	ldr	r0, [pc, #148]	; (71c <morph_config_gpio_get_pin_value+0xb0>)
+     686:	0013      	movs	r3, r2
+     688:	005b      	lsls	r3, r3, #1
+     68a:	189b      	adds	r3, r3, r2
+     68c:	005b      	lsls	r3, r3, #1
+     68e:	5c1b      	ldrb	r3, [r3, r0]
+     690:	700b      	strb	r3, [r1, #0]
+	int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     692:	1dfb      	adds	r3, r7, #7
+     694:	781b      	ldrb	r3, [r3, #0]
+     696:	b25b      	sxtb	r3, r3
+     698:	1e5a      	subs	r2, r3, #1
+     69a:	230e      	movs	r3, #14
+     69c:	18f9      	adds	r1, r7, r3
+     69e:	481f      	ldr	r0, [pc, #124]	; (71c <morph_config_gpio_get_pin_value+0xb0>)
+     6a0:	0013      	movs	r3, r2
+     6a2:	005b      	lsls	r3, r3, #1
+     6a4:	189b      	adds	r3, r3, r2
+     6a6:	005b      	lsls	r3, r3, #1
+     6a8:	18c3      	adds	r3, r0, r3
+     6aa:	3301      	adds	r3, #1
+     6ac:	781b      	ldrb	r3, [r3, #0]
+     6ae:	700b      	strb	r3, [r1, #0]
+	
+	
+	if (pin_defs[pn].pinGroup >= 0)
+     6b0:	1dfb      	adds	r3, r7, #7
+     6b2:	2200      	movs	r2, #0
+     6b4:	569a      	ldrsb	r2, [r3, r2]
+     6b6:	4919      	ldr	r1, [pc, #100]	; (71c <morph_config_gpio_get_pin_value+0xb0>)
+     6b8:	0013      	movs	r3, r2
+     6ba:	005b      	lsls	r3, r3, #1
+     6bc:	189b      	adds	r3, r3, r2
+     6be:	005b      	lsls	r3, r3, #1
+     6c0:	565b      	ldrsb	r3, [r3, r1]
+     6c2:	2b00      	cmp	r3, #0
+     6c4:	db25      	blt.n	712 <morph_config_gpio_get_pin_value+0xa6>
+	{
+		
+		// Verify the input enable has been enabled
+		PORT->Group[pin_group].PINCFG[pin_num].bit.INEN = 1;
+     6c6:	4816      	ldr	r0, [pc, #88]	; (720 <morph_config_gpio_get_pin_value+0xb4>)
+     6c8:	230f      	movs	r3, #15
+     6ca:	18fb      	adds	r3, r7, r3
+     6cc:	2200      	movs	r2, #0
+     6ce:	569a      	ldrsb	r2, [r3, r2]
+     6d0:	230e      	movs	r3, #14
+     6d2:	18fb      	adds	r3, r7, r3
+     6d4:	781b      	ldrb	r3, [r3, #0]
+     6d6:	b25b      	sxtb	r3, r3
+     6d8:	2140      	movs	r1, #64	; 0x40
+     6da:	01d2      	lsls	r2, r2, #7
+     6dc:	1882      	adds	r2, r0, r2
+     6de:	18d3      	adds	r3, r2, r3
+     6e0:	185a      	adds	r2, r3, r1
+     6e2:	7813      	ldrb	r3, [r2, #0]
+     6e4:	2102      	movs	r1, #2
+     6e6:	430b      	orrs	r3, r1
+     6e8:	7013      	strb	r3, [r2, #0]
+		
+		if((PORT->Group[pin_group].IN.reg >> pin_num) & 0x1 == 1)
+     6ea:	4a0d      	ldr	r2, [pc, #52]	; (720 <morph_config_gpio_get_pin_value+0xb4>)
+     6ec:	230f      	movs	r3, #15
+     6ee:	18fb      	adds	r3, r7, r3
+     6f0:	781b      	ldrb	r3, [r3, #0]
+     6f2:	b25b      	sxtb	r3, r3
+     6f4:	01db      	lsls	r3, r3, #7
+     6f6:	18d3      	adds	r3, r2, r3
+     6f8:	3320      	adds	r3, #32
+     6fa:	681a      	ldr	r2, [r3, #0]
+     6fc:	230e      	movs	r3, #14
+     6fe:	18fb      	adds	r3, r7, r3
+     700:	781b      	ldrb	r3, [r3, #0]
+     702:	b25b      	sxtb	r3, r3
+     704:	40da      	lsrs	r2, r3
+     706:	0013      	movs	r3, r2
+     708:	2201      	movs	r2, #1
+     70a:	4013      	ands	r3, r2
+     70c:	d001      	beq.n	712 <morph_config_gpio_get_pin_value+0xa6>
+			return High;
+     70e:	2301      	movs	r3, #1
+     710:	e000      	b.n	714 <morph_config_gpio_get_pin_value+0xa8>
+		
+	}
+	
+	return Low;
+     712:	2300      	movs	r3, #0
+	
+}
+     714:	0018      	movs	r0, r3
+     716:	46bd      	mov	sp, r7
+     718:	b004      	add	sp, #16
+     71a:	bd80      	pop	{r7, pc}
+     71c:	20000004 	.word	0x20000004
+     720:	41004400 	.word	0x41004400
+
+00000724 <morph_config_gpio_set_pin_direction>:
+
+void morph_config_gpio_set_pin_direction(MorphPinNumber pn, enum MorphPinDirection pd)
+{
+     724:	b580      	push	{r7, lr}
+     726:	b084      	sub	sp, #16
+     728:	af00      	add	r7, sp, #0
+     72a:	0002      	movs	r2, r0
+     72c:	1dfb      	adds	r3, r7, #7
+     72e:	701a      	strb	r2, [r3, #0]
+     730:	1dbb      	adds	r3, r7, #6
+     732:	1c0a      	adds	r2, r1, #0
+     734:	701a      	strb	r2, [r3, #0]
+	
+	uint8_t value = (pd == Output ? 1 : 0);
+     736:	1dbb      	adds	r3, r7, #6
+     738:	781b      	ldrb	r3, [r3, #0]
+     73a:	3b01      	subs	r3, #1
+     73c:	425a      	negs	r2, r3
+     73e:	4153      	adcs	r3, r2
+     740:	b2da      	uxtb	r2, r3
+     742:	230f      	movs	r3, #15
+     744:	18fb      	adds	r3, r7, r3
+     746:	701a      	strb	r2, [r3, #0]
+	
+	if(pn >= 1 && pn <= PIN_COUNT)
+     748:	1dfb      	adds	r3, r7, #7
+     74a:	781b      	ldrb	r3, [r3, #0]
+     74c:	b25b      	sxtb	r3, r3
+     74e:	2b00      	cmp	r3, #0
+     750:	dd6f      	ble.n	832 <morph_config_gpio_set_pin_direction+0x10e>
+     752:	1dfb      	adds	r3, r7, #7
+     754:	781b      	ldrb	r3, [r3, #0]
+     756:	b25b      	sxtb	r3, r3
+     758:	2b40      	cmp	r3, #64	; 0x40
+     75a:	dc6a      	bgt.n	832 <morph_config_gpio_set_pin_direction+0x10e>
+	{
+		
+		int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     75c:	1dfb      	adds	r3, r7, #7
+     75e:	781b      	ldrb	r3, [r3, #0]
+     760:	b25b      	sxtb	r3, r3
+     762:	1e5a      	subs	r2, r3, #1
+     764:	230e      	movs	r3, #14
+     766:	18f9      	adds	r1, r7, r3
+     768:	4834      	ldr	r0, [pc, #208]	; (83c <morph_config_gpio_set_pin_direction+0x118>)
+     76a:	0013      	movs	r3, r2
+     76c:	005b      	lsls	r3, r3, #1
+     76e:	189b      	adds	r3, r3, r2
+     770:	005b      	lsls	r3, r3, #1
+     772:	5c1b      	ldrb	r3, [r3, r0]
+     774:	700b      	strb	r3, [r1, #0]
+		int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     776:	1dfb      	adds	r3, r7, #7
+     778:	781b      	ldrb	r3, [r3, #0]
+     77a:	b25b      	sxtb	r3, r3
+     77c:	1e5a      	subs	r2, r3, #1
+     77e:	230d      	movs	r3, #13
+     780:	18f9      	adds	r1, r7, r3
+     782:	482e      	ldr	r0, [pc, #184]	; (83c <morph_config_gpio_set_pin_direction+0x118>)
+     784:	0013      	movs	r3, r2
+     786:	005b      	lsls	r3, r3, #1
+     788:	189b      	adds	r3, r3, r2
+     78a:	005b      	lsls	r3, r3, #1
+     78c:	18c3      	adds	r3, r0, r3
+     78e:	3301      	adds	r3, #1
+     790:	781b      	ldrb	r3, [r3, #0]
+     792:	700b      	strb	r3, [r1, #0]
+		
+		if(pin_group >= 0)
+     794:	230e      	movs	r3, #14
+     796:	18fb      	adds	r3, r7, r3
+     798:	781b      	ldrb	r3, [r3, #0]
+     79a:	2b7f      	cmp	r3, #127	; 0x7f
+     79c:	d849      	bhi.n	832 <morph_config_gpio_set_pin_direction+0x10e>
+		{
+			
+			if(value == 1)
+     79e:	230f      	movs	r3, #15
+     7a0:	18fb      	adds	r3, r7, r3
+     7a2:	781b      	ldrb	r3, [r3, #0]
+     7a4:	2b01      	cmp	r3, #1
+     7a6:	d122      	bne.n	7ee <morph_config_gpio_set_pin_direction+0xca>
+			{
+				PORT->Group[pin_group].DIRSET.reg = (1ul << pin_num);
+     7a8:	4925      	ldr	r1, [pc, #148]	; (840 <morph_config_gpio_set_pin_direction+0x11c>)
+     7aa:	230e      	movs	r3, #14
+     7ac:	18fb      	adds	r3, r7, r3
+     7ae:	781b      	ldrb	r3, [r3, #0]
+     7b0:	b25b      	sxtb	r3, r3
+     7b2:	220d      	movs	r2, #13
+     7b4:	18ba      	adds	r2, r7, r2
+     7b6:	7812      	ldrb	r2, [r2, #0]
+     7b8:	b252      	sxtb	r2, r2
+     7ba:	2001      	movs	r0, #1
+     7bc:	4090      	lsls	r0, r2
+     7be:	0002      	movs	r2, r0
+     7c0:	01db      	lsls	r3, r3, #7
+     7c2:	18cb      	adds	r3, r1, r3
+     7c4:	3308      	adds	r3, #8
+     7c6:	601a      	str	r2, [r3, #0]
+				
+				// We probably won't need input enabled at this time.
+				// Disable it.
+				// Input reading ensures it is on if that is ever called.
+				PORT->Group[pin_group].PINCFG[pin_num].bit.INEN = 0;
+     7c8:	481d      	ldr	r0, [pc, #116]	; (840 <morph_config_gpio_set_pin_direction+0x11c>)
+     7ca:	230e      	movs	r3, #14
+     7cc:	18fb      	adds	r3, r7, r3
+     7ce:	2200      	movs	r2, #0
+     7d0:	569a      	ldrsb	r2, [r3, r2]
+     7d2:	230d      	movs	r3, #13
+     7d4:	18fb      	adds	r3, r7, r3
+     7d6:	781b      	ldrb	r3, [r3, #0]
+     7d8:	b25b      	sxtb	r3, r3
+     7da:	2140      	movs	r1, #64	; 0x40
+     7dc:	01d2      	lsls	r2, r2, #7
+     7de:	1882      	adds	r2, r0, r2
+     7e0:	18d3      	adds	r3, r2, r3
+     7e2:	185a      	adds	r2, r3, r1
+     7e4:	7813      	ldrb	r3, [r2, #0]
+     7e6:	2102      	movs	r1, #2
+     7e8:	438b      	bics	r3, r1
+     7ea:	7013      	strb	r3, [r2, #0]
+			
+		}
+		
+	}
+
+}
+     7ec:	e021      	b.n	832 <morph_config_gpio_set_pin_direction+0x10e>
+				PORT->Group[pin_group].DIRCLR.reg = (1ul << pin_num);
+     7ee:	4914      	ldr	r1, [pc, #80]	; (840 <morph_config_gpio_set_pin_direction+0x11c>)
+     7f0:	230e      	movs	r3, #14
+     7f2:	18fb      	adds	r3, r7, r3
+     7f4:	781b      	ldrb	r3, [r3, #0]
+     7f6:	b25b      	sxtb	r3, r3
+     7f8:	220d      	movs	r2, #13
+     7fa:	18ba      	adds	r2, r7, r2
+     7fc:	7812      	ldrb	r2, [r2, #0]
+     7fe:	b252      	sxtb	r2, r2
+     800:	2001      	movs	r0, #1
+     802:	4090      	lsls	r0, r2
+     804:	0002      	movs	r2, r0
+     806:	01db      	lsls	r3, r3, #7
+     808:	18cb      	adds	r3, r1, r3
+     80a:	3304      	adds	r3, #4
+     80c:	601a      	str	r2, [r3, #0]
+				PORT->Group[pin_group].PINCFG[pin_num].bit.INEN = 1;
+     80e:	480c      	ldr	r0, [pc, #48]	; (840 <morph_config_gpio_set_pin_direction+0x11c>)
+     810:	230e      	movs	r3, #14
+     812:	18fb      	adds	r3, r7, r3
+     814:	2200      	movs	r2, #0
+     816:	569a      	ldrsb	r2, [r3, r2]
+     818:	230d      	movs	r3, #13
+     81a:	18fb      	adds	r3, r7, r3
+     81c:	781b      	ldrb	r3, [r3, #0]
+     81e:	b25b      	sxtb	r3, r3
+     820:	2140      	movs	r1, #64	; 0x40
+     822:	01d2      	lsls	r2, r2, #7
+     824:	1882      	adds	r2, r0, r2
+     826:	18d3      	adds	r3, r2, r3
+     828:	185a      	adds	r2, r3, r1
+     82a:	7813      	ldrb	r3, [r2, #0]
+     82c:	2102      	movs	r1, #2
+     82e:	430b      	orrs	r3, r1
+     830:	7013      	strb	r3, [r2, #0]
+}
+     832:	46c0      	nop			; (mov r8, r8)
+     834:	46bd      	mov	sp, r7
+     836:	b004      	add	sp, #16
+     838:	bd80      	pop	{r7, pc}
+     83a:	46c0      	nop			; (mov r8, r8)
+     83c:	20000004 	.word	0x20000004
+     840:	41004400 	.word	0x41004400
+
+00000844 <morph_config_gpio_get_pin_direction>:
+
+enum MorphPinDirection morph_config_gpio_get_pin_direction(MorphPinNumber pn)
+{
+     844:	b580      	push	{r7, lr}
+     846:	b084      	sub	sp, #16
+     848:	af00      	add	r7, sp, #0
+     84a:	0002      	movs	r2, r0
+     84c:	1dfb      	adds	r3, r7, #7
+     84e:	701a      	strb	r2, [r3, #0]
+
+	if(pn >= 1 && pn <= PIN_COUNT)
+     850:	1dfb      	adds	r3, r7, #7
+     852:	781b      	ldrb	r3, [r3, #0]
+     854:	b25b      	sxtb	r3, r3
+     856:	2b00      	cmp	r3, #0
+     858:	dd2e      	ble.n	8b8 <morph_config_gpio_get_pin_direction+0x74>
+     85a:	1dfb      	adds	r3, r7, #7
+     85c:	781b      	ldrb	r3, [r3, #0]
+     85e:	b25b      	sxtb	r3, r3
+     860:	2b40      	cmp	r3, #64	; 0x40
+     862:	dc29      	bgt.n	8b8 <morph_config_gpio_get_pin_direction+0x74>
+	{
+		
+		int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     864:	1dfb      	adds	r3, r7, #7
+     866:	781b      	ldrb	r3, [r3, #0]
+     868:	b25b      	sxtb	r3, r3
+     86a:	1e5a      	subs	r2, r3, #1
+     86c:	230f      	movs	r3, #15
+     86e:	18f9      	adds	r1, r7, r3
+     870:	4814      	ldr	r0, [pc, #80]	; (8c4 <morph_config_gpio_get_pin_direction+0x80>)
+     872:	0013      	movs	r3, r2
+     874:	005b      	lsls	r3, r3, #1
+     876:	189b      	adds	r3, r3, r2
+     878:	005b      	lsls	r3, r3, #1
+     87a:	5c1b      	ldrb	r3, [r3, r0]
+     87c:	700b      	strb	r3, [r1, #0]
+		int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     87e:	1dfb      	adds	r3, r7, #7
+     880:	781b      	ldrb	r3, [r3, #0]
+     882:	b25b      	sxtb	r3, r3
+     884:	1e5a      	subs	r2, r3, #1
+     886:	230e      	movs	r3, #14
+     888:	18f9      	adds	r1, r7, r3
+     88a:	480e      	ldr	r0, [pc, #56]	; (8c4 <morph_config_gpio_get_pin_direction+0x80>)
+     88c:	0013      	movs	r3, r2
+     88e:	005b      	lsls	r3, r3, #1
+     890:	189b      	adds	r3, r3, r2
+     892:	005b      	lsls	r3, r3, #1
+     894:	18c3      	adds	r3, r0, r3
+     896:	3301      	adds	r3, #1
+     898:	781b      	ldrb	r3, [r3, #0]
+     89a:	700b      	strb	r3, [r1, #0]
+		
+		if(pin_group >= 0)
+     89c:	230f      	movs	r3, #15
+     89e:	18fb      	adds	r3, r7, r3
+     8a0:	781b      	ldrb	r3, [r3, #0]
+     8a2:	2b7f      	cmp	r3, #127	; 0x7f
+     8a4:	d808      	bhi.n	8b8 <morph_config_gpio_get_pin_direction+0x74>
+		{
+			
+			return PORT->Group[pin_group].DIR.reg >> pin_num & 0x1 == 0 ? Input : Output;
+     8a6:	4a08      	ldr	r2, [pc, #32]	; (8c8 <morph_config_gpio_get_pin_direction+0x84>)
+     8a8:	230f      	movs	r3, #15
+     8aa:	18fb      	adds	r3, r7, r3
+     8ac:	781b      	ldrb	r3, [r3, #0]
+     8ae:	b25b      	sxtb	r3, r3
+     8b0:	01db      	lsls	r3, r3, #7
+     8b2:	589b      	ldr	r3, [r3, r2]
+     8b4:	2301      	movs	r3, #1
+     8b6:	e000      	b.n	8ba <morph_config_gpio_get_pin_direction+0x76>
+			
+		}
+		
+	}
+	
+	return Input;
+     8b8:	2300      	movs	r3, #0
+	
+}
+     8ba:	0018      	movs	r0, r3
+     8bc:	46bd      	mov	sp, r7
+     8be:	b004      	add	sp, #16
+     8c0:	bd80      	pop	{r7, pc}
+     8c2:	46c0      	nop			; (mov r8, r8)
+     8c4:	20000004 	.word	0x20000004
+     8c8:	41004400 	.word	0x41004400
+
+000008cc <morph_config_gpio_set_pin_pull_state>:
+
+void morph_config_gpio_set_pin_pull_state(MorphPinNumber pn, enum MorphPinPullState ps)
+{
+     8cc:	b580      	push	{r7, lr}
+     8ce:	b084      	sub	sp, #16
+     8d0:	af00      	add	r7, sp, #0
+     8d2:	0002      	movs	r2, r0
+     8d4:	1dfb      	adds	r3, r7, #7
+     8d6:	701a      	strb	r2, [r3, #0]
+     8d8:	1dbb      	adds	r3, r7, #6
+     8da:	1c0a      	adds	r2, r1, #0
+     8dc:	701a      	strb	r2, [r3, #0]
+	
+	if(pn >= 1 && pn <= PIN_COUNT)
+     8de:	1dfb      	adds	r3, r7, #7
+     8e0:	781b      	ldrb	r3, [r3, #0]
+     8e2:	b25b      	sxtb	r3, r3
+     8e4:	2b00      	cmp	r3, #0
+     8e6:	dc00      	bgt.n	8ea <morph_config_gpio_set_pin_pull_state+0x1e>
+     8e8:	e0a7      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+     8ea:	1dfb      	adds	r3, r7, #7
+     8ec:	781b      	ldrb	r3, [r3, #0]
+     8ee:	b25b      	sxtb	r3, r3
+     8f0:	2b40      	cmp	r3, #64	; 0x40
+     8f2:	dd00      	ble.n	8f6 <morph_config_gpio_set_pin_pull_state+0x2a>
+     8f4:	e0a1      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+	{
+			
+		int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     8f6:	1dfb      	adds	r3, r7, #7
+     8f8:	781b      	ldrb	r3, [r3, #0]
+     8fa:	b25b      	sxtb	r3, r3
+     8fc:	1e5a      	subs	r2, r3, #1
+     8fe:	230f      	movs	r3, #15
+     900:	18f9      	adds	r1, r7, r3
+     902:	4850      	ldr	r0, [pc, #320]	; (a44 <morph_config_gpio_set_pin_pull_state+0x178>)
+     904:	0013      	movs	r3, r2
+     906:	005b      	lsls	r3, r3, #1
+     908:	189b      	adds	r3, r3, r2
+     90a:	005b      	lsls	r3, r3, #1
+     90c:	5c1b      	ldrb	r3, [r3, r0]
+     90e:	700b      	strb	r3, [r1, #0]
+		int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     910:	1dfb      	adds	r3, r7, #7
+     912:	781b      	ldrb	r3, [r3, #0]
+     914:	b25b      	sxtb	r3, r3
+     916:	1e5a      	subs	r2, r3, #1
+     918:	230e      	movs	r3, #14
+     91a:	18f9      	adds	r1, r7, r3
+     91c:	4849      	ldr	r0, [pc, #292]	; (a44 <morph_config_gpio_set_pin_pull_state+0x178>)
+     91e:	0013      	movs	r3, r2
+     920:	005b      	lsls	r3, r3, #1
+     922:	189b      	adds	r3, r3, r2
+     924:	005b      	lsls	r3, r3, #1
+     926:	18c3      	adds	r3, r0, r3
+     928:	3301      	adds	r3, #1
+     92a:	781b      	ldrb	r3, [r3, #0]
+     92c:	700b      	strb	r3, [r1, #0]
+			
+		if(pin_group >= 0)
+     92e:	230f      	movs	r3, #15
+     930:	18fb      	adds	r3, r7, r3
+     932:	781b      	ldrb	r3, [r3, #0]
+     934:	2b7f      	cmp	r3, #127	; 0x7f
+     936:	d900      	bls.n	93a <morph_config_gpio_set_pin_pull_state+0x6e>
+     938:	e07f      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+		{
+
+			// These all need the input set
+			// This will set the port for input.
+			PORT->Group[pin_group].DIRCLR.reg = (1ul << pin_num);
+     93a:	4943      	ldr	r1, [pc, #268]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     93c:	230f      	movs	r3, #15
+     93e:	18fb      	adds	r3, r7, r3
+     940:	781b      	ldrb	r3, [r3, #0]
+     942:	b25b      	sxtb	r3, r3
+     944:	220e      	movs	r2, #14
+     946:	18ba      	adds	r2, r7, r2
+     948:	7812      	ldrb	r2, [r2, #0]
+     94a:	b252      	sxtb	r2, r2
+     94c:	2001      	movs	r0, #1
+     94e:	4090      	lsls	r0, r2
+     950:	0002      	movs	r2, r0
+     952:	01db      	lsls	r3, r3, #7
+     954:	18cb      	adds	r3, r1, r3
+     956:	3304      	adds	r3, #4
+     958:	601a      	str	r2, [r3, #0]
+				
+			switch(ps)
+     95a:	1dbb      	adds	r3, r7, #6
+     95c:	781b      	ldrb	r3, [r3, #0]
+     95e:	2b01      	cmp	r3, #1
+     960:	d002      	beq.n	968 <morph_config_gpio_set_pin_pull_state+0x9c>
+     962:	2b02      	cmp	r3, #2
+     964:	d023      	beq.n	9ae <morph_config_gpio_set_pin_pull_state+0xe2>
+     966:	e045      	b.n	9f4 <morph_config_gpio_set_pin_pull_state+0x128>
+				case PullHigh:
+				
+					// Ensure the pullups are enabled.
+					
+					// First, set output to the correct value (1 in this case).
+					PORT->Group[pin_group].OUTSET.reg = (1ul << pin_num);
+     968:	4937      	ldr	r1, [pc, #220]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     96a:	230f      	movs	r3, #15
+     96c:	18fb      	adds	r3, r7, r3
+     96e:	781b      	ldrb	r3, [r3, #0]
+     970:	b25b      	sxtb	r3, r3
+     972:	220e      	movs	r2, #14
+     974:	18ba      	adds	r2, r7, r2
+     976:	7812      	ldrb	r2, [r2, #0]
+     978:	b252      	sxtb	r2, r2
+     97a:	2001      	movs	r0, #1
+     97c:	4090      	lsls	r0, r2
+     97e:	0002      	movs	r2, r0
+     980:	01db      	lsls	r3, r3, #7
+     982:	18cb      	adds	r3, r1, r3
+     984:	3318      	adds	r3, #24
+     986:	601a      	str	r2, [r3, #0]
+
+					// Next, pull enable!
+					PORT->Group[pin_group].PINCFG[pin_num].bit.PULLEN = 1;
+     988:	482f      	ldr	r0, [pc, #188]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     98a:	230f      	movs	r3, #15
+     98c:	18fb      	adds	r3, r7, r3
+     98e:	2200      	movs	r2, #0
+     990:	569a      	ldrsb	r2, [r3, r2]
+     992:	230e      	movs	r3, #14
+     994:	18fb      	adds	r3, r7, r3
+     996:	781b      	ldrb	r3, [r3, #0]
+     998:	b25b      	sxtb	r3, r3
+     99a:	2140      	movs	r1, #64	; 0x40
+     99c:	01d2      	lsls	r2, r2, #7
+     99e:	1882      	adds	r2, r0, r2
+     9a0:	18d3      	adds	r3, r2, r3
+     9a2:	185a      	adds	r2, r3, r1
+     9a4:	7813      	ldrb	r3, [r2, #0]
+     9a6:	2104      	movs	r1, #4
+     9a8:	430b      	orrs	r3, r1
+     9aa:	7013      	strb	r3, [r2, #0]
+				
+					break;
+     9ac:	e045      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+				case PullLow:
+
+					// Ensure the pulldowns are enabled.
+
+					// First, set output to the correct value (1 in this case).
+					PORT->Group[pin_group].OUTCLR.reg = (1ul << pin_num);
+     9ae:	4926      	ldr	r1, [pc, #152]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     9b0:	230f      	movs	r3, #15
+     9b2:	18fb      	adds	r3, r7, r3
+     9b4:	781b      	ldrb	r3, [r3, #0]
+     9b6:	b25b      	sxtb	r3, r3
+     9b8:	220e      	movs	r2, #14
+     9ba:	18ba      	adds	r2, r7, r2
+     9bc:	7812      	ldrb	r2, [r2, #0]
+     9be:	b252      	sxtb	r2, r2
+     9c0:	2001      	movs	r0, #1
+     9c2:	4090      	lsls	r0, r2
+     9c4:	0002      	movs	r2, r0
+     9c6:	01db      	lsls	r3, r3, #7
+     9c8:	18cb      	adds	r3, r1, r3
+     9ca:	3314      	adds	r3, #20
+     9cc:	601a      	str	r2, [r3, #0]
+
+					// Next, pull enable!
+					PORT->Group[pin_group].PINCFG[pin_num].bit.PULLEN = 1;
+     9ce:	481e      	ldr	r0, [pc, #120]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     9d0:	230f      	movs	r3, #15
+     9d2:	18fb      	adds	r3, r7, r3
+     9d4:	2200      	movs	r2, #0
+     9d6:	569a      	ldrsb	r2, [r3, r2]
+     9d8:	230e      	movs	r3, #14
+     9da:	18fb      	adds	r3, r7, r3
+     9dc:	781b      	ldrb	r3, [r3, #0]
+     9de:	b25b      	sxtb	r3, r3
+     9e0:	2140      	movs	r1, #64	; 0x40
+     9e2:	01d2      	lsls	r2, r2, #7
+     9e4:	1882      	adds	r2, r0, r2
+     9e6:	18d3      	adds	r3, r2, r3
+     9e8:	185a      	adds	r2, r3, r1
+     9ea:	7813      	ldrb	r3, [r2, #0]
+     9ec:	2104      	movs	r1, #4
+     9ee:	430b      	orrs	r3, r1
+     9f0:	7013      	strb	r3, [r2, #0]
+									
+					break;
+     9f2:	e022      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+				
+				case PullNone:
+				default:
+				
+					//Disable pulling in either direction.
+					PORT->Group[pin_group].PINCFG[pin_num].bit.PULLEN = 0;
+     9f4:	4814      	ldr	r0, [pc, #80]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     9f6:	230f      	movs	r3, #15
+     9f8:	18fb      	adds	r3, r7, r3
+     9fa:	2200      	movs	r2, #0
+     9fc:	569a      	ldrsb	r2, [r3, r2]
+     9fe:	230e      	movs	r3, #14
+     a00:	18fb      	adds	r3, r7, r3
+     a02:	781b      	ldrb	r3, [r3, #0]
+     a04:	b25b      	sxtb	r3, r3
+     a06:	2140      	movs	r1, #64	; 0x40
+     a08:	01d2      	lsls	r2, r2, #7
+     a0a:	1882      	adds	r2, r0, r2
+     a0c:	18d3      	adds	r3, r2, r3
+     a0e:	185a      	adds	r2, r3, r1
+     a10:	7813      	ldrb	r3, [r2, #0]
+     a12:	2104      	movs	r1, #4
+     a14:	438b      	bics	r3, r1
+     a16:	7013      	strb	r3, [r2, #0]
+					// Also clear output just in case.
+					PORT->Group[pin_group].OUTCLR.reg = (1ul << pin_num);
+     a18:	490b      	ldr	r1, [pc, #44]	; (a48 <morph_config_gpio_set_pin_pull_state+0x17c>)
+     a1a:	230f      	movs	r3, #15
+     a1c:	18fb      	adds	r3, r7, r3
+     a1e:	781b      	ldrb	r3, [r3, #0]
+     a20:	b25b      	sxtb	r3, r3
+     a22:	220e      	movs	r2, #14
+     a24:	18ba      	adds	r2, r7, r2
+     a26:	7812      	ldrb	r2, [r2, #0]
+     a28:	b252      	sxtb	r2, r2
+     a2a:	2001      	movs	r0, #1
+     a2c:	4090      	lsls	r0, r2
+     a2e:	0002      	movs	r2, r0
+     a30:	01db      	lsls	r3, r3, #7
+     a32:	18cb      	adds	r3, r1, r3
+     a34:	3314      	adds	r3, #20
+     a36:	601a      	str	r2, [r3, #0]
+	
+		}
+			
+	}
+
+}
+     a38:	e7ff      	b.n	a3a <morph_config_gpio_set_pin_pull_state+0x16e>
+     a3a:	46c0      	nop			; (mov r8, r8)
+     a3c:	46bd      	mov	sp, r7
+     a3e:	b004      	add	sp, #16
+     a40:	bd80      	pop	{r7, pc}
+     a42:	46c0      	nop			; (mov r8, r8)
+     a44:	20000004 	.word	0x20000004
+     a48:	41004400 	.word	0x41004400
+
+00000a4c <morph_config_gpio_get_pin_pull_state>:
+
+enum MorphPinPullState morph_config_gpio_get_pin_pull_state(MorphPinNumber pn)
+{
+     a4c:	b580      	push	{r7, lr}
+     a4e:	b084      	sub	sp, #16
+     a50:	af00      	add	r7, sp, #0
+     a52:	0002      	movs	r2, r0
+     a54:	1dfb      	adds	r3, r7, #7
+     a56:	701a      	strb	r2, [r3, #0]
+	
+	if(pn >= 1 && pn <= PIN_COUNT)
+     a58:	1dfb      	adds	r3, r7, #7
+     a5a:	781b      	ldrb	r3, [r3, #0]
+     a5c:	b25b      	sxtb	r3, r3
+     a5e:	2b00      	cmp	r3, #0
+     a60:	dd3b      	ble.n	ada <morph_config_gpio_get_pin_pull_state+0x8e>
+     a62:	1dfb      	adds	r3, r7, #7
+     a64:	781b      	ldrb	r3, [r3, #0]
+     a66:	b25b      	sxtb	r3, r3
+     a68:	2b40      	cmp	r3, #64	; 0x40
+     a6a:	dc36      	bgt.n	ada <morph_config_gpio_get_pin_pull_state+0x8e>
+	{
+	
+		int8_t pin_group = pin_defs[pn - 1].pinGroup;
+     a6c:	1dfb      	adds	r3, r7, #7
+     a6e:	781b      	ldrb	r3, [r3, #0]
+     a70:	b25b      	sxtb	r3, r3
+     a72:	1e5a      	subs	r2, r3, #1
+     a74:	230f      	movs	r3, #15
+     a76:	18f9      	adds	r1, r7, r3
+     a78:	481a      	ldr	r0, [pc, #104]	; (ae4 <morph_config_gpio_get_pin_pull_state+0x98>)
+     a7a:	0013      	movs	r3, r2
+     a7c:	005b      	lsls	r3, r3, #1
+     a7e:	189b      	adds	r3, r3, r2
+     a80:	005b      	lsls	r3, r3, #1
+     a82:	5c1b      	ldrb	r3, [r3, r0]
+     a84:	700b      	strb	r3, [r1, #0]
+		int8_t pin_num = pin_defs[pn - 1].pinNumInGroup;
+     a86:	1dfb      	adds	r3, r7, #7
+     a88:	781b      	ldrb	r3, [r3, #0]
+     a8a:	b25b      	sxtb	r3, r3
+     a8c:	1e5a      	subs	r2, r3, #1
+     a8e:	230e      	movs	r3, #14
+     a90:	18f9      	adds	r1, r7, r3
+     a92:	4814      	ldr	r0, [pc, #80]	; (ae4 <morph_config_gpio_get_pin_pull_state+0x98>)
+     a94:	0013      	movs	r3, r2
+     a96:	005b      	lsls	r3, r3, #1
+     a98:	189b      	adds	r3, r3, r2
+     a9a:	005b      	lsls	r3, r3, #1
+     a9c:	18c3      	adds	r3, r0, r3
+     a9e:	3301      	adds	r3, #1
+     aa0:	781b      	ldrb	r3, [r3, #0]
+     aa2:	700b      	strb	r3, [r1, #0]
+	
+		if(PORT->Group[pin_group].PINCFG[pin_num].bit.PULLEN == 1 && PORT->Group[pin_group].DIR.reg >> pin_num & 0x1 == 0)
+     aa4:	4810      	ldr	r0, [pc, #64]	; (ae8 <morph_config_gpio_get_pin_pull_state+0x9c>)
+     aa6:	230f      	movs	r3, #15
+     aa8:	18fb      	adds	r3, r7, r3
+     aaa:	2200      	movs	r2, #0
+     aac:	569a      	ldrsb	r2, [r3, r2]
+     aae:	230e      	movs	r3, #14
+     ab0:	18fb      	adds	r3, r7, r3
+     ab2:	781b      	ldrb	r3, [r3, #0]
+     ab4:	b25b      	sxtb	r3, r3
+     ab6:	2140      	movs	r1, #64	; 0x40
+     ab8:	01d2      	lsls	r2, r2, #7
+     aba:	1882      	adds	r2, r0, r2
+     abc:	18d3      	adds	r3, r2, r3
+     abe:	185b      	adds	r3, r3, r1
+     ac0:	781b      	ldrb	r3, [r3, #0]
+     ac2:	075b      	lsls	r3, r3, #29
+     ac4:	0fdb      	lsrs	r3, r3, #31
+     ac6:	b2db      	uxtb	r3, r3
+     ac8:	2b01      	cmp	r3, #1
+     aca:	d106      	bne.n	ada <morph_config_gpio_get_pin_pull_state+0x8e>
+     acc:	4a06      	ldr	r2, [pc, #24]	; (ae8 <morph_config_gpio_get_pin_pull_state+0x9c>)
+     ace:	230f      	movs	r3, #15
+     ad0:	18fb      	adds	r3, r7, r3
+     ad2:	781b      	ldrb	r3, [r3, #0]
+     ad4:	b25b      	sxtb	r3, r3
+     ad6:	01db      	lsls	r3, r3, #7
+     ad8:	589b      	ldr	r3, [r3, r2]
+
+			
+		}
+	}
+	
+	return PullNone;
+     ada:	2300      	movs	r3, #0
+	
+}
+     adc:	0018      	movs	r0, r3
+     ade:	46bd      	mov	sp, r7
+     ae0:	b004      	add	sp, #16
+     ae2:	bd80      	pop	{r7, pc}
+     ae4:	20000004 	.word	0x20000004
+     ae8:	41004400 	.word	0x41004400
+
+00000aec <set_mux_group_config>:
+
+void set_mux_group_config(enum PMUXTypes t, uint8_t group, uint8_t pin)
+{
+     aec:	b590      	push	{r4, r7, lr}
+     aee:	b083      	sub	sp, #12
+     af0:	af00      	add	r7, sp, #0
+     af2:	0004      	movs	r4, r0
+     af4:	0008      	movs	r0, r1
+     af6:	0011      	movs	r1, r2
+     af8:	1dfb      	adds	r3, r7, #7
+     afa:	1c22      	adds	r2, r4, #0
+     afc:	701a      	strb	r2, [r3, #0]
+     afe:	1dbb      	adds	r3, r7, #6
+     b00:	1c02      	adds	r2, r0, #0
+     b02:	701a      	strb	r2, [r3, #0]
+     b04:	1d7b      	adds	r3, r7, #5
+     b06:	1c0a      	adds	r2, r1, #0
+     b08:	701a      	strb	r2, [r3, #0]
+	
+	// Is this an even or odd pin?
+	if(pin % 2 == 0)
+     b0a:	1d7b      	adds	r3, r7, #5
+     b0c:	781b      	ldrb	r3, [r3, #0]
+     b0e:	2201      	movs	r2, #1
+     b10:	4013      	ands	r3, r2
+     b12:	b2db      	uxtb	r3, r3
+     b14:	2b00      	cmp	r3, #0
+     b16:	d11b      	bne.n	b50 <set_mux_group_config+0x64>
+	{
+		//It's an even pin.
+		//Enable the PMUX 
+		PORT->Group[group].PMUX[pin/2].bit.PMUXE = t;
+     b18:	481c      	ldr	r0, [pc, #112]	; (b8c <set_mux_group_config+0xa0>)
+     b1a:	1dbb      	adds	r3, r7, #6
+     b1c:	781b      	ldrb	r3, [r3, #0]
+     b1e:	1d7a      	adds	r2, r7, #5
+     b20:	7812      	ldrb	r2, [r2, #0]
+     b22:	0852      	lsrs	r2, r2, #1
+     b24:	b2d2      	uxtb	r2, r2
+     b26:	0014      	movs	r4, r2
+     b28:	1dfa      	adds	r2, r7, #7
+     b2a:	7812      	ldrb	r2, [r2, #0]
+     b2c:	210f      	movs	r1, #15
+     b2e:	400a      	ands	r2, r1
+     b30:	b2d1      	uxtb	r1, r2
+     b32:	2230      	movs	r2, #48	; 0x30
+     b34:	01db      	lsls	r3, r3, #7
+     b36:	18c3      	adds	r3, r0, r3
+     b38:	191b      	adds	r3, r3, r4
+     b3a:	189a      	adds	r2, r3, r2
+     b3c:	7813      	ldrb	r3, [r2, #0]
+     b3e:	200f      	movs	r0, #15
+     b40:	4008      	ands	r0, r1
+     b42:	210f      	movs	r1, #15
+     b44:	438b      	bics	r3, r1
+     b46:	1c19      	adds	r1, r3, #0
+     b48:	1c03      	adds	r3, r0, #0
+     b4a:	430b      	orrs	r3, r1
+     b4c:	7013      	strb	r3, [r2, #0]
+		//Enable the PMUX.
+		PORT->Group[group].PMUX[pin/2].bit.PMUXO = t;
+	}	
+	
+	
+}
+     b4e:	e019      	b.n	b84 <set_mux_group_config+0x98>
+		PORT->Group[group].PMUX[pin/2].bit.PMUXO = t;
+     b50:	480e      	ldr	r0, [pc, #56]	; (b8c <set_mux_group_config+0xa0>)
+     b52:	1dbb      	adds	r3, r7, #6
+     b54:	781b      	ldrb	r3, [r3, #0]
+     b56:	1d7a      	adds	r2, r7, #5
+     b58:	7812      	ldrb	r2, [r2, #0]
+     b5a:	0852      	lsrs	r2, r2, #1
+     b5c:	b2d2      	uxtb	r2, r2
+     b5e:	0014      	movs	r4, r2
+     b60:	1dfa      	adds	r2, r7, #7
+     b62:	7812      	ldrb	r2, [r2, #0]
+     b64:	210f      	movs	r1, #15
+     b66:	400a      	ands	r2, r1
+     b68:	b2d1      	uxtb	r1, r2
+     b6a:	2230      	movs	r2, #48	; 0x30
+     b6c:	01db      	lsls	r3, r3, #7
+     b6e:	18c3      	adds	r3, r0, r3
+     b70:	191b      	adds	r3, r3, r4
+     b72:	189a      	adds	r2, r3, r2
+     b74:	7813      	ldrb	r3, [r2, #0]
+     b76:	0108      	lsls	r0, r1, #4
+     b78:	210f      	movs	r1, #15
+     b7a:	400b      	ands	r3, r1
+     b7c:	1c19      	adds	r1, r3, #0
+     b7e:	1c03      	adds	r3, r0, #0
+     b80:	430b      	orrs	r3, r1
+     b82:	7013      	strb	r3, [r2, #0]
+}
+     b84:	46c0      	nop			; (mov r8, r8)
+     b86:	46bd      	mov	sp, r7
+     b88:	b003      	add	sp, #12
+     b8a:	bd90      	pop	{r4, r7, pc}
+     b8c:	41004400 	.word	0x41004400
+
+00000b90 <get_sercom_channel_ptr>:
+
+Sercom * get_sercom_channel_ptr(uint8_t c)
+{
+     b90:	b580      	push	{r7, lr}
+     b92:	b082      	sub	sp, #8
+     b94:	af00      	add	r7, sp, #0
+     b96:	0002      	movs	r2, r0
+     b98:	1dfb      	adds	r3, r7, #7
+     b9a:	701a      	strb	r2, [r3, #0]
+	
+	switch(c)
+     b9c:	1dfb      	adds	r3, r7, #7
+     b9e:	781b      	ldrb	r3, [r3, #0]
+     ba0:	2b05      	cmp	r3, #5
+     ba2:	d810      	bhi.n	bc6 <get_sercom_channel_ptr+0x36>
+     ba4:	009a      	lsls	r2, r3, #2
+     ba6:	4b0a      	ldr	r3, [pc, #40]	; (bd0 <get_sercom_channel_ptr+0x40>)
+     ba8:	18d3      	adds	r3, r2, r3
+     baa:	681b      	ldr	r3, [r3, #0]
+     bac:	469f      	mov	pc, r3
+	{
+		case 0:
+			return SERCOM0;
+     bae:	4b09      	ldr	r3, [pc, #36]	; (bd4 <get_sercom_channel_ptr+0x44>)
+     bb0:	e00a      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		case 1:
+			return SERCOM1;
+     bb2:	4b09      	ldr	r3, [pc, #36]	; (bd8 <get_sercom_channel_ptr+0x48>)
+     bb4:	e008      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		case 2:
+			return SERCOM2;
+     bb6:	4b09      	ldr	r3, [pc, #36]	; (bdc <get_sercom_channel_ptr+0x4c>)
+     bb8:	e006      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		case 3:
+			return SERCOM3;
+     bba:	4b09      	ldr	r3, [pc, #36]	; (be0 <get_sercom_channel_ptr+0x50>)
+     bbc:	e004      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		case 4:
+			return SERCOM4;
+     bbe:	4b09      	ldr	r3, [pc, #36]	; (be4 <get_sercom_channel_ptr+0x54>)
+     bc0:	e002      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		case 5:
+			return SERCOM5;
+     bc2:	4b09      	ldr	r3, [pc, #36]	; (be8 <get_sercom_channel_ptr+0x58>)
+     bc4:	e000      	b.n	bc8 <get_sercom_channel_ptr+0x38>
+		default:
+			return SERCOM0;
+     bc6:	4b03      	ldr	r3, [pc, #12]	; (bd4 <get_sercom_channel_ptr+0x44>)
+	}
+	
+}
+     bc8:	0018      	movs	r0, r3
+     bca:	46bd      	mov	sp, r7
+     bcc:	b002      	add	sp, #8
+     bce:	bd80      	pop	{r7, pc}
+     bd0:	00001d84 	.word	0x00001d84
+     bd4:	42000800 	.word	0x42000800
+     bd8:	42000c00 	.word	0x42000c00
+     bdc:	42001000 	.word	0x42001000
+     be0:	42001400 	.word	0x42001400
+     be4:	42001800 	.word	0x42001800
+     be8:	42001c00 	.word	0x42001c00
+
+00000bec <initClockNVIC>:
+};
+
+#define MAX_SERIAL_BUFFER 250
+
+void initClockNVIC( int8_t sercom_channel )
+{
+     bec:	b580      	push	{r7, lr}
+     bee:	b084      	sub	sp, #16
+     bf0:	af00      	add	r7, sp, #0
+     bf2:	0002      	movs	r2, r0
+     bf4:	1dfb      	adds	r3, r7, #7
+     bf6:	701a      	strb	r2, [r3, #0]
+	uint8_t clockId = 0;
+     bf8:	230f      	movs	r3, #15
+     bfa:	18fb      	adds	r3, r7, r3
+     bfc:	2200      	movs	r2, #0
+     bfe:	701a      	strb	r2, [r3, #0]
+	IRQn_Type IdNvic=PendSV_IRQn ; // Dummy init to intercept potential error later
+     c00:	230e      	movs	r3, #14
+     c02:	18fb      	adds	r3, r7, r3
+     c04:	22fe      	movs	r2, #254	; 0xfe
+     c06:	701a      	strb	r2, [r3, #0]
+
+	Sercom * sercom = get_sercom_channel_ptr(sercom_channel);
+     c08:	1dfb      	adds	r3, r7, #7
+     c0a:	781b      	ldrb	r3, [r3, #0]
+     c0c:	0018      	movs	r0, r3
+     c0e:	4b3f      	ldr	r3, [pc, #252]	; (d0c <initClockNVIC+0x120>)
+     c10:	4798      	blx	r3
+     c12:	0003      	movs	r3, r0
+     c14:	60bb      	str	r3, [r7, #8]
+
+	if(sercom == SERCOM0)
+     c16:	68bb      	ldr	r3, [r7, #8]
+     c18:	4a3d      	ldr	r2, [pc, #244]	; (d10 <initClockNVIC+0x124>)
+     c1a:	4293      	cmp	r3, r2
+     c1c:	d108      	bne.n	c30 <initClockNVIC+0x44>
+	{
+		clockId = 0x14U;
+     c1e:	230f      	movs	r3, #15
+     c20:	18fb      	adds	r3, r7, r3
+     c22:	2214      	movs	r2, #20
+     c24:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM0_IRQn;
+     c26:	230e      	movs	r3, #14
+     c28:	18fb      	adds	r3, r7, r3
+     c2a:	2209      	movs	r2, #9
+     c2c:	701a      	strb	r2, [r3, #0]
+     c2e:	e03f      	b.n	cb0 <initClockNVIC+0xc4>
+	}
+	else if(sercom == SERCOM1)
+     c30:	68bb      	ldr	r3, [r7, #8]
+     c32:	4a38      	ldr	r2, [pc, #224]	; (d14 <initClockNVIC+0x128>)
+     c34:	4293      	cmp	r3, r2
+     c36:	d108      	bne.n	c4a <initClockNVIC+0x5e>
+	{
+		clockId = 0x15U;
+     c38:	230f      	movs	r3, #15
+     c3a:	18fb      	adds	r3, r7, r3
+     c3c:	2215      	movs	r2, #21
+     c3e:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM1_IRQn;
+     c40:	230e      	movs	r3, #14
+     c42:	18fb      	adds	r3, r7, r3
+     c44:	220a      	movs	r2, #10
+     c46:	701a      	strb	r2, [r3, #0]
+     c48:	e032      	b.n	cb0 <initClockNVIC+0xc4>
+	}
+	else if(sercom == SERCOM2)
+     c4a:	68bb      	ldr	r3, [r7, #8]
+     c4c:	4a32      	ldr	r2, [pc, #200]	; (d18 <initClockNVIC+0x12c>)
+     c4e:	4293      	cmp	r3, r2
+     c50:	d108      	bne.n	c64 <initClockNVIC+0x78>
+	{
+		clockId = 0x16U;
+     c52:	230f      	movs	r3, #15
+     c54:	18fb      	adds	r3, r7, r3
+     c56:	2216      	movs	r2, #22
+     c58:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM2_IRQn;
+     c5a:	230e      	movs	r3, #14
+     c5c:	18fb      	adds	r3, r7, r3
+     c5e:	220b      	movs	r2, #11
+     c60:	701a      	strb	r2, [r3, #0]
+     c62:	e025      	b.n	cb0 <initClockNVIC+0xc4>
+	}
+	else if(sercom == SERCOM3)
+     c64:	68bb      	ldr	r3, [r7, #8]
+     c66:	4a2d      	ldr	r2, [pc, #180]	; (d1c <initClockNVIC+0x130>)
+     c68:	4293      	cmp	r3, r2
+     c6a:	d108      	bne.n	c7e <initClockNVIC+0x92>
+	{
+		clockId = 0x17U;
+     c6c:	230f      	movs	r3, #15
+     c6e:	18fb      	adds	r3, r7, r3
+     c70:	2217      	movs	r2, #23
+     c72:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM3_IRQn;
+     c74:	230e      	movs	r3, #14
+     c76:	18fb      	adds	r3, r7, r3
+     c78:	220c      	movs	r2, #12
+     c7a:	701a      	strb	r2, [r3, #0]
+     c7c:	e018      	b.n	cb0 <initClockNVIC+0xc4>
+	}
+	#if defined(SERCOM4)
+	else if(sercom == SERCOM4)
+     c7e:	68bb      	ldr	r3, [r7, #8]
+     c80:	4a27      	ldr	r2, [pc, #156]	; (d20 <initClockNVIC+0x134>)
+     c82:	4293      	cmp	r3, r2
+     c84:	d108      	bne.n	c98 <initClockNVIC+0xac>
+	{
+		clockId = 0x18U;
+     c86:	230f      	movs	r3, #15
+     c88:	18fb      	adds	r3, r7, r3
+     c8a:	2218      	movs	r2, #24
+     c8c:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM4_IRQn;
+     c8e:	230e      	movs	r3, #14
+     c90:	18fb      	adds	r3, r7, r3
+     c92:	220d      	movs	r2, #13
+     c94:	701a      	strb	r2, [r3, #0]
+     c96:	e00b      	b.n	cb0 <initClockNVIC+0xc4>
+	}
+	#endif // SERCOM4
+	#if defined(SERCOM5)
+	else if(sercom == SERCOM5)
+     c98:	68bb      	ldr	r3, [r7, #8]
+     c9a:	4a22      	ldr	r2, [pc, #136]	; (d24 <initClockNVIC+0x138>)
+     c9c:	4293      	cmp	r3, r2
+     c9e:	d107      	bne.n	cb0 <initClockNVIC+0xc4>
+	{
+		clockId = 0x19U;
+     ca0:	230f      	movs	r3, #15
+     ca2:	18fb      	adds	r3, r7, r3
+     ca4:	2219      	movs	r2, #25
+     ca6:	701a      	strb	r2, [r3, #0]
+		IdNvic = SERCOM5_IRQn;
+     ca8:	230e      	movs	r3, #14
+     caa:	18fb      	adds	r3, r7, r3
+     cac:	220e      	movs	r2, #14
+     cae:	701a      	strb	r2, [r3, #0]
+	}
+	#endif // SERCOM5
+
+	if ( IdNvic == PendSV_IRQn )
+     cb0:	230e      	movs	r3, #14
+     cb2:	18fb      	adds	r3, r7, r3
+     cb4:	781b      	ldrb	r3, [r3, #0]
+     cb6:	b25b      	sxtb	r3, r3
+     cb8:	3302      	adds	r3, #2
+     cba:	d023      	beq.n	d04 <initClockNVIC+0x118>
+		// We got a problem here
+		return ;
+	}
+
+	// Setting NVIC
+	NVIC_EnableIRQ(IdNvic);
+     cbc:	230e      	movs	r3, #14
+     cbe:	18fb      	adds	r3, r7, r3
+     cc0:	781b      	ldrb	r3, [r3, #0]
+     cc2:	b25b      	sxtb	r3, r3
+     cc4:	0018      	movs	r0, r3
+     cc6:	4b18      	ldr	r3, [pc, #96]	; (d28 <initClockNVIC+0x13c>)
+     cc8:	4798      	blx	r3
+	NVIC_SetPriority (IdNvic, ((1<<__NVIC_PRIO_BITS) - 1));  /* set Priority */
+     cca:	230e      	movs	r3, #14
+     ccc:	18fb      	adds	r3, r7, r3
+     cce:	781b      	ldrb	r3, [r3, #0]
+     cd0:	b25b      	sxtb	r3, r3
+     cd2:	2103      	movs	r1, #3
+     cd4:	0018      	movs	r0, r3
+     cd6:	4b15      	ldr	r3, [pc, #84]	; (d2c <initClockNVIC+0x140>)
+     cd8:	4798      	blx	r3
+
+	//Setting clock
+	GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID( clockId ) | // Generic Clock 0 (SERCOMx)
+     cda:	4915      	ldr	r1, [pc, #84]	; (d30 <initClockNVIC+0x144>)
+     cdc:	230f      	movs	r3, #15
+     cde:	18fb      	adds	r3, r7, r3
+     ce0:	781b      	ldrb	r3, [r3, #0]
+     ce2:	b29b      	uxth	r3, r3
+     ce4:	223f      	movs	r2, #63	; 0x3f
+     ce6:	4013      	ands	r3, r2
+     ce8:	b29b      	uxth	r3, r3
+	GCLK_CLKCTRL_GEN_GCLK0 | // Generic Clock Generator 0 is source
+     cea:	2280      	movs	r2, #128	; 0x80
+     cec:	01d2      	lsls	r2, r2, #7
+     cee:	4313      	orrs	r3, r2
+     cf0:	b29b      	uxth	r3, r3
+	GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID( clockId ) | // Generic Clock 0 (SERCOMx)
+     cf2:	804b      	strh	r3, [r1, #2]
+	GCLK_CLKCTRL_CLKEN ;
+
+	while ( GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY )
+     cf4:	46c0      	nop			; (mov r8, r8)
+     cf6:	4b0e      	ldr	r3, [pc, #56]	; (d30 <initClockNVIC+0x144>)
+     cf8:	785b      	ldrb	r3, [r3, #1]
+     cfa:	b2db      	uxtb	r3, r3
+     cfc:	b25b      	sxtb	r3, r3
+     cfe:	2b00      	cmp	r3, #0
+     d00:	dbf9      	blt.n	cf6 <initClockNVIC+0x10a>
+     d02:	e000      	b.n	d06 <initClockNVIC+0x11a>
+		return ;
+     d04:	46c0      	nop			; (mov r8, r8)
+	{
+		/* Wait for synchronization */
+	}
+}
+     d06:	46bd      	mov	sp, r7
+     d08:	b004      	add	sp, #16
+     d0a:	bd80      	pop	{r7, pc}
+     d0c:	00000b91 	.word	0x00000b91
+     d10:	42000800 	.word	0x42000800
+     d14:	42000c00 	.word	0x42000c00
+     d18:	42001000 	.word	0x42001000
+     d1c:	42001400 	.word	0x42001400
+     d20:	42001800 	.word	0x42001800
+     d24:	42001c00 	.word	0x42001c00
+     d28:	00000485 	.word	0x00000485
+     d2c:	000004b9 	.word	0x000004b9
+     d30:	40000c00 	.word	0x40000c00
+
+00000d34 <morph_config_uart_setup_channel>:
+
+
+void morph_config_uart_setup_channel(MorphUARTChannel c, MorphUARTBaudRate br, MorphUARTByteSize bs, enum MorphUARTParity pc, MorphUARTStopBits sb)
+{
+     d34:	b590      	push	{r4, r7, lr}
+     d36:	b087      	sub	sp, #28
+     d38:	af00      	add	r7, sp, #0
+     d3a:	0004      	movs	r4, r0
+     d3c:	6039      	str	r1, [r7, #0]
+     d3e:	0010      	movs	r0, r2
+     d40:	0019      	movs	r1, r3
+     d42:	1dfb      	adds	r3, r7, #7
+     d44:	1c22      	adds	r2, r4, #0
+     d46:	701a      	strb	r2, [r3, #0]
+     d48:	1dbb      	adds	r3, r7, #6
+     d4a:	1c02      	adds	r2, r0, #0
+     d4c:	701a      	strb	r2, [r3, #0]
+     d4e:	1d7b      	adds	r3, r7, #5
+     d50:	1c0a      	adds	r2, r1, #0
+     d52:	701a      	strb	r2, [r3, #0]
+
+	if(c < 0 || c > 5)
+     d54:	1dfb      	adds	r3, r7, #7
+     d56:	781b      	ldrb	r3, [r3, #0]
+     d58:	2b05      	cmp	r3, #5
+     d5a:	d900      	bls.n	d5e <morph_config_uart_setup_channel+0x2a>
+     d5c:	e119      	b.n	f92 <morph_config_uart_setup_channel+0x25e>
+		return; //Begone!
+	
+	initClockNVIC(c);
+     d5e:	1dfb      	adds	r3, r7, #7
+     d60:	781b      	ldrb	r3, [r3, #0]
+     d62:	b25b      	sxtb	r3, r3
+     d64:	0018      	movs	r0, r3
+     d66:	4b8d      	ldr	r3, [pc, #564]	; (f9c <morph_config_uart_setup_channel+0x268>)
+     d68:	4798      	blx	r3
+	
+	// The "Channel" in this case will refer to a SERCOM channel.
+	Sercom * sercom_ptr = get_sercom_channel_ptr(c);
+     d6a:	1dfb      	adds	r3, r7, #7
+     d6c:	781b      	ldrb	r3, [r3, #0]
+     d6e:	0018      	movs	r0, r3
+     d70:	4b8b      	ldr	r3, [pc, #556]	; (fa0 <morph_config_uart_setup_channel+0x26c>)
+     d72:	4798      	blx	r3
+     d74:	0003      	movs	r3, r0
+     d76:	617b      	str	r3, [r7, #20]
+	
+	
+	// Start the Software Reset
+	sercom_ptr->USART.CTRLA.bit.SWRST = 1 ;
+     d78:	697b      	ldr	r3, [r7, #20]
+     d7a:	681a      	ldr	r2, [r3, #0]
+     d7c:	2101      	movs	r1, #1
+     d7e:	430a      	orrs	r2, r1
+     d80:	601a      	str	r2, [r3, #0]
+
+	while ( sercom_ptr->USART.CTRLA.bit.SWRST || sercom_ptr->USART.SYNCBUSY.bit.SWRST )
+     d82:	46c0      	nop			; (mov r8, r8)
+     d84:	697b      	ldr	r3, [r7, #20]
+     d86:	681b      	ldr	r3, [r3, #0]
+     d88:	07db      	lsls	r3, r3, #31
+     d8a:	0fdb      	lsrs	r3, r3, #31
+     d8c:	b2db      	uxtb	r3, r3
+     d8e:	2b00      	cmp	r3, #0
+     d90:	d1f8      	bne.n	d84 <morph_config_uart_setup_channel+0x50>
+     d92:	697b      	ldr	r3, [r7, #20]
+     d94:	69db      	ldr	r3, [r3, #28]
+     d96:	07db      	lsls	r3, r3, #31
+     d98:	0fdb      	lsrs	r3, r3, #31
+     d9a:	b2db      	uxtb	r3, r3
+     d9c:	2b00      	cmp	r3, #0
+     d9e:	d1f1      	bne.n	d84 <morph_config_uart_setup_channel+0x50>
+	{
+		// Wait for both bits Software Reset from CTRLA and SYNCBUSY coming back to 0
+	}
+	
+	// We are doing 16x oversampling
+	uint8_t sample_rate = 16;
+     da0:	2313      	movs	r3, #19
+     da2:	18fb      	adds	r3, r7, r3
+     da4:	2210      	movs	r2, #16
+     da6:	701a      	strb	r2, [r3, #0]
+	
+	// First, setup the muxing on the pins.
+	uint8_t def_rx_pin = uart_default_defs[c].rx_pin_num;
+     da8:	1dfb      	adds	r3, r7, #7
+     daa:	781b      	ldrb	r3, [r3, #0]
+     dac:	4a7d      	ldr	r2, [pc, #500]	; (fa4 <morph_config_uart_setup_channel+0x270>)
+     dae:	005b      	lsls	r3, r3, #1
+     db0:	18d3      	adds	r3, r2, r3
+     db2:	3301      	adds	r3, #1
+     db4:	2200      	movs	r2, #0
+     db6:	569a      	ldrsb	r2, [r3, r2]
+     db8:	2312      	movs	r3, #18
+     dba:	18fb      	adds	r3, r7, r3
+     dbc:	701a      	strb	r2, [r3, #0]
+	uint8_t def_tx_pin = uart_default_defs[c].tx_pin_num;
+     dbe:	1dfb      	adds	r3, r7, #7
+     dc0:	781a      	ldrb	r2, [r3, #0]
+     dc2:	4b78      	ldr	r3, [pc, #480]	; (fa4 <morph_config_uart_setup_channel+0x270>)
+     dc4:	0052      	lsls	r2, r2, #1
+     dc6:	56d2      	ldrsb	r2, [r2, r3]
+     dc8:	2311      	movs	r3, #17
+     dca:	18fb      	adds	r3, r7, r3
+     dcc:	701a      	strb	r2, [r3, #0]
+
+	uint8_t cur_rx_pin = uart_current_defs[c].rx_pin_num;
+     dce:	1dfb      	adds	r3, r7, #7
+     dd0:	781b      	ldrb	r3, [r3, #0]
+     dd2:	4a75      	ldr	r2, [pc, #468]	; (fa8 <morph_config_uart_setup_channel+0x274>)
+     dd4:	005b      	lsls	r3, r3, #1
+     dd6:	18d3      	adds	r3, r2, r3
+     dd8:	3301      	adds	r3, #1
+     dda:	2200      	movs	r2, #0
+     ddc:	569a      	ldrsb	r2, [r3, r2]
+     dde:	2310      	movs	r3, #16
+     de0:	18fb      	adds	r3, r7, r3
+     de2:	701a      	strb	r2, [r3, #0]
+	uint8_t cur_tx_pin = uart_current_defs[c].tx_pin_num;
+     de4:	1dfb      	adds	r3, r7, #7
+     de6:	781a      	ldrb	r2, [r3, #0]
+     de8:	4b6f      	ldr	r3, [pc, #444]	; (fa8 <morph_config_uart_setup_channel+0x274>)
+     dea:	0052      	lsls	r2, r2, #1
+     dec:	56d2      	ldrsb	r2, [r2, r3]
+     dee:	230f      	movs	r3, #15
+     df0:	18fb      	adds	r3, r7, r3
+     df2:	701a      	strb	r2, [r3, #0]
+	{
+		morph_config_uart_set_rx_pin(c, def_rx_pin);
+	}
+	else
+	{
+		morph_config_uart_set_rx_pin(c, cur_rx_pin);
+     df4:	2310      	movs	r3, #16
+     df6:	18fb      	adds	r3, r7, r3
+     df8:	2200      	movs	r2, #0
+     dfa:	569a      	ldrsb	r2, [r3, r2]
+     dfc:	1dfb      	adds	r3, r7, #7
+     dfe:	781b      	ldrb	r3, [r3, #0]
+     e00:	0011      	movs	r1, r2
+     e02:	0018      	movs	r0, r3
+     e04:	4b69      	ldr	r3, [pc, #420]	; (fac <morph_config_uart_setup_channel+0x278>)
+     e06:	4798      	blx	r3
+	{
+		morph_config_uart_set_tx_pin(c, def_tx_pin);
+	}
+	else
+	{
+		morph_config_uart_set_tx_pin(c, cur_tx_pin);
+     e08:	230f      	movs	r3, #15
+     e0a:	18fb      	adds	r3, r7, r3
+     e0c:	2200      	movs	r2, #0
+     e0e:	569a      	ldrsb	r2, [r3, r2]
+     e10:	1dfb      	adds	r3, r7, #7
+     e12:	781b      	ldrb	r3, [r3, #0]
+     e14:	0011      	movs	r1, r2
+     e16:	0018      	movs	r0, r3
+     e18:	4b65      	ldr	r3, [pc, #404]	; (fb0 <morph_config_uart_setup_channel+0x27c>)
+     e1a:	4798      	blx	r3
+	}
+
+	// Pins configured!
+	
+	// Setting SERCOM mode to UART on internal clock
+	sercom_ptr->USART.CTRLA.bit.MODE = SERCOM_USART_CTRLA_MODE_USART_INT_CLK_Val;
+     e1c:	697b      	ldr	r3, [r7, #20]
+     e1e:	681a      	ldr	r2, [r3, #0]
+     e20:	211c      	movs	r1, #28
+     e22:	438a      	bics	r2, r1
+     e24:	2104      	movs	r1, #4
+     e26:	430a      	orrs	r2, r1
+     e28:	601a      	str	r2, [r3, #0]
+	
+	// 16x over-sampling using fractional baud rate generation.
+	sercom_ptr->USART.CTRLA.bit.SAMPR = 0x1;
+     e2a:	697b      	ldr	r3, [r7, #20]
+     e2c:	681a      	ldr	r2, [r3, #0]
+     e2e:	4961      	ldr	r1, [pc, #388]	; (fb4 <morph_config_uart_setup_channel+0x280>)
+     e30:	400a      	ands	r2, r1
+     e32:	2180      	movs	r1, #128	; 0x80
+     e34:	0189      	lsls	r1, r1, #6
+     e36:	430a      	orrs	r2, r1
+     e38:	601a      	str	r2, [r3, #0]
+	
+    // Asynchronous fractional mode (Table 24-2 in datasheet)
+    //   BAUD = fref / (sampleRateValue * fbaud)
+    // (multiply by 8, to calculate fractional piece)
+    uint32_t baudTimes8 = (SystemCoreClock * 8) / (sample_rate * br);
+     e3a:	4b5f      	ldr	r3, [pc, #380]	; (fb8 <morph_config_uart_setup_channel+0x284>)
+     e3c:	681b      	ldr	r3, [r3, #0]
+     e3e:	00d8      	lsls	r0, r3, #3
+     e40:	2313      	movs	r3, #19
+     e42:	18fb      	adds	r3, r7, r3
+     e44:	781b      	ldrb	r3, [r3, #0]
+     e46:	683a      	ldr	r2, [r7, #0]
+     e48:	435a      	muls	r2, r3
+     e4a:	4b5c      	ldr	r3, [pc, #368]	; (fbc <morph_config_uart_setup_channel+0x288>)
+     e4c:	0011      	movs	r1, r2
+     e4e:	4798      	blx	r3
+     e50:	0003      	movs	r3, r0
+     e52:	60bb      	str	r3, [r7, #8]
+
+    sercom_ptr->USART.BAUD.FRAC.FP   = (baudTimes8 % 8);
+     e54:	68bb      	ldr	r3, [r7, #8]
+     e56:	b2db      	uxtb	r3, r3
+     e58:	1c1a      	adds	r2, r3, #0
+     e5a:	2307      	movs	r3, #7
+     e5c:	4013      	ands	r3, r2
+     e5e:	b2d9      	uxtb	r1, r3
+     e60:	697a      	ldr	r2, [r7, #20]
+     e62:	8993      	ldrh	r3, [r2, #12]
+     e64:	0348      	lsls	r0, r1, #13
+     e66:	04db      	lsls	r3, r3, #19
+     e68:	0cdb      	lsrs	r3, r3, #19
+     e6a:	1c19      	adds	r1, r3, #0
+     e6c:	1c03      	adds	r3, r0, #0
+     e6e:	430b      	orrs	r3, r1
+     e70:	8193      	strh	r3, [r2, #12]
+    sercom_ptr->USART.BAUD.FRAC.BAUD = (baudTimes8 / 8);
+     e72:	68bb      	ldr	r3, [r7, #8]
+     e74:	08db      	lsrs	r3, r3, #3
+     e76:	b29b      	uxth	r3, r3
+     e78:	04db      	lsls	r3, r3, #19
+     e7a:	0cdb      	lsrs	r3, r3, #19
+     e7c:	b299      	uxth	r1, r3
+     e7e:	697a      	ldr	r2, [r7, #20]
+     e80:	8993      	ldrh	r3, [r2, #12]
+     e82:	04c9      	lsls	r1, r1, #19
+     e84:	0cc8      	lsrs	r0, r1, #19
+     e86:	0b5b      	lsrs	r3, r3, #13
+     e88:	035b      	lsls	r3, r3, #13
+     e8a:	1c19      	adds	r1, r3, #0
+     e8c:	1c03      	adds	r3, r0, #0
+     e8e:	430b      	orrs	r3, r1
+     e90:	8193      	strh	r3, [r2, #12]
+	
+	// Now for frame stuff.
+	
+	// Determine if we need parity or not.
+	sercom_ptr->USART.CTRLA.bit.FORM = pc == MorphNoParity ? 0 : 1;
+     e92:	1d7b      	adds	r3, r7, #5
+     e94:	781b      	ldrb	r3, [r3, #0]
+     e96:	3b02      	subs	r3, #2
+     e98:	1e5a      	subs	r2, r3, #1
+     e9a:	4193      	sbcs	r3, r2
+     e9c:	b2db      	uxtb	r3, r3
+     e9e:	1c1a      	adds	r2, r3, #0
+     ea0:	230f      	movs	r3, #15
+     ea2:	4013      	ands	r3, r2
+     ea4:	b2d9      	uxtb	r1, r3
+     ea6:	697b      	ldr	r3, [r7, #20]
+     ea8:	681a      	ldr	r2, [r3, #0]
+     eaa:	200f      	movs	r0, #15
+     eac:	4001      	ands	r1, r0
+     eae:	0609      	lsls	r1, r1, #24
+     eb0:	4843      	ldr	r0, [pc, #268]	; (fc0 <morph_config_uart_setup_channel+0x28c>)
+     eb2:	4002      	ands	r2, r0
+     eb4:	430a      	orrs	r2, r1
+     eb6:	601a      	str	r2, [r3, #0]
+	
+	if(pc != MorphNoParity)
+     eb8:	1d7b      	adds	r3, r7, #5
+     eba:	781b      	ldrb	r3, [r3, #0]
+     ebc:	2b02      	cmp	r3, #2
+     ebe:	d00d      	beq.n	edc <morph_config_uart_setup_channel+0x1a8>
+	{
+		// If we have parity, determine if it is even or odd.
+		sercom_ptr->USART.CTRLB.bit.PMODE = pc == MorphEvenParity ? 0 : 1;
+     ec0:	1d7b      	adds	r3, r7, #5
+     ec2:	781b      	ldrb	r3, [r3, #0]
+     ec4:	1e5a      	subs	r2, r3, #1
+     ec6:	4193      	sbcs	r3, r2
+     ec8:	b2d9      	uxtb	r1, r3
+     eca:	697b      	ldr	r3, [r7, #20]
+     ecc:	685a      	ldr	r2, [r3, #4]
+     ece:	2001      	movs	r0, #1
+     ed0:	4001      	ands	r1, r0
+     ed2:	0349      	lsls	r1, r1, #13
+     ed4:	483b      	ldr	r0, [pc, #236]	; (fc4 <morph_config_uart_setup_channel+0x290>)
+     ed6:	4002      	ands	r2, r0
+     ed8:	430a      	orrs	r2, r1
+     eda:	605a      	str	r2, [r3, #4]
+	}
+	
+	// Force data order to be LSB first 
+	sercom_ptr->USART.CTRLA.bit.DORD = 1;
+     edc:	697b      	ldr	r3, [r7, #20]
+     ede:	681a      	ldr	r2, [r3, #0]
+     ee0:	2180      	movs	r1, #128	; 0x80
+     ee2:	05c9      	lsls	r1, r1, #23
+     ee4:	430a      	orrs	r2, r1
+     ee6:	601a      	str	r2, [r3, #0]
+	
+	// Setting the character size.
+	switch(bs)
+     ee8:	1dbb      	adds	r3, r7, #6
+     eea:	781b      	ldrb	r3, [r3, #0]
+     eec:	2b08      	cmp	r3, #8
+     eee:	d00d      	beq.n	f0c <morph_config_uart_setup_channel+0x1d8>
+     ef0:	dc02      	bgt.n	ef8 <morph_config_uart_setup_channel+0x1c4>
+     ef2:	2b05      	cmp	r3, #5
+     ef4:	db1e      	blt.n	f34 <morph_config_uart_setup_channel+0x200>
+     ef6:	e00f      	b.n	f18 <morph_config_uart_setup_channel+0x1e4>
+     ef8:	2b09      	cmp	r3, #9
+     efa:	d11b      	bne.n	f34 <morph_config_uart_setup_channel+0x200>
+	{
+		case 9:
+		
+			sercom_ptr->USART.CTRLB.bit.CHSIZE = 0x1;
+     efc:	697b      	ldr	r3, [r7, #20]
+     efe:	685a      	ldr	r2, [r3, #4]
+     f00:	2107      	movs	r1, #7
+     f02:	438a      	bics	r2, r1
+     f04:	2101      	movs	r1, #1
+     f06:	430a      	orrs	r2, r1
+     f08:	605a      	str	r2, [r3, #4]
+	
+			break;
+     f0a:	e018      	b.n	f3e <morph_config_uart_setup_channel+0x20a>
+		
+		case 8:
+
+			sercom_ptr->USART.CTRLB.bit.CHSIZE = 0x0;
+     f0c:	697b      	ldr	r3, [r7, #20]
+     f0e:	685a      	ldr	r2, [r3, #4]
+     f10:	2107      	movs	r1, #7
+     f12:	438a      	bics	r2, r1
+     f14:	605a      	str	r2, [r3, #4]
+			
+			break;
+     f16:	e012      	b.n	f3e <morph_config_uart_setup_channel+0x20a>
+		
+		case 5:
+		case 6:
+		case 7:
+
+			sercom_ptr->USART.CTRLB.bit.CHSIZE = bs;
+     f18:	1dbb      	adds	r3, r7, #6
+     f1a:	781b      	ldrb	r3, [r3, #0]
+     f1c:	2207      	movs	r2, #7
+     f1e:	4013      	ands	r3, r2
+     f20:	b2d9      	uxtb	r1, r3
+     f22:	697b      	ldr	r3, [r7, #20]
+     f24:	685a      	ldr	r2, [r3, #4]
+     f26:	2007      	movs	r0, #7
+     f28:	4001      	ands	r1, r0
+     f2a:	2007      	movs	r0, #7
+     f2c:	4382      	bics	r2, r0
+     f2e:	430a      	orrs	r2, r1
+     f30:	605a      	str	r2, [r3, #4]
+					
+			break;
+     f32:	e004      	b.n	f3e <morph_config_uart_setup_channel+0x20a>
+
+		default:
+			sercom_ptr->USART.CTRLB.bit.CHSIZE = 0x0;
+     f34:	697b      	ldr	r3, [r7, #20]
+     f36:	685a      	ldr	r2, [r3, #4]
+     f38:	2107      	movs	r1, #7
+     f3a:	438a      	bics	r2, r1
+     f3c:	605a      	str	r2, [r3, #4]
+		
+	}
+	
+	// Setting stop bits.
+	sercom_ptr->USART.CTRLB.bit.SBMODE = sb == 1 ? 0 : 1;
+     f3e:	2328      	movs	r3, #40	; 0x28
+     f40:	18fb      	adds	r3, r7, r3
+     f42:	781b      	ldrb	r3, [r3, #0]
+     f44:	3b01      	subs	r3, #1
+     f46:	1e5a      	subs	r2, r3, #1
+     f48:	4193      	sbcs	r3, r2
+     f4a:	b2d9      	uxtb	r1, r3
+     f4c:	697b      	ldr	r3, [r7, #20]
+     f4e:	685a      	ldr	r2, [r3, #4]
+     f50:	2001      	movs	r0, #1
+     f52:	4001      	ands	r1, r0
+     f54:	0189      	lsls	r1, r1, #6
+     f56:	2040      	movs	r0, #64	; 0x40
+     f58:	4382      	bics	r2, r0
+     f5a:	430a      	orrs	r2, r1
+     f5c:	605a      	str	r2, [r3, #4]
+	
+	
+	// Enable transmitting and receiving!
+	sercom_ptr->USART.CTRLB.bit.TXEN = 0x1;
+     f5e:	697b      	ldr	r3, [r7, #20]
+     f60:	685a      	ldr	r2, [r3, #4]
+     f62:	2180      	movs	r1, #128	; 0x80
+     f64:	0249      	lsls	r1, r1, #9
+     f66:	430a      	orrs	r2, r1
+     f68:	605a      	str	r2, [r3, #4]
+	sercom_ptr->USART.CTRLB.bit.RXEN = 0x1;
+     f6a:	697b      	ldr	r3, [r7, #20]
+     f6c:	685a      	ldr	r2, [r3, #4]
+     f6e:	2180      	movs	r1, #128	; 0x80
+     f70:	0289      	lsls	r1, r1, #10
+     f72:	430a      	orrs	r2, r1
+     f74:	605a      	str	r2, [r3, #4]
+	
+	// Enable the SERCOM!
+	sercom_ptr->USART.CTRLA.bit.ENABLE = 0x1u;
+     f76:	697b      	ldr	r3, [r7, #20]
+     f78:	681a      	ldr	r2, [r3, #0]
+     f7a:	2102      	movs	r1, #2
+     f7c:	430a      	orrs	r2, r1
+     f7e:	601a      	str	r2, [r3, #0]
+
+	//Wait for SYNCBUSY
+	while(sercom_ptr->USART.SYNCBUSY.bit.ENABLE);
+     f80:	46c0      	nop			; (mov r8, r8)
+     f82:	697b      	ldr	r3, [r7, #20]
+     f84:	69db      	ldr	r3, [r3, #28]
+     f86:	079b      	lsls	r3, r3, #30
+     f88:	0fdb      	lsrs	r3, r3, #31
+     f8a:	b2db      	uxtb	r3, r3
+     f8c:	2b00      	cmp	r3, #0
+     f8e:	d1f8      	bne.n	f82 <morph_config_uart_setup_channel+0x24e>
+     f90:	e000      	b.n	f94 <morph_config_uart_setup_channel+0x260>
+		return; //Begone!
+     f92:	46c0      	nop			; (mov r8, r8)
+	
+}
+     f94:	46bd      	mov	sp, r7
+     f96:	b007      	add	sp, #28
+     f98:	bd90      	pop	{r4, r7, pc}
+     f9a:	46c0      	nop			; (mov r8, r8)
+     f9c:	00000bed 	.word	0x00000bed
+     fa0:	00000b91 	.word	0x00000b91
+     fa4:	20000198 	.word	0x20000198
+     fa8:	200001a4 	.word	0x200001a4
+     fac:	00001375 	.word	0x00001375
+     fb0:	000010f1 	.word	0x000010f1
+     fb4:	ffff1fff 	.word	0xffff1fff
+     fb8:	20000000 	.word	0x20000000
+     fbc:	00001825 	.word	0x00001825
+     fc0:	f0ffffff 	.word	0xf0ffffff
+     fc4:	ffffdfff 	.word	0xffffdfff
+
+00000fc8 <morph_config_uart_send_data>:
+
+void morph_config_uart_send_data(MorphUARTChannel c, MorphUARTData data)
+{
+     fc8:	b580      	push	{r7, lr}
+     fca:	b084      	sub	sp, #16
+     fcc:	af00      	add	r7, sp, #0
+     fce:	0002      	movs	r2, r0
+     fd0:	1dfb      	adds	r3, r7, #7
+     fd2:	701a      	strb	r2, [r3, #0]
+     fd4:	1d3b      	adds	r3, r7, #4
+     fd6:	1c0a      	adds	r2, r1, #0
+     fd8:	801a      	strh	r2, [r3, #0]
+	if(c < 0 || c > 5)
+     fda:	1dfb      	adds	r3, r7, #7
+     fdc:	781b      	ldrb	r3, [r3, #0]
+     fde:	2b05      	cmp	r3, #5
+     fe0:	d813      	bhi.n	100a <morph_config_uart_send_data+0x42>
+		return; //Begone!
+		
+	Sercom * sercom_ptr = get_sercom_channel_ptr(c);
+     fe2:	1dfb      	adds	r3, r7, #7
+     fe4:	781b      	ldrb	r3, [r3, #0]
+     fe6:	0018      	movs	r0, r3
+     fe8:	4b0a      	ldr	r3, [pc, #40]	; (1014 <morph_config_uart_send_data+0x4c>)
+     fea:	4798      	blx	r3
+     fec:	0003      	movs	r3, r0
+     fee:	60fb      	str	r3, [r7, #12]
+	
+	// Wait for the data register to be empty.
+	while(!sercom_ptr->USART.INTFLAG.bit.DRE);
+     ff0:	46c0      	nop			; (mov r8, r8)
+     ff2:	68fb      	ldr	r3, [r7, #12]
+     ff4:	7e1b      	ldrb	r3, [r3, #24]
+     ff6:	07db      	lsls	r3, r3, #31
+     ff8:	0fdb      	lsrs	r3, r3, #31
+     ffa:	b2db      	uxtb	r3, r3
+     ffc:	2b00      	cmp	r3, #0
+     ffe:	d0f8      	beq.n	ff2 <morph_config_uart_send_data+0x2a>
+	
+	// Now write the data!
+	sercom_ptr->USART.DATA.reg = data;
+    1000:	68fb      	ldr	r3, [r7, #12]
+    1002:	1d3a      	adds	r2, r7, #4
+    1004:	8812      	ldrh	r2, [r2, #0]
+    1006:	851a      	strh	r2, [r3, #40]	; 0x28
+    1008:	e000      	b.n	100c <morph_config_uart_send_data+0x44>
+		return; //Begone!
+    100a:	46c0      	nop			; (mov r8, r8)
+	
+}
+    100c:	46bd      	mov	sp, r7
+    100e:	b004      	add	sp, #16
+    1010:	bd80      	pop	{r7, pc}
+    1012:	46c0      	nop			; (mov r8, r8)
+    1014:	00000b91 	.word	0x00000b91
+
+00001018 <morph_config_uart_read_data>:
+
+MorphUARTData morph_config_uart_read_data(MorphUARTChannel c)
+{
+    1018:	b580      	push	{r7, lr}
+    101a:	b084      	sub	sp, #16
+    101c:	af00      	add	r7, sp, #0
+    101e:	0002      	movs	r2, r0
+    1020:	1dfb      	adds	r3, r7, #7
+    1022:	701a      	strb	r2, [r3, #0]
+
+	Sercom * sercom_ptr = get_sercom_channel_ptr(c);
+    1024:	1dfb      	adds	r3, r7, #7
+    1026:	781b      	ldrb	r3, [r3, #0]
+    1028:	0018      	movs	r0, r3
+    102a:	4b09      	ldr	r3, [pc, #36]	; (1050 <morph_config_uart_read_data+0x38>)
+    102c:	4798      	blx	r3
+    102e:	0003      	movs	r3, r0
+    1030:	60fb      	str	r3, [r7, #12]
+		
+	// The register should be read only when the Receive Complete Interrupt Flag bit in the 
+	// Interrupt Flag Status and Clear register (INTFLAG.RXC) is set.
+	// (per datasheet section 26.8.10)
+	while(!sercom_ptr->USART.INTFLAG.bit.RXC);	
+    1032:	46c0      	nop			; (mov r8, r8)
+    1034:	68fb      	ldr	r3, [r7, #12]
+    1036:	7e1b      	ldrb	r3, [r3, #24]
+    1038:	075b      	lsls	r3, r3, #29
+    103a:	0fdb      	lsrs	r3, r3, #31
+    103c:	b2db      	uxtb	r3, r3
+    103e:	2b00      	cmp	r3, #0
+    1040:	d0f8      	beq.n	1034 <morph_config_uart_read_data+0x1c>
+	
+	return sercom_ptr->USART.DATA.reg;	
+    1042:	68fb      	ldr	r3, [r7, #12]
+    1044:	8d1b      	ldrh	r3, [r3, #40]	; 0x28
+    1046:	b29b      	uxth	r3, r3
+	
+}
+    1048:	0018      	movs	r0, r3
+    104a:	46bd      	mov	sp, r7
+    104c:	b004      	add	sp, #16
+    104e:	bd80      	pop	{r7, pc}
+    1050:	00000b91 	.word	0x00000b91
+
+00001054 <morph_config_uart_write_data_buffer>:
+
+void morph_config_uart_write_data_buffer(MorphUARTChannel c, MorphUARTData * buffer, size_t length)
+{
+    1054:	b580      	push	{r7, lr}
+    1056:	b086      	sub	sp, #24
+    1058:	af00      	add	r7, sp, #0
+    105a:	60b9      	str	r1, [r7, #8]
+    105c:	607a      	str	r2, [r7, #4]
+    105e:	230f      	movs	r3, #15
+    1060:	18fb      	adds	r3, r7, r3
+    1062:	1c02      	adds	r2, r0, #0
+    1064:	701a      	strb	r2, [r3, #0]
+	
+	for(size_t i = 0; i < length; i ++)
+    1066:	2300      	movs	r3, #0
+    1068:	617b      	str	r3, [r7, #20]
+    106a:	e00e      	b.n	108a <morph_config_uart_write_data_buffer+0x36>
+	{
+		
+		morph_config_uart_send_data(c, (uint16_t)buffer[i]);
+    106c:	697b      	ldr	r3, [r7, #20]
+    106e:	005b      	lsls	r3, r3, #1
+    1070:	68ba      	ldr	r2, [r7, #8]
+    1072:	18d3      	adds	r3, r2, r3
+    1074:	881a      	ldrh	r2, [r3, #0]
+    1076:	230f      	movs	r3, #15
+    1078:	18fb      	adds	r3, r7, r3
+    107a:	781b      	ldrb	r3, [r3, #0]
+    107c:	0011      	movs	r1, r2
+    107e:	0018      	movs	r0, r3
+    1080:	4b06      	ldr	r3, [pc, #24]	; (109c <morph_config_uart_write_data_buffer+0x48>)
+    1082:	4798      	blx	r3
+	for(size_t i = 0; i < length; i ++)
+    1084:	697b      	ldr	r3, [r7, #20]
+    1086:	3301      	adds	r3, #1
+    1088:	617b      	str	r3, [r7, #20]
+    108a:	697a      	ldr	r2, [r7, #20]
+    108c:	687b      	ldr	r3, [r7, #4]
+    108e:	429a      	cmp	r2, r3
+    1090:	d3ec      	bcc.n	106c <morph_config_uart_write_data_buffer+0x18>
+		
+	}
+	
+}
+    1092:	46c0      	nop			; (mov r8, r8)
+    1094:	46bd      	mov	sp, r7
+    1096:	b006      	add	sp, #24
+    1098:	bd80      	pop	{r7, pc}
+    109a:	46c0      	nop			; (mov r8, r8)
+    109c:	00000fc9 	.word	0x00000fc9
+
+000010a0 <morph_config_uart_read_data_buffer>:
+
+enum MorphUARTErrors morph_config_uart_read_data_buffer(MorphUARTChannel c, MorphUARTData * buffer, size_t length, MorphUARTTimeout timeout)
+{
+    10a0:	b590      	push	{r4, r7, lr}
+    10a2:	b087      	sub	sp, #28
+    10a4:	af00      	add	r7, sp, #0
+    10a6:	60b9      	str	r1, [r7, #8]
+    10a8:	607a      	str	r2, [r7, #4]
+    10aa:	603b      	str	r3, [r7, #0]
+    10ac:	230f      	movs	r3, #15
+    10ae:	18fb      	adds	r3, r7, r3
+    10b0:	1c02      	adds	r2, r0, #0
+    10b2:	701a      	strb	r2, [r3, #0]
+
+	//TODO: timeout.
+
+	for(size_t i = 0; i < length; i ++)
+    10b4:	2300      	movs	r3, #0
+    10b6:	617b      	str	r3, [r7, #20]
+    10b8:	e00e      	b.n	10d8 <morph_config_uart_read_data_buffer+0x38>
+	{
+		
+		buffer[i] = morph_config_uart_read_data(c);
+    10ba:	697b      	ldr	r3, [r7, #20]
+    10bc:	005b      	lsls	r3, r3, #1
+    10be:	68ba      	ldr	r2, [r7, #8]
+    10c0:	18d4      	adds	r4, r2, r3
+    10c2:	230f      	movs	r3, #15
+    10c4:	18fb      	adds	r3, r7, r3
+    10c6:	781b      	ldrb	r3, [r3, #0]
+    10c8:	0018      	movs	r0, r3
+    10ca:	4b08      	ldr	r3, [pc, #32]	; (10ec <morph_config_uart_read_data_buffer+0x4c>)
+    10cc:	4798      	blx	r3
+    10ce:	0003      	movs	r3, r0
+    10d0:	8023      	strh	r3, [r4, #0]
+	for(size_t i = 0; i < length; i ++)
+    10d2:	697b      	ldr	r3, [r7, #20]
+    10d4:	3301      	adds	r3, #1
+    10d6:	617b      	str	r3, [r7, #20]
+    10d8:	697a      	ldr	r2, [r7, #20]
+    10da:	687b      	ldr	r3, [r7, #4]
+    10dc:	429a      	cmp	r2, r3
+    10de:	d3ec      	bcc.n	10ba <morph_config_uart_read_data_buffer+0x1a>
+		
+	}	
+	
+	return MORPH_UART_SUCCESS;
+    10e0:	2300      	movs	r3, #0
+
+}
+    10e2:	0018      	movs	r0, r3
+    10e4:	46bd      	mov	sp, r7
+    10e6:	b007      	add	sp, #28
+    10e8:	bd90      	pop	{r4, r7, pc}
+    10ea:	46c0      	nop			; (mov r8, r8)
+    10ec:	00001019 	.word	0x00001019
+
+000010f0 <morph_config_uart_set_tx_pin>:
+
+void morph_config_uart_set_tx_pin(MorphUARTChannel c, MorphPinNumber p_tx)
+{
+    10f0:	b580      	push	{r7, lr}
+    10f2:	b086      	sub	sp, #24
+    10f4:	af00      	add	r7, sp, #0
+    10f6:	0002      	movs	r2, r0
+    10f8:	1dfb      	adds	r3, r7, #7
+    10fa:	701a      	strb	r2, [r3, #0]
+    10fc:	1dbb      	adds	r3, r7, #6
+    10fe:	1c0a      	adds	r2, r1, #0
+    1100:	701a      	strb	r2, [r3, #0]
+	// Determine if such a configuration is even possible.
+
+	if(c < 0 || c > 5)
+    1102:	1dfb      	adds	r3, r7, #7
+    1104:	781b      	ldrb	r3, [r3, #0]
+    1106:	2b05      	cmp	r3, #5
+    1108:	d900      	bls.n	110c <morph_config_uart_set_tx_pin+0x1c>
+    110a:	e121      	b.n	1350 <morph_config_uart_set_tx_pin+0x260>
+		return; //Begone!
+
+	Sercom * sercom_ptr = get_sercom_channel_ptr(c);
+    110c:	1dfb      	adds	r3, r7, #7
+    110e:	781b      	ldrb	r3, [r3, #0]
+    1110:	0018      	movs	r0, r3
+    1112:	4b91      	ldr	r3, [pc, #580]	; (1358 <morph_config_uart_set_tx_pin+0x268>)
+    1114:	4798      	blx	r3
+    1116:	0003      	movs	r3, r0
+    1118:	60fb      	str	r3, [r7, #12]
+
+	int8_t pin_group = pin_defs[p_tx - 1].pinGroup;
+    111a:	1dbb      	adds	r3, r7, #6
+    111c:	781b      	ldrb	r3, [r3, #0]
+    111e:	b25b      	sxtb	r3, r3
+    1120:	1e5a      	subs	r2, r3, #1
+    1122:	230b      	movs	r3, #11
+    1124:	18f9      	adds	r1, r7, r3
+    1126:	488d      	ldr	r0, [pc, #564]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    1128:	0013      	movs	r3, r2
+    112a:	005b      	lsls	r3, r3, #1
+    112c:	189b      	adds	r3, r3, r2
+    112e:	005b      	lsls	r3, r3, #1
+    1130:	5c1b      	ldrb	r3, [r3, r0]
+    1132:	700b      	strb	r3, [r1, #0]
+	int8_t pin_num = pin_defs[p_tx - 1].pinNumInGroup;
+    1134:	1dbb      	adds	r3, r7, #6
+    1136:	781b      	ldrb	r3, [r3, #0]
+    1138:	b25b      	sxtb	r3, r3
+    113a:	1e5a      	subs	r2, r3, #1
+    113c:	230a      	movs	r3, #10
+    113e:	18f9      	adds	r1, r7, r3
+    1140:	4886      	ldr	r0, [pc, #536]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    1142:	0013      	movs	r3, r2
+    1144:	005b      	lsls	r3, r3, #1
+    1146:	189b      	adds	r3, r3, r2
+    1148:	005b      	lsls	r3, r3, #1
+    114a:	18c3      	adds	r3, r0, r3
+    114c:	3301      	adds	r3, #1
+    114e:	781b      	ldrb	r3, [r3, #0]
+    1150:	700b      	strb	r3, [r1, #0]
+
+	uint8_t txpo_reg_val = 0x0;
+    1152:	2317      	movs	r3, #23
+    1154:	18fb      	adds	r3, r7, r3
+    1156:	2200      	movs	r2, #0
+    1158:	701a      	strb	r2, [r3, #0]
+
+	bool do_config = false;
+    115a:	2316      	movs	r3, #22
+    115c:	18fb      	adds	r3, r7, r3
+    115e:	2200      	movs	r2, #0
+    1160:	701a      	strb	r2, [r3, #0]
+	bool use_config_alt = false;			
+    1162:	2315      	movs	r3, #21
+    1164:	18fb      	adds	r3, r7, r3
+    1166:	2200      	movs	r2, #0
+    1168:	701a      	strb	r2, [r3, #0]
+	
+	if(pin_defs[p_tx].sercomUnit == c)
+    116a:	1dbb      	adds	r3, r7, #6
+    116c:	2200      	movs	r2, #0
+    116e:	569a      	ldrsb	r2, [r3, r2]
+    1170:	497a      	ldr	r1, [pc, #488]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    1172:	0013      	movs	r3, r2
+    1174:	005b      	lsls	r3, r3, #1
+    1176:	189b      	adds	r3, r3, r2
+    1178:	005b      	lsls	r3, r3, #1
+    117a:	18cb      	adds	r3, r1, r3
+    117c:	3302      	adds	r3, #2
+    117e:	781b      	ldrb	r3, [r3, #0]
+    1180:	b25b      	sxtb	r3, r3
+    1182:	001a      	movs	r2, r3
+    1184:	1dfb      	adds	r3, r7, #7
+    1186:	781b      	ldrb	r3, [r3, #0]
+    1188:	429a      	cmp	r2, r3
+    118a:	d144      	bne.n	1216 <morph_config_uart_set_tx_pin+0x126>
+	{
+		uint8_t cur_sercom_pad = pin_defs[p_tx - 1].sercomPad;
+    118c:	1dbb      	adds	r3, r7, #6
+    118e:	781b      	ldrb	r3, [r3, #0]
+    1190:	b25b      	sxtb	r3, r3
+    1192:	1e5a      	subs	r2, r3, #1
+    1194:	4971      	ldr	r1, [pc, #452]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    1196:	0013      	movs	r3, r2
+    1198:	005b      	lsls	r3, r3, #1
+    119a:	189b      	adds	r3, r3, r2
+    119c:	005b      	lsls	r3, r3, #1
+    119e:	18cb      	adds	r3, r1, r3
+    11a0:	3303      	adds	r3, #3
+    11a2:	2200      	movs	r2, #0
+    11a4:	569a      	ldrsb	r2, [r3, r2]
+    11a6:	2309      	movs	r3, #9
+    11a8:	18fb      	adds	r3, r7, r3
+    11aa:	701a      	strb	r2, [r3, #0]
+	
+		// This pin has the correct sercom unit on it!
+		// Does this pin line-up with a correct pad?
+		for(uint8_t i = 0; i < sizeof(uart_tx_defs) / sizeof(uart_tx_defs[0]); i++)
+    11ac:	2314      	movs	r3, #20
+    11ae:	18fb      	adds	r3, r7, r3
+    11b0:	2200      	movs	r2, #0
+    11b2:	701a      	strb	r2, [r3, #0]
+    11b4:	e029      	b.n	120a <morph_config_uart_set_tx_pin+0x11a>
+		{
+			
+			if(uart_tx_defs[i].tx_pad_num == cur_sercom_pad)
+    11b6:	2314      	movs	r3, #20
+    11b8:	18fb      	adds	r3, r7, r3
+    11ba:	781a      	ldrb	r2, [r3, #0]
+    11bc:	4968      	ldr	r1, [pc, #416]	; (1360 <morph_config_uart_set_tx_pin+0x270>)
+    11be:	0013      	movs	r3, r2
+    11c0:	009b      	lsls	r3, r3, #2
+    11c2:	189b      	adds	r3, r3, r2
+    11c4:	565b      	ldrsb	r3, [r3, r1]
+    11c6:	001a      	movs	r2, r3
+    11c8:	2309      	movs	r3, #9
+    11ca:	18fb      	adds	r3, r7, r3
+    11cc:	781b      	ldrb	r3, [r3, #0]
+    11ce:	429a      	cmp	r2, r3
+    11d0:	d114      	bne.n	11fc <morph_config_uart_set_tx_pin+0x10c>
+			{
+				// This tx configuration works!
+				// Configure to use this tx pin.	
+				do_config = true;
+    11d2:	2316      	movs	r3, #22
+    11d4:	18fb      	adds	r3, r7, r3
+    11d6:	2201      	movs	r2, #1
+    11d8:	701a      	strb	r2, [r3, #0]
+				use_config_alt = false;
+    11da:	2315      	movs	r3, #21
+    11dc:	18fb      	adds	r3, r7, r3
+    11de:	2200      	movs	r2, #0
+    11e0:	701a      	strb	r2, [r3, #0]
+				txpo_reg_val = uart_tx_defs[i].txpo_reg_val;
+    11e2:	2314      	movs	r3, #20
+    11e4:	18fb      	adds	r3, r7, r3
+    11e6:	781a      	ldrb	r2, [r3, #0]
+    11e8:	2317      	movs	r3, #23
+    11ea:	18f9      	adds	r1, r7, r3
+    11ec:	485c      	ldr	r0, [pc, #368]	; (1360 <morph_config_uart_set_tx_pin+0x270>)
+    11ee:	0013      	movs	r3, r2
+    11f0:	009b      	lsls	r3, r3, #2
+    11f2:	189b      	adds	r3, r3, r2
+    11f4:	18c3      	adds	r3, r0, r3
+    11f6:	3304      	adds	r3, #4
+    11f8:	781b      	ldrb	r3, [r3, #0]
+    11fa:	700b      	strb	r3, [r1, #0]
+		for(uint8_t i = 0; i < sizeof(uart_tx_defs) / sizeof(uart_tx_defs[0]); i++)
+    11fc:	2314      	movs	r3, #20
+    11fe:	18fb      	adds	r3, r7, r3
+    1200:	781a      	ldrb	r2, [r3, #0]
+    1202:	2314      	movs	r3, #20
+    1204:	18fb      	adds	r3, r7, r3
+    1206:	3201      	adds	r2, #1
+    1208:	701a      	strb	r2, [r3, #0]
+    120a:	2314      	movs	r3, #20
+    120c:	18fb      	adds	r3, r7, r3
+    120e:	781b      	ldrb	r3, [r3, #0]
+    1210:	2b03      	cmp	r3, #3
+    1212:	d9d0      	bls.n	11b6 <morph_config_uart_set_tx_pin+0xc6>
+    1214:	e054      	b.n	12c0 <morph_config_uart_set_tx_pin+0x1d0>
+			}
+			
+		}
+	}
+	else if(pin_defs[p_tx].sercomAltUnit == c)
+    1216:	1dbb      	adds	r3, r7, #6
+    1218:	2200      	movs	r2, #0
+    121a:	569a      	ldrsb	r2, [r3, r2]
+    121c:	494f      	ldr	r1, [pc, #316]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    121e:	0013      	movs	r3, r2
+    1220:	005b      	lsls	r3, r3, #1
+    1222:	189b      	adds	r3, r3, r2
+    1224:	005b      	lsls	r3, r3, #1
+    1226:	18cb      	adds	r3, r1, r3
+    1228:	3304      	adds	r3, #4
+    122a:	781b      	ldrb	r3, [r3, #0]
+    122c:	b25b      	sxtb	r3, r3
+    122e:	001a      	movs	r2, r3
+    1230:	1dfb      	adds	r3, r7, #7
+    1232:	781b      	ldrb	r3, [r3, #0]
+    1234:	429a      	cmp	r2, r3
+    1236:	d143      	bne.n	12c0 <morph_config_uart_set_tx_pin+0x1d0>
+	{
+		uint8_t cur_sercom_pad = pin_defs[p_tx - 1].sercomAltPad;
+    1238:	1dbb      	adds	r3, r7, #6
+    123a:	781b      	ldrb	r3, [r3, #0]
+    123c:	b25b      	sxtb	r3, r3
+    123e:	1e5a      	subs	r2, r3, #1
+    1240:	4946      	ldr	r1, [pc, #280]	; (135c <morph_config_uart_set_tx_pin+0x26c>)
+    1242:	0013      	movs	r3, r2
+    1244:	005b      	lsls	r3, r3, #1
+    1246:	189b      	adds	r3, r3, r2
+    1248:	005b      	lsls	r3, r3, #1
+    124a:	18cb      	adds	r3, r1, r3
+    124c:	3305      	adds	r3, #5
+    124e:	2200      	movs	r2, #0
+    1250:	569a      	ldrsb	r2, [r3, r2]
+    1252:	2308      	movs	r3, #8
+    1254:	18fb      	adds	r3, r7, r3
+    1256:	701a      	strb	r2, [r3, #0]
+			
+		// This pin has the correct sercom unit on it!
+		// Does this pin line-up with a correct pad?
+		for(uint8_t i = 0; i < sizeof(uart_tx_defs) / sizeof(uart_tx_defs[0]); i++)
+    1258:	2313      	movs	r3, #19
+    125a:	18fb      	adds	r3, r7, r3
+    125c:	2200      	movs	r2, #0
+    125e:	701a      	strb	r2, [r3, #0]
+    1260:	e029      	b.n	12b6 <morph_config_uart_set_tx_pin+0x1c6>
+		{
+				
+			if(uart_tx_defs[i].tx_pad_num == cur_sercom_pad)
+    1262:	2313      	movs	r3, #19
+    1264:	18fb      	adds	r3, r7, r3
+    1266:	781a      	ldrb	r2, [r3, #0]
+    1268:	493d      	ldr	r1, [pc, #244]	; (1360 <morph_config_uart_set_tx_pin+0x270>)
+    126a:	0013      	movs	r3, r2
+    126c:	009b      	lsls	r3, r3, #2
+    126e:	189b      	adds	r3, r3, r2
+    1270:	565b      	ldrsb	r3, [r3, r1]
+    1272:	001a      	movs	r2, r3
+    1274:	2308      	movs	r3, #8
+    1276:	18fb      	adds	r3, r7, r3
+    1278:	781b      	ldrb	r3, [r3, #0]
+    127a:	429a      	cmp	r2, r3
+    127c:	d114      	bne.n	12a8 <morph_config_uart_set_tx_pin+0x1b8>
+			{
+				// This tx configuration works!
+				// Configure to use this alt-tx pin.
+				do_config = true;
+    127e:	2316      	movs	r3, #22
+    1280:	18fb      	adds	r3, r7, r3
+    1282:	2201      	movs	r2, #1
+    1284:	701a      	strb	r2, [r3, #0]
+				use_config_alt = true;
+    1286:	2315      	movs	r3, #21
+    1288:	18fb      	adds	r3, r7, r3
+    128a:	2201      	movs	r2, #1
+    128c:	701a      	strb	r2, [r3, #0]
+				txpo_reg_val = uart_tx_defs[i].txpo_reg_val;
+    128e:	2313      	movs	r3, #19
+    1290:	18fb      	adds	r3, r7, r3
+    1292:	781a      	ldrb	r2, [r3, #0]
+    1294:	2317      	movs	r3, #23
+    1296:	18f9      	adds	r1, r7, r3
+    1298:	4831      	ldr	r0, [pc, #196]	; (1360 <morph_config_uart_set_tx_pin+0x270>)
+    129a:	0013      	movs	r3, r2
+    129c:	009b      	lsls	r3, r3, #2
+    129e:	189b      	adds	r3, r3, r2
+    12a0:	18c3      	adds	r3, r0, r3
+    12a2:	3304      	adds	r3, #4
+    12a4:	781b      	ldrb	r3, [r3, #0]
+    12a6:	700b      	strb	r3, [r1, #0]
+		for(uint8_t i = 0; i < sizeof(uart_tx_defs) / sizeof(uart_tx_defs[0]); i++)
+    12a8:	2313      	movs	r3, #19
+    12aa:	18fb      	adds	r3, r7, r3
+    12ac:	781a      	ldrb	r2, [r3, #0]
+    12ae:	2313      	movs	r3, #19
+    12b0:	18fb      	adds	r3, r7, r3
+    12b2:	3201      	adds	r2, #1
+    12b4:	701a      	strb	r2, [r3, #0]
+    12b6:	2313      	movs	r3, #19
+    12b8:	18fb      	adds	r3, r7, r3
+    12ba:	781b      	ldrb	r3, [r3, #0]
+    12bc:	2b03      	cmp	r3, #3
+    12be:	d9d0      	bls.n	1262 <morph_config_uart_set_tx_pin+0x172>
+			}
+				
+		}
+	}
+	
+	if(do_config)
+    12c0:	2316      	movs	r3, #22
+    12c2:	18fb      	adds	r3, r7, r3
+    12c4:	781b      	ldrb	r3, [r3, #0]
+    12c6:	2b00      	cmp	r3, #0
+    12c8:	d043      	beq.n	1352 <morph_config_uart_set_tx_pin+0x262>
+	{
+		if(use_config_alt)
+    12ca:	2315      	movs	r3, #21
+    12cc:	18fb      	adds	r3, r7, r3
+    12ce:	781b      	ldrb	r3, [r3, #0]
+    12d0:	2b00      	cmp	r3, #0
+    12d2:	d00a      	beq.n	12ea <morph_config_uart_set_tx_pin+0x1fa>
+			set_mux_group_config(SERCOM_ALT_PMUX, pin_group, pin_num);
+    12d4:	230b      	movs	r3, #11
+    12d6:	18fb      	adds	r3, r7, r3
+    12d8:	7819      	ldrb	r1, [r3, #0]
+    12da:	230a      	movs	r3, #10
+    12dc:	18fb      	adds	r3, r7, r3
+    12de:	781b      	ldrb	r3, [r3, #0]
+    12e0:	001a      	movs	r2, r3
+    12e2:	2003      	movs	r0, #3
+    12e4:	4b1f      	ldr	r3, [pc, #124]	; (1364 <morph_config_uart_set_tx_pin+0x274>)
+    12e6:	4798      	blx	r3
+    12e8:	e009      	b.n	12fe <morph_config_uart_set_tx_pin+0x20e>
+		else
+			set_mux_group_config(SERCOM_PMUX, pin_group, pin_num);		
+    12ea:	230b      	movs	r3, #11
+    12ec:	18fb      	adds	r3, r7, r3
+    12ee:	7819      	ldrb	r1, [r3, #0]
+    12f0:	230a      	movs	r3, #10
+    12f2:	18fb      	adds	r3, r7, r3
+    12f4:	781b      	ldrb	r3, [r3, #0]
+    12f6:	001a      	movs	r2, r3
+    12f8:	2002      	movs	r0, #2
+    12fa:	4b1a      	ldr	r3, [pc, #104]	; (1364 <morph_config_uart_set_tx_pin+0x274>)
+    12fc:	4798      	blx	r3
+	
+		// This configures the TX settings for the sercom unit.
+		sercom_ptr->USART.CTRLA.bit.TXPO = txpo_reg_val;
+    12fe:	2317      	movs	r3, #23
+    1300:	18fb      	adds	r3, r7, r3
+    1302:	781b      	ldrb	r3, [r3, #0]
+    1304:	2203      	movs	r2, #3
+    1306:	4013      	ands	r3, r2
+    1308:	b2d9      	uxtb	r1, r3
+    130a:	68fb      	ldr	r3, [r7, #12]
+    130c:	681a      	ldr	r2, [r3, #0]
+    130e:	2003      	movs	r0, #3
+    1310:	4001      	ands	r1, r0
+    1312:	0409      	lsls	r1, r1, #16
+    1314:	4814      	ldr	r0, [pc, #80]	; (1368 <morph_config_uart_set_tx_pin+0x278>)
+    1316:	4002      	ands	r2, r0
+    1318:	430a      	orrs	r2, r1
+    131a:	601a      	str	r2, [r3, #0]
+	
+		// After configuring the mux functions, enable them on the pin.
+		PORT->Group[pin_group].PINCFG[pin_num].bit.PMUXEN = 1;
+    131c:	4813      	ldr	r0, [pc, #76]	; (136c <morph_config_uart_set_tx_pin+0x27c>)
+    131e:	230b      	movs	r3, #11
+    1320:	18fb      	adds	r3, r7, r3
+    1322:	2200      	movs	r2, #0
+    1324:	569a      	ldrsb	r2, [r3, r2]
+    1326:	230a      	movs	r3, #10
+    1328:	18fb      	adds	r3, r7, r3
+    132a:	781b      	ldrb	r3, [r3, #0]
+    132c:	b25b      	sxtb	r3, r3
+    132e:	2140      	movs	r1, #64	; 0x40
+    1330:	01d2      	lsls	r2, r2, #7
+    1332:	1882      	adds	r2, r0, r2
+    1334:	18d3      	adds	r3, r2, r3
+    1336:	185a      	adds	r2, r3, r1
+    1338:	7813      	ldrb	r3, [r2, #0]
+    133a:	2101      	movs	r1, #1
+    133c:	430b      	orrs	r3, r1
+    133e:	7013      	strb	r3, [r2, #0]
+		
+		// Save this config
+		uart_current_defs[c].tx_pin_num = p_tx;
+    1340:	1dfb      	adds	r3, r7, #7
+    1342:	781a      	ldrb	r2, [r3, #0]
+    1344:	4b0a      	ldr	r3, [pc, #40]	; (1370 <morph_config_uart_set_tx_pin+0x280>)
+    1346:	0052      	lsls	r2, r2, #1
+    1348:	1db9      	adds	r1, r7, #6
+    134a:	7809      	ldrb	r1, [r1, #0]
+    134c:	54d1      	strb	r1, [r2, r3]
+    134e:	e000      	b.n	1352 <morph_config_uart_set_tx_pin+0x262>
+		return; //Begone!
+    1350:	46c0      	nop			; (mov r8, r8)
+	}
+					
+
+	
+}
+    1352:	46bd      	mov	sp, r7
+    1354:	b006      	add	sp, #24
+    1356:	bd80      	pop	{r7, pc}
+    1358:	00000b91 	.word	0x00000b91
+    135c:	20000004 	.word	0x20000004
+    1360:	20000184 	.word	0x20000184
+    1364:	00000aed 	.word	0x00000aed
+    1368:	fffcffff 	.word	0xfffcffff
+    136c:	41004400 	.word	0x41004400
+    1370:	200001a4 	.word	0x200001a4
+
+00001374 <morph_config_uart_set_rx_pin>:
+
+void morph_config_uart_set_rx_pin(MorphUARTChannel c, MorphPinNumber p_rx)
+{
+    1374:	b580      	push	{r7, lr}
+    1376:	b084      	sub	sp, #16
+    1378:	af00      	add	r7, sp, #0
+    137a:	0002      	movs	r2, r0
+    137c:	1dfb      	adds	r3, r7, #7
+    137e:	701a      	strb	r2, [r3, #0]
+    1380:	1dbb      	adds	r3, r7, #6
+    1382:	1c0a      	adds	r2, r1, #0
+    1384:	701a      	strb	r2, [r3, #0]
+	
+	if(c < 0 || c > 5)
+    1386:	1dfb      	adds	r3, r7, #7
+    1388:	781b      	ldrb	r3, [r3, #0]
+    138a:	2b05      	cmp	r3, #5
+    138c:	d900      	bls.n	1390 <morph_config_uart_set_rx_pin+0x1c>
+    138e:	e12a      	b.n	15e6 <morph_config_uart_set_rx_pin+0x272>
+		return; //Begone!
+		
+	Sercom * sercom_ptr = get_sercom_channel_ptr(c);
+    1390:	1dfb      	adds	r3, r7, #7
+    1392:	781b      	ldrb	r3, [r3, #0]
+    1394:	0018      	movs	r0, r3
+    1396:	4b96      	ldr	r3, [pc, #600]	; (15f0 <morph_config_uart_set_rx_pin+0x27c>)
+    1398:	4798      	blx	r3
+    139a:	0003      	movs	r3, r0
+    139c:	60fb      	str	r3, [r7, #12]
+
+
+	int8_t pin_group = pin_defs[p_rx - 1].pinGroup;
+    139e:	1dbb      	adds	r3, r7, #6
+    13a0:	781b      	ldrb	r3, [r3, #0]
+    13a2:	b25b      	sxtb	r3, r3
+    13a4:	1e5a      	subs	r2, r3, #1
+    13a6:	230b      	movs	r3, #11
+    13a8:	18f9      	adds	r1, r7, r3
+    13aa:	4892      	ldr	r0, [pc, #584]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    13ac:	0013      	movs	r3, r2
+    13ae:	005b      	lsls	r3, r3, #1
+    13b0:	189b      	adds	r3, r3, r2
+    13b2:	005b      	lsls	r3, r3, #1
+    13b4:	5c1b      	ldrb	r3, [r3, r0]
+    13b6:	700b      	strb	r3, [r1, #0]
+	int8_t pin_num = pin_defs[p_rx - 1].pinNumInGroup;
+    13b8:	1dbb      	adds	r3, r7, #6
+    13ba:	781b      	ldrb	r3, [r3, #0]
+    13bc:	b25b      	sxtb	r3, r3
+    13be:	1e5a      	subs	r2, r3, #1
+    13c0:	230a      	movs	r3, #10
+    13c2:	18f9      	adds	r1, r7, r3
+    13c4:	488b      	ldr	r0, [pc, #556]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    13c6:	0013      	movs	r3, r2
+    13c8:	005b      	lsls	r3, r3, #1
+    13ca:	189b      	adds	r3, r3, r2
+    13cc:	005b      	lsls	r3, r3, #1
+    13ce:	18c3      	adds	r3, r0, r3
+    13d0:	3301      	adds	r3, #1
+    13d2:	781b      	ldrb	r3, [r3, #0]
+    13d4:	700b      	strb	r3, [r1, #0]
+	int8_t sercom_unit  = pin_defs[p_rx - 1].sercomUnit;
+    13d6:	1dbb      	adds	r3, r7, #6
+    13d8:	781b      	ldrb	r3, [r3, #0]
+    13da:	b25b      	sxtb	r3, r3
+    13dc:	1e5a      	subs	r2, r3, #1
+    13de:	2309      	movs	r3, #9
+    13e0:	18f9      	adds	r1, r7, r3
+    13e2:	4884      	ldr	r0, [pc, #528]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    13e4:	0013      	movs	r3, r2
+    13e6:	005b      	lsls	r3, r3, #1
+    13e8:	189b      	adds	r3, r3, r2
+    13ea:	005b      	lsls	r3, r3, #1
+    13ec:	18c3      	adds	r3, r0, r3
+    13ee:	3302      	adds	r3, #2
+    13f0:	781b      	ldrb	r3, [r3, #0]
+    13f2:	700b      	strb	r3, [r1, #0]
+	int8_t sercom_alt_unit = pin_defs[p_rx - 1].sercomAltUnit;
+    13f4:	1dbb      	adds	r3, r7, #6
+    13f6:	781b      	ldrb	r3, [r3, #0]
+    13f8:	b25b      	sxtb	r3, r3
+    13fa:	1e5a      	subs	r2, r3, #1
+    13fc:	2308      	movs	r3, #8
+    13fe:	18f9      	adds	r1, r7, r3
+    1400:	487c      	ldr	r0, [pc, #496]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    1402:	0013      	movs	r3, r2
+    1404:	005b      	lsls	r3, r3, #1
+    1406:	189b      	adds	r3, r3, r2
+    1408:	005b      	lsls	r3, r3, #1
+    140a:	18c3      	adds	r3, r0, r3
+    140c:	3304      	adds	r3, #4
+    140e:	781b      	ldrb	r3, [r3, #0]
+    1410:	700b      	strb	r3, [r1, #0]
+	
+	if(pin_defs[p_rx - 1].sercomUnit == c)
+    1412:	1dbb      	adds	r3, r7, #6
+    1414:	781b      	ldrb	r3, [r3, #0]
+    1416:	b25b      	sxtb	r3, r3
+    1418:	1e5a      	subs	r2, r3, #1
+    141a:	4976      	ldr	r1, [pc, #472]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    141c:	0013      	movs	r3, r2
+    141e:	005b      	lsls	r3, r3, #1
+    1420:	189b      	adds	r3, r3, r2
+    1422:	005b      	lsls	r3, r3, #1
+    1424:	18cb      	adds	r3, r1, r3
+    1426:	3302      	adds	r3, #2
+    1428:	781b      	ldrb	r3, [r3, #0]
+    142a:	b25b      	sxtb	r3, r3
+    142c:	001a      	movs	r2, r3
+    142e:	1dfb      	adds	r3, r7, #7
+    1430:	781b      	ldrb	r3, [r3, #0]
+    1432:	429a      	cmp	r2, r3
+    1434:	d162      	bne.n	14fc <morph_config_uart_set_rx_pin+0x188>
+	{
+		
+		// Set the direction to input!
+		PORT->Group[pin_group].DIRCLR.reg = (1ul << pin_num);
+    1436:	4970      	ldr	r1, [pc, #448]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    1438:	230b      	movs	r3, #11
+    143a:	18fb      	adds	r3, r7, r3
+    143c:	781b      	ldrb	r3, [r3, #0]
+    143e:	b25b      	sxtb	r3, r3
+    1440:	220a      	movs	r2, #10
+    1442:	18ba      	adds	r2, r7, r2
+    1444:	7812      	ldrb	r2, [r2, #0]
+    1446:	b252      	sxtb	r2, r2
+    1448:	2001      	movs	r0, #1
+    144a:	4090      	lsls	r0, r2
+    144c:	0002      	movs	r2, r0
+    144e:	01db      	lsls	r3, r3, #7
+    1450:	18cb      	adds	r3, r1, r3
+    1452:	3304      	adds	r3, #4
+    1454:	601a      	str	r2, [r3, #0]
+		// Set the input enable to enabled!
+		PORT->Group[pin_group].PINCFG[pin_num].bit.INEN = 1;
+    1456:	4868      	ldr	r0, [pc, #416]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    1458:	230b      	movs	r3, #11
+    145a:	18fb      	adds	r3, r7, r3
+    145c:	2200      	movs	r2, #0
+    145e:	569a      	ldrsb	r2, [r3, r2]
+    1460:	230a      	movs	r3, #10
+    1462:	18fb      	adds	r3, r7, r3
+    1464:	781b      	ldrb	r3, [r3, #0]
+    1466:	b25b      	sxtb	r3, r3
+    1468:	2140      	movs	r1, #64	; 0x40
+    146a:	01d2      	lsls	r2, r2, #7
+    146c:	1882      	adds	r2, r0, r2
+    146e:	18d3      	adds	r3, r2, r3
+    1470:	185a      	adds	r2, r3, r1
+    1472:	7813      	ldrb	r3, [r2, #0]
+    1474:	2102      	movs	r1, #2
+    1476:	430b      	orrs	r3, r1
+    1478:	7013      	strb	r3, [r2, #0]
+		
+		// This pin has the correct sercom unit on it!
+		// The rx pin can be on any pad of the sercom.
+		set_mux_group_config(SERCOM_PMUX, pin_group, pin_num);
+    147a:	230b      	movs	r3, #11
+    147c:	18fb      	adds	r3, r7, r3
+    147e:	7819      	ldrb	r1, [r3, #0]
+    1480:	230a      	movs	r3, #10
+    1482:	18fb      	adds	r3, r7, r3
+    1484:	781b      	ldrb	r3, [r3, #0]
+    1486:	001a      	movs	r2, r3
+    1488:	2002      	movs	r0, #2
+    148a:	4b5c      	ldr	r3, [pc, #368]	; (15fc <morph_config_uart_set_rx_pin+0x288>)
+    148c:	4798      	blx	r3
+		
+		// After configuring the mux functions, enable them on the pin.
+		PORT->Group[pin_group].PINCFG[pin_num].bit.PMUXEN = 1;
+    148e:	485a      	ldr	r0, [pc, #360]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    1490:	230b      	movs	r3, #11
+    1492:	18fb      	adds	r3, r7, r3
+    1494:	2200      	movs	r2, #0
+    1496:	569a      	ldrsb	r2, [r3, r2]
+    1498:	230a      	movs	r3, #10
+    149a:	18fb      	adds	r3, r7, r3
+    149c:	781b      	ldrb	r3, [r3, #0]
+    149e:	b25b      	sxtb	r3, r3
+    14a0:	2140      	movs	r1, #64	; 0x40
+    14a2:	01d2      	lsls	r2, r2, #7
+    14a4:	1882      	adds	r2, r0, r2
+    14a6:	18d3      	adds	r3, r2, r3
+    14a8:	185a      	adds	r2, r3, r1
+    14aa:	7813      	ldrb	r3, [r2, #0]
+    14ac:	2101      	movs	r1, #1
+    14ae:	430b      	orrs	r3, r1
+    14b0:	7013      	strb	r3, [r2, #0]
+
+		sercom_ptr->USART.CTRLA.bit.RXPO = pin_defs[p_rx - 1].sercomPad;
+    14b2:	1dbb      	adds	r3, r7, #6
+    14b4:	781b      	ldrb	r3, [r3, #0]
+    14b6:	b25b      	sxtb	r3, r3
+    14b8:	1e5a      	subs	r2, r3, #1
+    14ba:	494e      	ldr	r1, [pc, #312]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    14bc:	0013      	movs	r3, r2
+    14be:	005b      	lsls	r3, r3, #1
+    14c0:	189b      	adds	r3, r3, r2
+    14c2:	005b      	lsls	r3, r3, #1
+    14c4:	18cb      	adds	r3, r1, r3
+    14c6:	3303      	adds	r3, #3
+    14c8:	781b      	ldrb	r3, [r3, #0]
+    14ca:	b25b      	sxtb	r3, r3
+    14cc:	b2db      	uxtb	r3, r3
+    14ce:	1c1a      	adds	r2, r3, #0
+    14d0:	2303      	movs	r3, #3
+    14d2:	4013      	ands	r3, r2
+    14d4:	b2d9      	uxtb	r1, r3
+    14d6:	68fb      	ldr	r3, [r7, #12]
+    14d8:	681a      	ldr	r2, [r3, #0]
+    14da:	2003      	movs	r0, #3
+    14dc:	4001      	ands	r1, r0
+    14de:	0509      	lsls	r1, r1, #20
+    14e0:	4847      	ldr	r0, [pc, #284]	; (1600 <morph_config_uart_set_rx_pin+0x28c>)
+    14e2:	4002      	ands	r2, r0
+    14e4:	430a      	orrs	r2, r1
+    14e6:	601a      	str	r2, [r3, #0]
+
+		// Save this config
+		uart_current_defs[c].rx_pin_num = p_rx;
+    14e8:	1dfb      	adds	r3, r7, #7
+    14ea:	781b      	ldrb	r3, [r3, #0]
+    14ec:	4a45      	ldr	r2, [pc, #276]	; (1604 <morph_config_uart_set_rx_pin+0x290>)
+    14ee:	005b      	lsls	r3, r3, #1
+    14f0:	18d3      	adds	r3, r2, r3
+    14f2:	3301      	adds	r3, #1
+    14f4:	1dba      	adds	r2, r7, #6
+    14f6:	7812      	ldrb	r2, [r2, #0]
+    14f8:	701a      	strb	r2, [r3, #0]
+    14fa:	e075      	b.n	15e8 <morph_config_uart_set_rx_pin+0x274>
+
+	}
+	else if(pin_defs[p_rx - 1].sercomAltUnit == c)
+    14fc:	1dbb      	adds	r3, r7, #6
+    14fe:	781b      	ldrb	r3, [r3, #0]
+    1500:	b25b      	sxtb	r3, r3
+    1502:	1e5a      	subs	r2, r3, #1
+    1504:	493b      	ldr	r1, [pc, #236]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    1506:	0013      	movs	r3, r2
+    1508:	005b      	lsls	r3, r3, #1
+    150a:	189b      	adds	r3, r3, r2
+    150c:	005b      	lsls	r3, r3, #1
+    150e:	18cb      	adds	r3, r1, r3
+    1510:	3304      	adds	r3, #4
+    1512:	781b      	ldrb	r3, [r3, #0]
+    1514:	b25b      	sxtb	r3, r3
+    1516:	001a      	movs	r2, r3
+    1518:	1dfb      	adds	r3, r7, #7
+    151a:	781b      	ldrb	r3, [r3, #0]
+    151c:	429a      	cmp	r2, r3
+    151e:	d163      	bne.n	15e8 <morph_config_uart_set_rx_pin+0x274>
+	{
+		// This pin has the correct sercom unit on it!
+		// The rx pin can be on any pad of the sercom.
+		set_mux_group_config(SERCOM_ALT_PMUX, pin_group, pin_num);
+    1520:	230b      	movs	r3, #11
+    1522:	18fb      	adds	r3, r7, r3
+    1524:	7819      	ldrb	r1, [r3, #0]
+    1526:	230a      	movs	r3, #10
+    1528:	18fb      	adds	r3, r7, r3
+    152a:	781b      	ldrb	r3, [r3, #0]
+    152c:	001a      	movs	r2, r3
+    152e:	2003      	movs	r0, #3
+    1530:	4b32      	ldr	r3, [pc, #200]	; (15fc <morph_config_uart_set_rx_pin+0x288>)
+    1532:	4798      	blx	r3
+
+		// After configuring the mux functions, enable them on the pin.
+		PORT->Group[pin_group].PINCFG[pin_num].bit.PMUXEN = 1;
+    1534:	4830      	ldr	r0, [pc, #192]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    1536:	230b      	movs	r3, #11
+    1538:	18fb      	adds	r3, r7, r3
+    153a:	2200      	movs	r2, #0
+    153c:	569a      	ldrsb	r2, [r3, r2]
+    153e:	230a      	movs	r3, #10
+    1540:	18fb      	adds	r3, r7, r3
+    1542:	781b      	ldrb	r3, [r3, #0]
+    1544:	b25b      	sxtb	r3, r3
+    1546:	2140      	movs	r1, #64	; 0x40
+    1548:	01d2      	lsls	r2, r2, #7
+    154a:	1882      	adds	r2, r0, r2
+    154c:	18d3      	adds	r3, r2, r3
+    154e:	185a      	adds	r2, r3, r1
+    1550:	7813      	ldrb	r3, [r2, #0]
+    1552:	2101      	movs	r1, #1
+    1554:	430b      	orrs	r3, r1
+    1556:	7013      	strb	r3, [r2, #0]
+
+		sercom_ptr->USART.CTRLA.bit.RXPO = pin_defs[p_rx - 1].sercomAltPad;
+    1558:	1dbb      	adds	r3, r7, #6
+    155a:	781b      	ldrb	r3, [r3, #0]
+    155c:	b25b      	sxtb	r3, r3
+    155e:	1e5a      	subs	r2, r3, #1
+    1560:	4924      	ldr	r1, [pc, #144]	; (15f4 <morph_config_uart_set_rx_pin+0x280>)
+    1562:	0013      	movs	r3, r2
+    1564:	005b      	lsls	r3, r3, #1
+    1566:	189b      	adds	r3, r3, r2
+    1568:	005b      	lsls	r3, r3, #1
+    156a:	18cb      	adds	r3, r1, r3
+    156c:	3305      	adds	r3, #5
+    156e:	781b      	ldrb	r3, [r3, #0]
+    1570:	b25b      	sxtb	r3, r3
+    1572:	b2db      	uxtb	r3, r3
+    1574:	1c1a      	adds	r2, r3, #0
+    1576:	2303      	movs	r3, #3
+    1578:	4013      	ands	r3, r2
+    157a:	b2d9      	uxtb	r1, r3
+    157c:	68fb      	ldr	r3, [r7, #12]
+    157e:	681a      	ldr	r2, [r3, #0]
+    1580:	2003      	movs	r0, #3
+    1582:	4001      	ands	r1, r0
+    1584:	0509      	lsls	r1, r1, #20
+    1586:	481e      	ldr	r0, [pc, #120]	; (1600 <morph_config_uart_set_rx_pin+0x28c>)
+    1588:	4002      	ands	r2, r0
+    158a:	430a      	orrs	r2, r1
+    158c:	601a      	str	r2, [r3, #0]
+
+		// Set the direction to input!
+		PORT->Group[pin_group].DIRCLR.reg = (1ul << pin_num);
+    158e:	491a      	ldr	r1, [pc, #104]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    1590:	230b      	movs	r3, #11
+    1592:	18fb      	adds	r3, r7, r3
+    1594:	781b      	ldrb	r3, [r3, #0]
+    1596:	b25b      	sxtb	r3, r3
+    1598:	220a      	movs	r2, #10
+    159a:	18ba      	adds	r2, r7, r2
+    159c:	7812      	ldrb	r2, [r2, #0]
+    159e:	b252      	sxtb	r2, r2
+    15a0:	2001      	movs	r0, #1
+    15a2:	4090      	lsls	r0, r2
+    15a4:	0002      	movs	r2, r0
+    15a6:	01db      	lsls	r3, r3, #7
+    15a8:	18cb      	adds	r3, r1, r3
+    15aa:	3304      	adds	r3, #4
+    15ac:	601a      	str	r2, [r3, #0]
+		// Set the input enable to enabled!
+		PORT->Group[pin_group].PINCFG[pin_num].bit.INEN = 1;
+    15ae:	4812      	ldr	r0, [pc, #72]	; (15f8 <morph_config_uart_set_rx_pin+0x284>)
+    15b0:	230b      	movs	r3, #11
+    15b2:	18fb      	adds	r3, r7, r3
+    15b4:	2200      	movs	r2, #0
+    15b6:	569a      	ldrsb	r2, [r3, r2]
+    15b8:	230a      	movs	r3, #10
+    15ba:	18fb      	adds	r3, r7, r3
+    15bc:	781b      	ldrb	r3, [r3, #0]
+    15be:	b25b      	sxtb	r3, r3
+    15c0:	2140      	movs	r1, #64	; 0x40
+    15c2:	01d2      	lsls	r2, r2, #7
+    15c4:	1882      	adds	r2, r0, r2
+    15c6:	18d3      	adds	r3, r2, r3
+    15c8:	185a      	adds	r2, r3, r1
+    15ca:	7813      	ldrb	r3, [r2, #0]
+    15cc:	2102      	movs	r1, #2
+    15ce:	430b      	orrs	r3, r1
+    15d0:	7013      	strb	r3, [r2, #0]
+
+
+		// Save this config
+		uart_current_defs[c].rx_pin_num = p_rx;
+    15d2:	1dfb      	adds	r3, r7, #7
+    15d4:	781b      	ldrb	r3, [r3, #0]
+    15d6:	4a0b      	ldr	r2, [pc, #44]	; (1604 <morph_config_uart_set_rx_pin+0x290>)
+    15d8:	005b      	lsls	r3, r3, #1
+    15da:	18d3      	adds	r3, r2, r3
+    15dc:	3301      	adds	r3, #1
+    15de:	1dba      	adds	r2, r7, #6
+    15e0:	7812      	ldrb	r2, [r2, #0]
+    15e2:	701a      	strb	r2, [r3, #0]
+    15e4:	e000      	b.n	15e8 <morph_config_uart_set_rx_pin+0x274>
+		return; //Begone!
+    15e6:	46c0      	nop			; (mov r8, r8)
+
+	}
+}
+    15e8:	46bd      	mov	sp, r7
+    15ea:	b004      	add	sp, #16
+    15ec:	bd80      	pop	{r7, pc}
+    15ee:	46c0      	nop			; (mov r8, r8)
+    15f0:	00000b91 	.word	0x00000b91
+    15f4:	20000004 	.word	0x20000004
+    15f8:	41004400 	.word	0x41004400
+    15fc:	00000aed 	.word	0x00000aed
+    1600:	ffcfffff 	.word	0xffcfffff
+    1604:	200001a4 	.word	0x200001a4
+
+00001608 <SysTick_Handler>:
+
+
+MorphTimeValue millisecond_tick = 0;
+
+void SysTick_Handler(void)
+{
+    1608:	b590      	push	{r4, r7, lr}
+    160a:	af00      	add	r7, sp, #0
+	// Handles the SysTick event to log the current milliseconds.
+	millisecond_tick ++;
+    160c:	4b06      	ldr	r3, [pc, #24]	; (1628 <SysTick_Handler+0x20>)
+    160e:	685c      	ldr	r4, [r3, #4]
+    1610:	681b      	ldr	r3, [r3, #0]
+    1612:	2101      	movs	r1, #1
+    1614:	2200      	movs	r2, #0
+    1616:	185b      	adds	r3, r3, r1
+    1618:	4154      	adcs	r4, r2
+    161a:	4a03      	ldr	r2, [pc, #12]	; (1628 <SysTick_Handler+0x20>)
+    161c:	6013      	str	r3, [r2, #0]
+    161e:	6054      	str	r4, [r2, #4]
+	
+}
+    1620:	46c0      	nop			; (mov r8, r8)
+    1622:	46bd      	mov	sp, r7
+    1624:	bd90      	pop	{r4, r7, pc}
+    1626:	46c0      	nop			; (mov r8, r8)
+    1628:	20000668 	.word	0x20000668
+
+0000162c <morph_config_time_init>:
+
+void morph_config_time_init(MorphTimerNumber tn, enum MorphTimerResolution res)
+{
+    162c:	b580      	push	{r7, lr}
+    162e:	b082      	sub	sp, #8
+    1630:	af00      	add	r7, sp, #0
+    1632:	0002      	movs	r2, r0
+    1634:	1dfb      	adds	r3, r7, #7
+    1636:	701a      	strb	r2, [r3, #0]
+    1638:	1dbb      	adds	r3, r7, #6
+    163a:	1c0a      	adds	r2, r1, #0
+    163c:	701a      	strb	r2, [r3, #0]
+	// Do nothing.
+	return;
+    163e:	46c0      	nop			; (mov r8, r8)
+	
+}
+    1640:	46bd      	mov	sp, r7
+    1642:	b002      	add	sp, #8
+    1644:	bd80      	pop	{r7, pc}
+	...
+
+00001648 <morph_config_time_init_rtc>:
+
+void morph_config_time_init_rtc()
+{
+    1648:	b580      	push	{r7, lr}
+    164a:	af00      	add	r7, sp, #0
+	// Setup the RTC
+
+	SysTick->CTRL = 0;                    // Disable the SysTick Module
+    164c:	4b0c      	ldr	r3, [pc, #48]	; (1680 <morph_config_time_init_rtc+0x38>)
+    164e:	2200      	movs	r2, #0
+    1650:	601a      	str	r2, [r3, #0]
+	SysTick->LOAD = 999UL;                // Set the Reload Register for 1mS interrupts
+    1652:	4b0b      	ldr	r3, [pc, #44]	; (1680 <morph_config_time_init_rtc+0x38>)
+    1654:	4a0b      	ldr	r2, [pc, #44]	; (1684 <morph_config_time_init_rtc+0x3c>)
+    1656:	605a      	str	r2, [r3, #4]
+	NVIC_SetPriority(SysTick_IRQn, 3);    // Set the interrupt priority to least urgency
+    1658:	2301      	movs	r3, #1
+    165a:	425b      	negs	r3, r3
+    165c:	2103      	movs	r1, #3
+    165e:	0018      	movs	r0, r3
+    1660:	4b09      	ldr	r3, [pc, #36]	; (1688 <morph_config_time_init_rtc+0x40>)
+    1662:	4798      	blx	r3
+	SysTick->VAL = 0;                    // Clear the Current Value register
+    1664:	4b06      	ldr	r3, [pc, #24]	; (1680 <morph_config_time_init_rtc+0x38>)
+    1666:	2200      	movs	r2, #0
+    1668:	609a      	str	r2, [r3, #8]
+	SysTick->CTRL = 0x00000007;        // Enable SysTick, Enable SysTick Exceptions, Use CPU Clock
+    166a:	4b05      	ldr	r3, [pc, #20]	; (1680 <morph_config_time_init_rtc+0x38>)
+    166c:	2207      	movs	r2, #7
+    166e:	601a      	str	r2, [r3, #0]
+	NVIC_EnableIRQ(SysTick_IRQn);        // Enable the SysTick Interrupt (Global)
+    1670:	2301      	movs	r3, #1
+    1672:	425b      	negs	r3, r3
+    1674:	0018      	movs	r0, r3
+    1676:	4b05      	ldr	r3, [pc, #20]	; (168c <morph_config_time_init_rtc+0x44>)
+    1678:	4798      	blx	r3
+	
+}
+    167a:	46c0      	nop			; (mov r8, r8)
+    167c:	46bd      	mov	sp, r7
+    167e:	bd80      	pop	{r7, pc}
+    1680:	e000e010 	.word	0xe000e010
+    1684:	000003e7 	.word	0x000003e7
+    1688:	000004b9 	.word	0x000004b9
+    168c:	00000485 	.word	0x00000485
+
+00001690 <morph_config_time_millis>:
+
+MorphTimeValue morph_config_time_millis()
+{
+    1690:	b590      	push	{r4, r7, lr}
+    1692:	af00      	add	r7, sp, #0
+	// Get the current millisecond time and return.
+	return millisecond_tick;
+    1694:	4b03      	ldr	r3, [pc, #12]	; (16a4 <morph_config_time_millis+0x14>)
+    1696:	685c      	ldr	r4, [r3, #4]
+    1698:	681b      	ldr	r3, [r3, #0]
+	
+}
+    169a:	0018      	movs	r0, r3
+    169c:	0021      	movs	r1, r4
+    169e:	46bd      	mov	sp, r7
+    16a0:	bd90      	pop	{r4, r7, pc}
+    16a2:	46c0      	nop			; (mov r8, r8)
+    16a4:	20000668 	.word	0x20000668
+
+000016a8 <morph_config_init>:
+
+void morph_config_init()
+{
+    16a8:	b580      	push	{r7, lr}
+    16aa:	af00      	add	r7, sp, #0
+	NVIC_SetPriority (SysTick_IRQn,  (1 << __NVIC_PRIO_BITS) - 2);  /* set Priority for Systick Interrupt (2nd lowest) */
+    16ac:	2301      	movs	r3, #1
+    16ae:	425b      	negs	r3, r3
+    16b0:	2102      	movs	r1, #2
+    16b2:	0018      	movs	r0, r3
+    16b4:	4b05      	ldr	r3, [pc, #20]	; (16cc <morph_config_init+0x24>)
+    16b6:	4798      	blx	r3
+	//
+	//  // Clock EIC for I/O interrupts
+	//  PM->APBAMASK.reg |= PM_APBAMASK_EIC ;
+
+	// Clock SERCOM for Serial
+	PM->APBCMASK.reg |= PM_APBCMASK_SERCOM0 | PM_APBCMASK_SERCOM1 | PM_APBCMASK_SERCOM2 | PM_APBCMASK_SERCOM3 | PM_APBCMASK_SERCOM4 | PM_APBCMASK_SERCOM5 ;
+    16b8:	4b05      	ldr	r3, [pc, #20]	; (16d0 <morph_config_init+0x28>)
+    16ba:	4a05      	ldr	r2, [pc, #20]	; (16d0 <morph_config_init+0x28>)
+    16bc:	6a12      	ldr	r2, [r2, #32]
+    16be:	21fc      	movs	r1, #252	; 0xfc
+    16c0:	430a      	orrs	r2, r1
+    16c2:	621a      	str	r2, [r3, #32]
+}
+    16c4:	46c0      	nop			; (mov r8, r8)
+    16c6:	46bd      	mov	sp, r7
+    16c8:	bd80      	pop	{r7, pc}
+    16ca:	46c0      	nop			; (mov r8, r8)
+    16cc:	000004b9 	.word	0x000004b9
+    16d0:	40000400 	.word	0x40000400
+
+000016d4 <MorphUtils_empty_callback>:
+
+// This function is used to initialize any function pointers.
+// If this is not used, function pointers will restart the program if accidentally called.
+static void MorphUtils_empty_callback(){
+	; // Do nothing
+}
+    16d4:	4770      	bx	lr
+	...
+
+000016d8 <MorphGPIO_register_set_pin_value_function>:
+void (*morph_unset_pin_interrupt_function)(MorphPinNumber, enum MorphPinValue) = &MorphUtils_empty_callback;
+
+
+void MorphGPIO_register_set_pin_value_function(void (*function)(MorphPinNumber, enum MorphPinValue))
+{
+	morph_set_pin_value_function = function;	
+    16d8:	4b01      	ldr	r3, [pc, #4]	; (16e0 <MorphGPIO_register_set_pin_value_function+0x8>)
+    16da:	6018      	str	r0, [r3, #0]
+}
+    16dc:	4770      	bx	lr
+    16de:	46c0      	nop			; (mov r8, r8)
+    16e0:	200001b0 	.word	0x200001b0
+
+000016e4 <MorphGPIO_register_get_pin_value_function>:
+
+void MorphGPIO_register_get_pin_value_function(enum MorphPinValue (*function)(MorphPinNumber))
+{
+	morph_get_pin_value_function = function;
+    16e4:	4b01      	ldr	r3, [pc, #4]	; (16ec <MorphGPIO_register_get_pin_value_function+0x8>)
+    16e6:	6058      	str	r0, [r3, #4]
+}
+    16e8:	4770      	bx	lr
+    16ea:	46c0      	nop			; (mov r8, r8)
+    16ec:	200001b0 	.word	0x200001b0
+
+000016f0 <MorphGPIO_register_set_pin_direction_function>:
+
+void MorphGPIO_register_set_pin_direction_function(void (*function)(MorphPinNumber, enum MorphPinDirection))
+{
+	morph_set_pin_direction_function = function;
+    16f0:	4b01      	ldr	r3, [pc, #4]	; (16f8 <MorphGPIO_register_set_pin_direction_function+0x8>)
+    16f2:	6098      	str	r0, [r3, #8]
+}
+    16f4:	4770      	bx	lr
+    16f6:	46c0      	nop			; (mov r8, r8)
+    16f8:	200001b0 	.word	0x200001b0
+
+000016fc <MorphGPIO_register_get_pin_direction_function>:
+
+void MorphGPIO_register_get_pin_direction_function(enum MorphPinDirection (*function)(MorphPinNumber))
+{
+	morph_get_pin_direction_function = function;
+    16fc:	4b01      	ldr	r3, [pc, #4]	; (1704 <MorphGPIO_register_get_pin_direction_function+0x8>)
+    16fe:	60d8      	str	r0, [r3, #12]
+}
+    1700:	4770      	bx	lr
+    1702:	46c0      	nop			; (mov r8, r8)
+    1704:	200001b0 	.word	0x200001b0
+
+00001708 <MorphGPIO_register_set_pin_pull_state_function>:
+
+void MorphGPIO_register_set_pin_pull_state_function(void (*function)(MorphPinNumber, enum MorphPinPullState))
+{
+	morph_set_pin_pull_state_function = function;
+    1708:	4b01      	ldr	r3, [pc, #4]	; (1710 <MorphGPIO_register_set_pin_pull_state_function+0x8>)
+    170a:	6118      	str	r0, [r3, #16]
+}
+    170c:	4770      	bx	lr
+    170e:	46c0      	nop			; (mov r8, r8)
+    1710:	200001b0 	.word	0x200001b0
+
+00001714 <MorphGPIO_register_get_pin_pull_state_function>:
+
+void MorphGPIO_register_get_pin_pull_state_function(enum MorphPinPullState (*function)(MorphPinNumber))
+{
+	morph_get_pin_pull_state_function = function;	
+    1714:	4b01      	ldr	r3, [pc, #4]	; (171c <MorphGPIO_register_get_pin_pull_state_function+0x8>)
+    1716:	6158      	str	r0, [r3, #20]
+}
+    1718:	4770      	bx	lr
+    171a:	46c0      	nop			; (mov r8, r8)
+    171c:	200001b0 	.word	0x200001b0
+
+00001720 <MorphGPIO_set_pin_direction>:
+		return morph_get_pin_value_function(pn);
+	#endif
+}
+
+void MorphGPIO_set_pin_direction(MorphPinNumber pn, enum MorphPinDirection pd)
+{
+    1720:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+		morph_config_gpio_set_pin_direction(pn, pd);
+	#else
+		morph_set_pin_direction_function(pn, pd);
+    1722:	4b02      	ldr	r3, [pc, #8]	; (172c <MorphGPIO_set_pin_direction+0xc>)
+    1724:	689b      	ldr	r3, [r3, #8]
+    1726:	4798      	blx	r3
+	#endif
+}
+    1728:	bd10      	pop	{r4, pc}
+    172a:	46c0      	nop			; (mov r8, r8)
+    172c:	200001b0 	.word	0x200001b0
+
+00001730 <MorphGPIO_set_pin_pull_state>:
+		return morph_get_pin_direction_function(pn);
+	#endif
+}
+
+void MorphGPIO_set_pin_pull_state(MorphPinNumber pn, enum MorphPinPullState ps)
+{
+    1730:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+		morph_config_gpio_set_pin_pull_state(pn);
+	#else
+		morph_set_pin_pull_state_function(pn, ps);
+    1732:	4b02      	ldr	r3, [pc, #8]	; (173c <MorphGPIO_set_pin_pull_state+0xc>)
+    1734:	691b      	ldr	r3, [r3, #16]
+    1736:	4798      	blx	r3
+	#endif
+}
+    1738:	bd10      	pop	{r4, pc}
+    173a:	46c0      	nop			; (mov r8, r8)
+    173c:	200001b0 	.word	0x200001b0
+
+00001740 <MorphUtils_empty_callback>:
+    1740:	4770      	bx	lr
+	...
+
+00001744 <MorphTime_register_init_function>:
+MorphTimeValue (*morph_millis_function)(void) = &MorphUtils_empty_callback;
+
+
+void MorphTime_register_init_function(void (*function)(MorphTimerNumber, enum MorphTimerResolution))
+{
+	morph_init_function = function;
+    1744:	4b01      	ldr	r3, [pc, #4]	; (174c <MorphTime_register_init_function+0x8>)
+    1746:	6018      	str	r0, [r3, #0]
+}
+    1748:	4770      	bx	lr
+    174a:	46c0      	nop			; (mov r8, r8)
+    174c:	200001d0 	.word	0x200001d0
+
+00001750 <MorphTime_register_init_rtc_function>:
+
+void MorphTime_register_init_rtc_function(void (*function)(void))
+{
+	morph_init_rtc_function = function;
+    1750:	4b01      	ldr	r3, [pc, #4]	; (1758 <MorphTime_register_init_rtc_function+0x8>)
+    1752:	6058      	str	r0, [r3, #4]
+}
+    1754:	4770      	bx	lr
+    1756:	46c0      	nop			; (mov r8, r8)
+    1758:	200001d0 	.word	0x200001d0
+
+0000175c <MorphTime_register_millis_function>:
+
+void MorphTime_register_millis_function(MorphTimeValue (*function)(void))
+{
+	morph_millis_function = function;
+    175c:	4b01      	ldr	r3, [pc, #4]	; (1764 <MorphTime_register_millis_function+0x8>)
+    175e:	6098      	str	r0, [r3, #8]
+}
+    1760:	4770      	bx	lr
+    1762:	46c0      	nop			; (mov r8, r8)
+    1764:	200001d0 	.word	0x200001d0
+
+00001768 <MorphTime_init_rtc>:
+	#endif
+	
+}
+
+void MorphTime_init_rtc()
+{
+    1768:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+		morph_config_time_init_rtc();
+	#else
+		morph_init_rtc_function();
+    176a:	4b02      	ldr	r3, [pc, #8]	; (1774 <MorphTime_init_rtc+0xc>)
+    176c:	685b      	ldr	r3, [r3, #4]
+    176e:	4798      	blx	r3
+	#endif
+}
+    1770:	bd10      	pop	{r4, pc}
+    1772:	46c0      	nop			; (mov r8, r8)
+    1774:	200001d0 	.word	0x200001d0
+
+00001778 <MorphTime_millis>:
+
+MorphTimeValue MorphTime_millis()
+{
+    1778:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+		morph_config_time_millis();
+	#else
+		morph_config_time_millis();
+    177a:	4b01      	ldr	r3, [pc, #4]	; (1780 <MorphTime_millis+0x8>)
+    177c:	4798      	blx	r3
+	#endif
+	
+}
+    177e:	bd10      	pop	{r4, pc}
+    1780:	00001691 	.word	0x00001691
+
+00001784 <MorphUtils_empty_callback>:
+    1784:	4770      	bx	lr
+	...
+
+00001788 <MorphUART_register_setup_channel_function>:
+
+void (*morph_set_cts_pin_function)(MorphUARTChannel, MorphPinNumber) = &MorphUtils_empty_callback;
+
+void MorphUART_register_setup_channel_function(void (*function)(MorphUARTChannel, MorphUARTBaudRate, MorphUARTByteSize, enum MorphUARTParity, MorphUARTStopBits))
+{
+	morph_setup_channel_function = function;
+    1788:	4b01      	ldr	r3, [pc, #4]	; (1790 <MorphUART_register_setup_channel_function+0x8>)
+    178a:	6018      	str	r0, [r3, #0]
+}
+    178c:	4770      	bx	lr
+    178e:	46c0      	nop			; (mov r8, r8)
+    1790:	200001dc 	.word	0x200001dc
+
+00001794 <MorphUART_register_send_data_function>:
+	morph_disable_channel_function = function;
+}
+
+void MorphUART_register_send_data_function(void (*function)(MorphUARTChannel, MorphUARTData))
+{
+	morph_send_data_function = function;
+    1794:	4b01      	ldr	r3, [pc, #4]	; (179c <MorphUART_register_send_data_function+0x8>)
+    1796:	6098      	str	r0, [r3, #8]
+}
+    1798:	4770      	bx	lr
+    179a:	46c0      	nop			; (mov r8, r8)
+    179c:	200001dc 	.word	0x200001dc
+
+000017a0 <MorphUART_register_read_data_function>:
+
+void MorphUART_register_read_data_function(MorphUARTData (*function)(MorphUARTChannel))
+{
+	morph_read_data_function = function;
+    17a0:	4b01      	ldr	r3, [pc, #4]	; (17a8 <MorphUART_register_read_data_function+0x8>)
+    17a2:	60d8      	str	r0, [r3, #12]
+}
+    17a4:	4770      	bx	lr
+    17a6:	46c0      	nop			; (mov r8, r8)
+    17a8:	200001dc 	.word	0x200001dc
+
+000017ac <MorphUART_register_write_data_buffer_function>:
+	morph_read_byte_function = function;
+}
+
+void MorphUART_register_write_data_buffer_function(void (*function)(MorphUARTChannel, MorphUARTData*, size_t))
+{
+	morph_write_data_buffer_function = function;
+    17ac:	4b01      	ldr	r3, [pc, #4]	; (17b4 <MorphUART_register_write_data_buffer_function+0x8>)
+    17ae:	6198      	str	r0, [r3, #24]
+}
+    17b0:	4770      	bx	lr
+    17b2:	46c0      	nop			; (mov r8, r8)
+    17b4:	200001dc 	.word	0x200001dc
+
+000017b8 <MorphUART_register_read_data_buffer_function>:
+	morph_write_byte_buffer_function = function;
+}
+
+void MorphUART_register_read_data_buffer_function(enum MorphUARTErrors (*function)(MorphUARTChannel, MorphUARTData *, size_t, MorphUARTTimeout))
+{
+	morph_read_data_buffer_function = function;
+    17b8:	4b01      	ldr	r3, [pc, #4]	; (17c0 <MorphUART_register_read_data_buffer_function+0x8>)
+    17ba:	6218      	str	r0, [r3, #32]
+}
+    17bc:	4770      	bx	lr
+    17be:	46c0      	nop			; (mov r8, r8)
+    17c0:	200001dc 	.word	0x200001dc
+
+000017c4 <MorphUART_register_set_tx_pin_function>:
+	morph_purge_input_function = function;
+}
+
+void MorphUART_register_set_tx_pin_function(void (*function)(MorphUARTChannel, MorphPinNumber))
+{
+	morph_set_tx_pin_function = function;
+    17c4:	4b01      	ldr	r3, [pc, #4]	; (17cc <MorphUART_register_set_tx_pin_function+0x8>)
+    17c6:	62d8      	str	r0, [r3, #44]	; 0x2c
+}
+    17c8:	4770      	bx	lr
+    17ca:	46c0      	nop			; (mov r8, r8)
+    17cc:	200001dc 	.word	0x200001dc
+
+000017d0 <MorphUART_register_set_rx_pin_function>:
+
+void MorphUART_register_set_rx_pin_function(void (*function)(MorphUARTChannel, MorphPinNumber))
+{
+	morph_set_rx_pin_function = function;
+    17d0:	4b01      	ldr	r3, [pc, #4]	; (17d8 <MorphUART_register_set_rx_pin_function+0x8>)
+    17d2:	6318      	str	r0, [r3, #48]	; 0x30
+}
+    17d4:	4770      	bx	lr
+    17d6:	46c0      	nop			; (mov r8, r8)
+    17d8:	200001dc 	.word	0x200001dc
+
+000017dc <MorphUART_setup_channel>:
+#endif
+
+// FUNCTIONS! //
+
+void MorphUART_setup_channel(MorphUARTChannel c, MorphUARTBaudRate br, MorphUARTByteSize bs, enum MorphUARTParity pc, MorphUARTStopBits sb)
+{
+    17dc:	b510      	push	{r4, lr}
+    17de:	b082      	sub	sp, #8
+    17e0:	ac04      	add	r4, sp, #16
+    17e2:	7824      	ldrb	r4, [r4, #0]
+	#ifdef MORPH_IMPLICIT
+		morph_config_uart_setup_channel(c, br, bs, pc, sb);
+	#else
+		morph_setup_channel_function(c, br, bs, pc, sb);
+    17e4:	9400      	str	r4, [sp, #0]
+    17e6:	4c02      	ldr	r4, [pc, #8]	; (17f0 <MorphUART_setup_channel+0x14>)
+    17e8:	6824      	ldr	r4, [r4, #0]
+    17ea:	47a0      	blx	r4
+	#endif
+}
+    17ec:	b002      	add	sp, #8
+    17ee:	bd10      	pop	{r4, pc}
+    17f0:	200001dc 	.word	0x200001dc
+
+000017f4 <MorphUART_send_data>:
+	#endif
+}
+
+// Will send the first n bytes of data depending on serial config.
+void MorphUART_send_data(MorphUARTChannel c, MorphUARTData data)
+{
+    17f4:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT	
+		morph_config_uart_send_data(c, data);
+	#else
+		morph_send_data_function(c, data);
+    17f6:	4b02      	ldr	r3, [pc, #8]	; (1800 <MorphUART_send_data+0xc>)
+    17f8:	689b      	ldr	r3, [r3, #8]
+    17fa:	4798      	blx	r3
+	#endif		
+}
+    17fc:	bd10      	pop	{r4, pc}
+    17fe:	46c0      	nop			; (mov r8, r8)
+    1800:	200001dc 	.word	0x200001dc
+
+00001804 <MorphUART_set_tx_pin>:
+		morph_purge_input_function(c);
+	#endif		
+}
+
+void MorphUART_set_tx_pin(MorphUARTChannel c, MorphPinNumber p_tx)
+{
+    1804:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+		morph_config_uart_set_tx_pin(c, p_tx);
+	#else
+		morph_set_tx_pin_function(c, p_tx);
+    1806:	4b02      	ldr	r3, [pc, #8]	; (1810 <MorphUART_set_tx_pin+0xc>)
+    1808:	6adb      	ldr	r3, [r3, #44]	; 0x2c
+    180a:	4798      	blx	r3
+	#endif
+}
+    180c:	bd10      	pop	{r4, pc}
+    180e:	46c0      	nop			; (mov r8, r8)
+    1810:	200001dc 	.word	0x200001dc
+
+00001814 <MorphUART_set_rx_pin>:
+
+void MorphUART_set_rx_pin(MorphUARTChannel c, MorphPinNumber p_rx)
+{
+    1814:	b510      	push	{r4, lr}
+	#ifdef MORPH_IMPLICIT
+	morph_config_uart_set_rx_pin(c, p_rx);
+	#else
+	morph_set_rx_pin_function(c, p_rx);
+    1816:	4b02      	ldr	r3, [pc, #8]	; (1820 <MorphUART_set_rx_pin+0xc>)
+    1818:	6b1b      	ldr	r3, [r3, #48]	; 0x30
+    181a:	4798      	blx	r3
+	#endif
+}
+    181c:	bd10      	pop	{r4, pc}
+    181e:	46c0      	nop			; (mov r8, r8)
+    1820:	200001dc 	.word	0x200001dc
+
+00001824 <__udivsi3>:
+    1824:	2200      	movs	r2, #0
+    1826:	0843      	lsrs	r3, r0, #1
+    1828:	428b      	cmp	r3, r1
+    182a:	d374      	bcc.n	1916 <__udivsi3+0xf2>
+    182c:	0903      	lsrs	r3, r0, #4
+    182e:	428b      	cmp	r3, r1
+    1830:	d35f      	bcc.n	18f2 <__udivsi3+0xce>
+    1832:	0a03      	lsrs	r3, r0, #8
+    1834:	428b      	cmp	r3, r1
+    1836:	d344      	bcc.n	18c2 <__udivsi3+0x9e>
+    1838:	0b03      	lsrs	r3, r0, #12
+    183a:	428b      	cmp	r3, r1
+    183c:	d328      	bcc.n	1890 <__udivsi3+0x6c>
+    183e:	0c03      	lsrs	r3, r0, #16
+    1840:	428b      	cmp	r3, r1
+    1842:	d30d      	bcc.n	1860 <__udivsi3+0x3c>
+    1844:	22ff      	movs	r2, #255	; 0xff
+    1846:	0209      	lsls	r1, r1, #8
+    1848:	ba12      	rev	r2, r2
+    184a:	0c03      	lsrs	r3, r0, #16
+    184c:	428b      	cmp	r3, r1
+    184e:	d302      	bcc.n	1856 <__udivsi3+0x32>
+    1850:	1212      	asrs	r2, r2, #8
+    1852:	0209      	lsls	r1, r1, #8
+    1854:	d065      	beq.n	1922 <__udivsi3+0xfe>
+    1856:	0b03      	lsrs	r3, r0, #12
+    1858:	428b      	cmp	r3, r1
+    185a:	d319      	bcc.n	1890 <__udivsi3+0x6c>
+    185c:	e000      	b.n	1860 <__udivsi3+0x3c>
+    185e:	0a09      	lsrs	r1, r1, #8
+    1860:	0bc3      	lsrs	r3, r0, #15
+    1862:	428b      	cmp	r3, r1
+    1864:	d301      	bcc.n	186a <__udivsi3+0x46>
+    1866:	03cb      	lsls	r3, r1, #15
+    1868:	1ac0      	subs	r0, r0, r3
+    186a:	4152      	adcs	r2, r2
+    186c:	0b83      	lsrs	r3, r0, #14
+    186e:	428b      	cmp	r3, r1
+    1870:	d301      	bcc.n	1876 <__udivsi3+0x52>
+    1872:	038b      	lsls	r3, r1, #14
+    1874:	1ac0      	subs	r0, r0, r3
+    1876:	4152      	adcs	r2, r2
+    1878:	0b43      	lsrs	r3, r0, #13
+    187a:	428b      	cmp	r3, r1
+    187c:	d301      	bcc.n	1882 <__udivsi3+0x5e>
+    187e:	034b      	lsls	r3, r1, #13
+    1880:	1ac0      	subs	r0, r0, r3
+    1882:	4152      	adcs	r2, r2
+    1884:	0b03      	lsrs	r3, r0, #12
+    1886:	428b      	cmp	r3, r1
+    1888:	d301      	bcc.n	188e <__udivsi3+0x6a>
+    188a:	030b      	lsls	r3, r1, #12
+    188c:	1ac0      	subs	r0, r0, r3
+    188e:	4152      	adcs	r2, r2
+    1890:	0ac3      	lsrs	r3, r0, #11
+    1892:	428b      	cmp	r3, r1
+    1894:	d301      	bcc.n	189a <__udivsi3+0x76>
+    1896:	02cb      	lsls	r3, r1, #11
+    1898:	1ac0      	subs	r0, r0, r3
+    189a:	4152      	adcs	r2, r2
+    189c:	0a83      	lsrs	r3, r0, #10
+    189e:	428b      	cmp	r3, r1
+    18a0:	d301      	bcc.n	18a6 <__udivsi3+0x82>
+    18a2:	028b      	lsls	r3, r1, #10
+    18a4:	1ac0      	subs	r0, r0, r3
+    18a6:	4152      	adcs	r2, r2
+    18a8:	0a43      	lsrs	r3, r0, #9
+    18aa:	428b      	cmp	r3, r1
+    18ac:	d301      	bcc.n	18b2 <__udivsi3+0x8e>
+    18ae:	024b      	lsls	r3, r1, #9
+    18b0:	1ac0      	subs	r0, r0, r3
+    18b2:	4152      	adcs	r2, r2
+    18b4:	0a03      	lsrs	r3, r0, #8
+    18b6:	428b      	cmp	r3, r1
+    18b8:	d301      	bcc.n	18be <__udivsi3+0x9a>
+    18ba:	020b      	lsls	r3, r1, #8
+    18bc:	1ac0      	subs	r0, r0, r3
+    18be:	4152      	adcs	r2, r2
+    18c0:	d2cd      	bcs.n	185e <__udivsi3+0x3a>
+    18c2:	09c3      	lsrs	r3, r0, #7
+    18c4:	428b      	cmp	r3, r1
+    18c6:	d301      	bcc.n	18cc <__udivsi3+0xa8>
+    18c8:	01cb      	lsls	r3, r1, #7
+    18ca:	1ac0      	subs	r0, r0, r3
+    18cc:	4152      	adcs	r2, r2
+    18ce:	0983      	lsrs	r3, r0, #6
+    18d0:	428b      	cmp	r3, r1
+    18d2:	d301      	bcc.n	18d8 <__udivsi3+0xb4>
+    18d4:	018b      	lsls	r3, r1, #6
+    18d6:	1ac0      	subs	r0, r0, r3
+    18d8:	4152      	adcs	r2, r2
+    18da:	0943      	lsrs	r3, r0, #5
+    18dc:	428b      	cmp	r3, r1
+    18de:	d301      	bcc.n	18e4 <__udivsi3+0xc0>
+    18e0:	014b      	lsls	r3, r1, #5
+    18e2:	1ac0      	subs	r0, r0, r3
+    18e4:	4152      	adcs	r2, r2
+    18e6:	0903      	lsrs	r3, r0, #4
+    18e8:	428b      	cmp	r3, r1
+    18ea:	d301      	bcc.n	18f0 <__udivsi3+0xcc>
+    18ec:	010b      	lsls	r3, r1, #4
+    18ee:	1ac0      	subs	r0, r0, r3
+    18f0:	4152      	adcs	r2, r2
+    18f2:	08c3      	lsrs	r3, r0, #3
+    18f4:	428b      	cmp	r3, r1
+    18f6:	d301      	bcc.n	18fc <__udivsi3+0xd8>
+    18f8:	00cb      	lsls	r3, r1, #3
+    18fa:	1ac0      	subs	r0, r0, r3
+    18fc:	4152      	adcs	r2, r2
+    18fe:	0883      	lsrs	r3, r0, #2
+    1900:	428b      	cmp	r3, r1
+    1902:	d301      	bcc.n	1908 <__udivsi3+0xe4>
+    1904:	008b      	lsls	r3, r1, #2
+    1906:	1ac0      	subs	r0, r0, r3
+    1908:	4152      	adcs	r2, r2
+    190a:	0843      	lsrs	r3, r0, #1
+    190c:	428b      	cmp	r3, r1
+    190e:	d301      	bcc.n	1914 <__udivsi3+0xf0>
+    1910:	004b      	lsls	r3, r1, #1
+    1912:	1ac0      	subs	r0, r0, r3
+    1914:	4152      	adcs	r2, r2
+    1916:	1a41      	subs	r1, r0, r1
+    1918:	d200      	bcs.n	191c <__udivsi3+0xf8>
+    191a:	4601      	mov	r1, r0
+    191c:	4152      	adcs	r2, r2
+    191e:	4610      	mov	r0, r2
+    1920:	4770      	bx	lr
+    1922:	e7ff      	b.n	1924 <__udivsi3+0x100>
+    1924:	b501      	push	{r0, lr}
+    1926:	2000      	movs	r0, #0
+    1928:	f000 f806 	bl	1938 <__aeabi_idiv0>
+    192c:	bd02      	pop	{r1, pc}
+    192e:	46c0      	nop			; (mov r8, r8)
+
+00001930 <__aeabi_uidivmod>:
+    1930:	2900      	cmp	r1, #0
+    1932:	d0f7      	beq.n	1924 <__udivsi3+0x100>
+    1934:	e776      	b.n	1824 <__udivsi3>
+    1936:	4770      	bx	lr
+
+00001938 <__aeabi_idiv0>:
+    1938:	4770      	bx	lr
+    193a:	46c0      	nop			; (mov r8, r8)
+
+0000193c <__aeabi_uldivmod>:
+    193c:	2b00      	cmp	r3, #0
+    193e:	d111      	bne.n	1964 <__aeabi_uldivmod+0x28>
+    1940:	2a00      	cmp	r2, #0
+    1942:	d10f      	bne.n	1964 <__aeabi_uldivmod+0x28>
+    1944:	2900      	cmp	r1, #0
+    1946:	d100      	bne.n	194a <__aeabi_uldivmod+0xe>
+    1948:	2800      	cmp	r0, #0
+    194a:	d002      	beq.n	1952 <__aeabi_uldivmod+0x16>
+    194c:	2100      	movs	r1, #0
+    194e:	43c9      	mvns	r1, r1
+    1950:	1c08      	adds	r0, r1, #0
+    1952:	b407      	push	{r0, r1, r2}
+    1954:	4802      	ldr	r0, [pc, #8]	; (1960 <__aeabi_uldivmod+0x24>)
+    1956:	a102      	add	r1, pc, #8	; (adr r1, 1960 <__aeabi_uldivmod+0x24>)
+    1958:	1840      	adds	r0, r0, r1
+    195a:	9002      	str	r0, [sp, #8]
+    195c:	bd03      	pop	{r0, r1, pc}
+    195e:	46c0      	nop			; (mov r8, r8)
+    1960:	ffffffd9 	.word	0xffffffd9
+    1964:	b403      	push	{r0, r1}
+    1966:	4668      	mov	r0, sp
+    1968:	b501      	push	{r0, lr}
+    196a:	9802      	ldr	r0, [sp, #8]
+    196c:	f000 f806 	bl	197c <__udivmoddi4>
+    1970:	9b01      	ldr	r3, [sp, #4]
+    1972:	469e      	mov	lr, r3
+    1974:	b002      	add	sp, #8
+    1976:	bc0c      	pop	{r2, r3}
+    1978:	4770      	bx	lr
+    197a:	46c0      	nop			; (mov r8, r8)
+
+0000197c <__udivmoddi4>:
+    197c:	b5f0      	push	{r4, r5, r6, r7, lr}
+    197e:	4657      	mov	r7, sl
+    1980:	464e      	mov	r6, r9
+    1982:	4645      	mov	r5, r8
+    1984:	46de      	mov	lr, fp
+    1986:	b5e0      	push	{r5, r6, r7, lr}
+    1988:	0004      	movs	r4, r0
+    198a:	b083      	sub	sp, #12
+    198c:	000d      	movs	r5, r1
+    198e:	4692      	mov	sl, r2
+    1990:	4699      	mov	r9, r3
+    1992:	428b      	cmp	r3, r1
+    1994:	d82f      	bhi.n	19f6 <__udivmoddi4+0x7a>
+    1996:	d02c      	beq.n	19f2 <__udivmoddi4+0x76>
+    1998:	4649      	mov	r1, r9
+    199a:	4650      	mov	r0, sl
+    199c:	f000 f8ae 	bl	1afc <__clzdi2>
+    19a0:	0029      	movs	r1, r5
+    19a2:	0006      	movs	r6, r0
+    19a4:	0020      	movs	r0, r4
+    19a6:	f000 f8a9 	bl	1afc <__clzdi2>
+    19aa:	1a33      	subs	r3, r6, r0
+    19ac:	4698      	mov	r8, r3
+    19ae:	3b20      	subs	r3, #32
+    19b0:	469b      	mov	fp, r3
+    19b2:	d500      	bpl.n	19b6 <__udivmoddi4+0x3a>
+    19b4:	e074      	b.n	1aa0 <__udivmoddi4+0x124>
+    19b6:	4653      	mov	r3, sl
+    19b8:	465a      	mov	r2, fp
+    19ba:	4093      	lsls	r3, r2
+    19bc:	001f      	movs	r7, r3
+    19be:	4653      	mov	r3, sl
+    19c0:	4642      	mov	r2, r8
+    19c2:	4093      	lsls	r3, r2
+    19c4:	001e      	movs	r6, r3
+    19c6:	42af      	cmp	r7, r5
+    19c8:	d829      	bhi.n	1a1e <__udivmoddi4+0xa2>
+    19ca:	d026      	beq.n	1a1a <__udivmoddi4+0x9e>
+    19cc:	465b      	mov	r3, fp
+    19ce:	1ba4      	subs	r4, r4, r6
+    19d0:	41bd      	sbcs	r5, r7
+    19d2:	2b00      	cmp	r3, #0
+    19d4:	da00      	bge.n	19d8 <__udivmoddi4+0x5c>
+    19d6:	e079      	b.n	1acc <__udivmoddi4+0x150>
+    19d8:	2200      	movs	r2, #0
+    19da:	2300      	movs	r3, #0
+    19dc:	9200      	str	r2, [sp, #0]
+    19de:	9301      	str	r3, [sp, #4]
+    19e0:	2301      	movs	r3, #1
+    19e2:	465a      	mov	r2, fp
+    19e4:	4093      	lsls	r3, r2
+    19e6:	9301      	str	r3, [sp, #4]
+    19e8:	2301      	movs	r3, #1
+    19ea:	4642      	mov	r2, r8
+    19ec:	4093      	lsls	r3, r2
+    19ee:	9300      	str	r3, [sp, #0]
+    19f0:	e019      	b.n	1a26 <__udivmoddi4+0xaa>
+    19f2:	4282      	cmp	r2, r0
+    19f4:	d9d0      	bls.n	1998 <__udivmoddi4+0x1c>
+    19f6:	2200      	movs	r2, #0
+    19f8:	2300      	movs	r3, #0
+    19fa:	9200      	str	r2, [sp, #0]
+    19fc:	9301      	str	r3, [sp, #4]
+    19fe:	9b0c      	ldr	r3, [sp, #48]	; 0x30
+    1a00:	2b00      	cmp	r3, #0
+    1a02:	d001      	beq.n	1a08 <__udivmoddi4+0x8c>
+    1a04:	601c      	str	r4, [r3, #0]
+    1a06:	605d      	str	r5, [r3, #4]
+    1a08:	9800      	ldr	r0, [sp, #0]
+    1a0a:	9901      	ldr	r1, [sp, #4]
+    1a0c:	b003      	add	sp, #12
+    1a0e:	bc3c      	pop	{r2, r3, r4, r5}
+    1a10:	4690      	mov	r8, r2
+    1a12:	4699      	mov	r9, r3
+    1a14:	46a2      	mov	sl, r4
+    1a16:	46ab      	mov	fp, r5
+    1a18:	bdf0      	pop	{r4, r5, r6, r7, pc}
+    1a1a:	42a3      	cmp	r3, r4
+    1a1c:	d9d6      	bls.n	19cc <__udivmoddi4+0x50>
+    1a1e:	2200      	movs	r2, #0
+    1a20:	2300      	movs	r3, #0
+    1a22:	9200      	str	r2, [sp, #0]
+    1a24:	9301      	str	r3, [sp, #4]
+    1a26:	4643      	mov	r3, r8
+    1a28:	2b00      	cmp	r3, #0
+    1a2a:	d0e8      	beq.n	19fe <__udivmoddi4+0x82>
+    1a2c:	07fb      	lsls	r3, r7, #31
+    1a2e:	0872      	lsrs	r2, r6, #1
+    1a30:	431a      	orrs	r2, r3
+    1a32:	4646      	mov	r6, r8
+    1a34:	087b      	lsrs	r3, r7, #1
+    1a36:	e00e      	b.n	1a56 <__udivmoddi4+0xda>
+    1a38:	42ab      	cmp	r3, r5
+    1a3a:	d101      	bne.n	1a40 <__udivmoddi4+0xc4>
+    1a3c:	42a2      	cmp	r2, r4
+    1a3e:	d80c      	bhi.n	1a5a <__udivmoddi4+0xde>
+    1a40:	1aa4      	subs	r4, r4, r2
+    1a42:	419d      	sbcs	r5, r3
+    1a44:	2001      	movs	r0, #1
+    1a46:	1924      	adds	r4, r4, r4
+    1a48:	416d      	adcs	r5, r5
+    1a4a:	2100      	movs	r1, #0
+    1a4c:	3e01      	subs	r6, #1
+    1a4e:	1824      	adds	r4, r4, r0
+    1a50:	414d      	adcs	r5, r1
+    1a52:	2e00      	cmp	r6, #0
+    1a54:	d006      	beq.n	1a64 <__udivmoddi4+0xe8>
+    1a56:	42ab      	cmp	r3, r5
+    1a58:	d9ee      	bls.n	1a38 <__udivmoddi4+0xbc>
+    1a5a:	3e01      	subs	r6, #1
+    1a5c:	1924      	adds	r4, r4, r4
+    1a5e:	416d      	adcs	r5, r5
+    1a60:	2e00      	cmp	r6, #0
+    1a62:	d1f8      	bne.n	1a56 <__udivmoddi4+0xda>
+    1a64:	465b      	mov	r3, fp
+    1a66:	9800      	ldr	r0, [sp, #0]
+    1a68:	9901      	ldr	r1, [sp, #4]
+    1a6a:	1900      	adds	r0, r0, r4
+    1a6c:	4169      	adcs	r1, r5
+    1a6e:	2b00      	cmp	r3, #0
+    1a70:	db22      	blt.n	1ab8 <__udivmoddi4+0x13c>
+    1a72:	002b      	movs	r3, r5
+    1a74:	465a      	mov	r2, fp
+    1a76:	40d3      	lsrs	r3, r2
+    1a78:	002a      	movs	r2, r5
+    1a7a:	4644      	mov	r4, r8
+    1a7c:	40e2      	lsrs	r2, r4
+    1a7e:	001c      	movs	r4, r3
+    1a80:	465b      	mov	r3, fp
+    1a82:	0015      	movs	r5, r2
+    1a84:	2b00      	cmp	r3, #0
+    1a86:	db2c      	blt.n	1ae2 <__udivmoddi4+0x166>
+    1a88:	0026      	movs	r6, r4
+    1a8a:	409e      	lsls	r6, r3
+    1a8c:	0033      	movs	r3, r6
+    1a8e:	0026      	movs	r6, r4
+    1a90:	4647      	mov	r7, r8
+    1a92:	40be      	lsls	r6, r7
+    1a94:	0032      	movs	r2, r6
+    1a96:	1a80      	subs	r0, r0, r2
+    1a98:	4199      	sbcs	r1, r3
+    1a9a:	9000      	str	r0, [sp, #0]
+    1a9c:	9101      	str	r1, [sp, #4]
+    1a9e:	e7ae      	b.n	19fe <__udivmoddi4+0x82>
+    1aa0:	4642      	mov	r2, r8
+    1aa2:	2320      	movs	r3, #32
+    1aa4:	1a9b      	subs	r3, r3, r2
+    1aa6:	4652      	mov	r2, sl
+    1aa8:	40da      	lsrs	r2, r3
+    1aaa:	4641      	mov	r1, r8
+    1aac:	0013      	movs	r3, r2
+    1aae:	464a      	mov	r2, r9
+    1ab0:	408a      	lsls	r2, r1
+    1ab2:	0017      	movs	r7, r2
+    1ab4:	431f      	orrs	r7, r3
+    1ab6:	e782      	b.n	19be <__udivmoddi4+0x42>
+    1ab8:	4642      	mov	r2, r8
+    1aba:	2320      	movs	r3, #32
+    1abc:	1a9b      	subs	r3, r3, r2
+    1abe:	002a      	movs	r2, r5
+    1ac0:	4646      	mov	r6, r8
+    1ac2:	409a      	lsls	r2, r3
+    1ac4:	0023      	movs	r3, r4
+    1ac6:	40f3      	lsrs	r3, r6
+    1ac8:	4313      	orrs	r3, r2
+    1aca:	e7d5      	b.n	1a78 <__udivmoddi4+0xfc>
+    1acc:	4642      	mov	r2, r8
+    1ace:	2320      	movs	r3, #32
+    1ad0:	2100      	movs	r1, #0
+    1ad2:	1a9b      	subs	r3, r3, r2
+    1ad4:	2200      	movs	r2, #0
+    1ad6:	9100      	str	r1, [sp, #0]
+    1ad8:	9201      	str	r2, [sp, #4]
+    1ada:	2201      	movs	r2, #1
+    1adc:	40da      	lsrs	r2, r3
+    1ade:	9201      	str	r2, [sp, #4]
+    1ae0:	e782      	b.n	19e8 <__udivmoddi4+0x6c>
+    1ae2:	4642      	mov	r2, r8
+    1ae4:	2320      	movs	r3, #32
+    1ae6:	0026      	movs	r6, r4
+    1ae8:	1a9b      	subs	r3, r3, r2
+    1aea:	40de      	lsrs	r6, r3
+    1aec:	002f      	movs	r7, r5
+    1aee:	46b4      	mov	ip, r6
+    1af0:	4097      	lsls	r7, r2
+    1af2:	4666      	mov	r6, ip
+    1af4:	003b      	movs	r3, r7
+    1af6:	4333      	orrs	r3, r6
+    1af8:	e7c9      	b.n	1a8e <__udivmoddi4+0x112>
+    1afa:	46c0      	nop			; (mov r8, r8)
+
+00001afc <__clzdi2>:
+    1afc:	b510      	push	{r4, lr}
+    1afe:	2900      	cmp	r1, #0
+    1b00:	d103      	bne.n	1b0a <__clzdi2+0xe>
+    1b02:	f000 f807 	bl	1b14 <__clzsi2>
+    1b06:	3020      	adds	r0, #32
+    1b08:	e002      	b.n	1b10 <__clzdi2+0x14>
+    1b0a:	1c08      	adds	r0, r1, #0
+    1b0c:	f000 f802 	bl	1b14 <__clzsi2>
+    1b10:	bd10      	pop	{r4, pc}
+    1b12:	46c0      	nop			; (mov r8, r8)
+
+00001b14 <__clzsi2>:
+    1b14:	211c      	movs	r1, #28
+    1b16:	2301      	movs	r3, #1
+    1b18:	041b      	lsls	r3, r3, #16
+    1b1a:	4298      	cmp	r0, r3
+    1b1c:	d301      	bcc.n	1b22 <__clzsi2+0xe>
+    1b1e:	0c00      	lsrs	r0, r0, #16
+    1b20:	3910      	subs	r1, #16
+    1b22:	0a1b      	lsrs	r3, r3, #8
+    1b24:	4298      	cmp	r0, r3
+    1b26:	d301      	bcc.n	1b2c <__clzsi2+0x18>
+    1b28:	0a00      	lsrs	r0, r0, #8
+    1b2a:	3908      	subs	r1, #8
+    1b2c:	091b      	lsrs	r3, r3, #4
+    1b2e:	4298      	cmp	r0, r3
+    1b30:	d301      	bcc.n	1b36 <__clzsi2+0x22>
+    1b32:	0900      	lsrs	r0, r0, #4
+    1b34:	3904      	subs	r1, #4
+    1b36:	a202      	add	r2, pc, #8	; (adr r2, 1b40 <__clzsi2+0x2c>)
+    1b38:	5c10      	ldrb	r0, [r2, r0]
+    1b3a:	1840      	adds	r0, r0, r1
+    1b3c:	4770      	bx	lr
+    1b3e:	46c0      	nop			; (mov r8, r8)
+    1b40:	02020304 	.word	0x02020304
+    1b44:	01010101 	.word	0x01010101
+	...
+
+00001b50 <__libc_init_array>:
+    1b50:	b570      	push	{r4, r5, r6, lr}
+    1b52:	4e0d      	ldr	r6, [pc, #52]	; (1b88 <__libc_init_array+0x38>)
+    1b54:	4d0d      	ldr	r5, [pc, #52]	; (1b8c <__libc_init_array+0x3c>)
+    1b56:	2400      	movs	r4, #0
+    1b58:	1bad      	subs	r5, r5, r6
+    1b5a:	10ad      	asrs	r5, r5, #2
+    1b5c:	d005      	beq.n	1b6a <__libc_init_array+0x1a>
+    1b5e:	00a3      	lsls	r3, r4, #2
+    1b60:	58f3      	ldr	r3, [r6, r3]
+    1b62:	3401      	adds	r4, #1
+    1b64:	4798      	blx	r3
+    1b66:	42a5      	cmp	r5, r4
+    1b68:	d1f9      	bne.n	1b5e <__libc_init_array+0xe>
+    1b6a:	f000 f919 	bl	1da0 <_init>
+    1b6e:	4e08      	ldr	r6, [pc, #32]	; (1b90 <__libc_init_array+0x40>)
+    1b70:	4d08      	ldr	r5, [pc, #32]	; (1b94 <__libc_init_array+0x44>)
+    1b72:	2400      	movs	r4, #0
+    1b74:	1bad      	subs	r5, r5, r6
+    1b76:	10ad      	asrs	r5, r5, #2
+    1b78:	d005      	beq.n	1b86 <__libc_init_array+0x36>
+    1b7a:	00a3      	lsls	r3, r4, #2
+    1b7c:	58f3      	ldr	r3, [r6, r3]
+    1b7e:	3401      	adds	r4, #1
+    1b80:	4798      	blx	r3
+    1b82:	42a5      	cmp	r5, r4
+    1b84:	d1f9      	bne.n	1b7a <__libc_init_array+0x2a>
+    1b86:	bd70      	pop	{r4, r5, r6, pc}
+    1b88:	00001dac 	.word	0x00001dac
+    1b8c:	00001dac 	.word	0x00001dac
+    1b90:	00001dac 	.word	0x00001dac
+    1b94:	00001db4 	.word	0x00001db4
+
+00001b98 <memset>:
+    1b98:	b5f0      	push	{r4, r5, r6, r7, lr}
+    1b9a:	0783      	lsls	r3, r0, #30
+    1b9c:	d043      	beq.n	1c26 <memset+0x8e>
+    1b9e:	1e54      	subs	r4, r2, #1
+    1ba0:	2a00      	cmp	r2, #0
+    1ba2:	d03f      	beq.n	1c24 <memset+0x8c>
+    1ba4:	b2ce      	uxtb	r6, r1
+    1ba6:	0002      	movs	r2, r0
+    1ba8:	2503      	movs	r5, #3
+    1baa:	e002      	b.n	1bb2 <memset+0x1a>
+    1bac:	001a      	movs	r2, r3
+    1bae:	3c01      	subs	r4, #1
+    1bb0:	d338      	bcc.n	1c24 <memset+0x8c>
+    1bb2:	1c53      	adds	r3, r2, #1
+    1bb4:	7016      	strb	r6, [r2, #0]
+    1bb6:	422b      	tst	r3, r5
+    1bb8:	d1f8      	bne.n	1bac <memset+0x14>
+    1bba:	2c03      	cmp	r4, #3
+    1bbc:	d92a      	bls.n	1c14 <memset+0x7c>
+    1bbe:	22ff      	movs	r2, #255	; 0xff
+    1bc0:	400a      	ands	r2, r1
+    1bc2:	0215      	lsls	r5, r2, #8
+    1bc4:	4315      	orrs	r5, r2
+    1bc6:	042a      	lsls	r2, r5, #16
+    1bc8:	4315      	orrs	r5, r2
+    1bca:	2c0f      	cmp	r4, #15
+    1bcc:	d914      	bls.n	1bf8 <memset+0x60>
+    1bce:	0027      	movs	r7, r4
+    1bd0:	001a      	movs	r2, r3
+    1bd2:	3f10      	subs	r7, #16
+    1bd4:	093e      	lsrs	r6, r7, #4
+    1bd6:	3601      	adds	r6, #1
+    1bd8:	0136      	lsls	r6, r6, #4
+    1bda:	199e      	adds	r6, r3, r6
+    1bdc:	6015      	str	r5, [r2, #0]
+    1bde:	6055      	str	r5, [r2, #4]
+    1be0:	6095      	str	r5, [r2, #8]
+    1be2:	60d5      	str	r5, [r2, #12]
+    1be4:	3210      	adds	r2, #16
+    1be6:	4296      	cmp	r6, r2
+    1be8:	d1f8      	bne.n	1bdc <memset+0x44>
+    1bea:	220f      	movs	r2, #15
+    1bec:	4397      	bics	r7, r2
+    1bee:	3710      	adds	r7, #16
+    1bf0:	19db      	adds	r3, r3, r7
+    1bf2:	4014      	ands	r4, r2
+    1bf4:	2c03      	cmp	r4, #3
+    1bf6:	d90d      	bls.n	1c14 <memset+0x7c>
+    1bf8:	001a      	movs	r2, r3
+    1bfa:	1f27      	subs	r7, r4, #4
+    1bfc:	08be      	lsrs	r6, r7, #2
+    1bfe:	3601      	adds	r6, #1
+    1c00:	00b6      	lsls	r6, r6, #2
+    1c02:	199e      	adds	r6, r3, r6
+    1c04:	c220      	stmia	r2!, {r5}
+    1c06:	42b2      	cmp	r2, r6
+    1c08:	d1fc      	bne.n	1c04 <memset+0x6c>
+    1c0a:	2203      	movs	r2, #3
+    1c0c:	4397      	bics	r7, r2
+    1c0e:	3704      	adds	r7, #4
+    1c10:	19db      	adds	r3, r3, r7
+    1c12:	4014      	ands	r4, r2
+    1c14:	2c00      	cmp	r4, #0
+    1c16:	d005      	beq.n	1c24 <memset+0x8c>
+    1c18:	b2c9      	uxtb	r1, r1
+    1c1a:	191c      	adds	r4, r3, r4
+    1c1c:	7019      	strb	r1, [r3, #0]
+    1c1e:	3301      	adds	r3, #1
+    1c20:	429c      	cmp	r4, r3
+    1c22:	d1fb      	bne.n	1c1c <memset+0x84>
+    1c24:	bdf0      	pop	{r4, r5, r6, r7, pc}
+    1c26:	0014      	movs	r4, r2
+    1c28:	0003      	movs	r3, r0
+    1c2a:	e7c6      	b.n	1bba <memset+0x22>
+
+00001c2c <register_fini>:
+    1c2c:	4b03      	ldr	r3, [pc, #12]	; (1c3c <register_fini+0x10>)
+    1c2e:	b510      	push	{r4, lr}
+    1c30:	2b00      	cmp	r3, #0
+    1c32:	d002      	beq.n	1c3a <register_fini+0xe>
+    1c34:	4802      	ldr	r0, [pc, #8]	; (1c40 <register_fini+0x14>)
+    1c36:	f000 f805 	bl	1c44 <atexit>
+    1c3a:	bd10      	pop	{r4, pc}
+    1c3c:	00000000 	.word	0x00000000
+    1c40:	00001c55 	.word	0x00001c55
+
+00001c44 <atexit>:
+    1c44:	b510      	push	{r4, lr}
+    1c46:	0001      	movs	r1, r0
+    1c48:	2300      	movs	r3, #0
+    1c4a:	2200      	movs	r2, #0
+    1c4c:	2000      	movs	r0, #0
+    1c4e:	f000 f81f 	bl	1c90 <__register_exitproc>
+    1c52:	bd10      	pop	{r4, pc}
+
+00001c54 <__libc_fini_array>:
+    1c54:	b570      	push	{r4, r5, r6, lr}
+    1c56:	4b09      	ldr	r3, [pc, #36]	; (1c7c <__libc_fini_array+0x28>)
+    1c58:	4c09      	ldr	r4, [pc, #36]	; (1c80 <__libc_fini_array+0x2c>)
+    1c5a:	1ae4      	subs	r4, r4, r3
+    1c5c:	10a4      	asrs	r4, r4, #2
+    1c5e:	d009      	beq.n	1c74 <__libc_fini_array+0x20>
+    1c60:	4a08      	ldr	r2, [pc, #32]	; (1c84 <__libc_fini_array+0x30>)
+    1c62:	18a5      	adds	r5, r4, r2
+    1c64:	00ad      	lsls	r5, r5, #2
+    1c66:	18ed      	adds	r5, r5, r3
+    1c68:	682b      	ldr	r3, [r5, #0]
+    1c6a:	3c01      	subs	r4, #1
+    1c6c:	4798      	blx	r3
+    1c6e:	3d04      	subs	r5, #4
+    1c70:	2c00      	cmp	r4, #0
+    1c72:	d1f9      	bne.n	1c68 <__libc_fini_array+0x14>
+    1c74:	f000 f89e 	bl	1db4 <_fini>
+    1c78:	bd70      	pop	{r4, r5, r6, pc}
+    1c7a:	46c0      	nop			; (mov r8, r8)
+    1c7c:	00001dc0 	.word	0x00001dc0
+    1c80:	00001dc4 	.word	0x00001dc4
+    1c84:	3fffffff 	.word	0x3fffffff
+
+00001c88 <__retarget_lock_acquire_recursive>:
+    1c88:	4770      	bx	lr
+    1c8a:	46c0      	nop			; (mov r8, r8)
+
+00001c8c <__retarget_lock_release_recursive>:
+    1c8c:	4770      	bx	lr
+    1c8e:	46c0      	nop			; (mov r8, r8)
+
+00001c90 <__register_exitproc>:
+    1c90:	b5f0      	push	{r4, r5, r6, r7, lr}
+    1c92:	464e      	mov	r6, r9
+    1c94:	4645      	mov	r5, r8
+    1c96:	46de      	mov	lr, fp
+    1c98:	4657      	mov	r7, sl
+    1c9a:	b5e0      	push	{r5, r6, r7, lr}
+    1c9c:	4d36      	ldr	r5, [pc, #216]	; (1d78 <__register_exitproc+0xe8>)
+    1c9e:	b083      	sub	sp, #12
+    1ca0:	0006      	movs	r6, r0
+    1ca2:	6828      	ldr	r0, [r5, #0]
+    1ca4:	4698      	mov	r8, r3
+    1ca6:	000f      	movs	r7, r1
+    1ca8:	4691      	mov	r9, r2
+    1caa:	f7ff ffed 	bl	1c88 <__retarget_lock_acquire_recursive>
+    1cae:	4b33      	ldr	r3, [pc, #204]	; (1d7c <__register_exitproc+0xec>)
+    1cb0:	681c      	ldr	r4, [r3, #0]
+    1cb2:	23a4      	movs	r3, #164	; 0xa4
+    1cb4:	005b      	lsls	r3, r3, #1
+    1cb6:	58e0      	ldr	r0, [r4, r3]
+    1cb8:	2800      	cmp	r0, #0
+    1cba:	d052      	beq.n	1d62 <__register_exitproc+0xd2>
+    1cbc:	6843      	ldr	r3, [r0, #4]
+    1cbe:	2b1f      	cmp	r3, #31
+    1cc0:	dc13      	bgt.n	1cea <__register_exitproc+0x5a>
+    1cc2:	1c5a      	adds	r2, r3, #1
+    1cc4:	9201      	str	r2, [sp, #4]
+    1cc6:	2e00      	cmp	r6, #0
+    1cc8:	d128      	bne.n	1d1c <__register_exitproc+0x8c>
+    1cca:	9a01      	ldr	r2, [sp, #4]
+    1ccc:	3302      	adds	r3, #2
+    1cce:	009b      	lsls	r3, r3, #2
+    1cd0:	6042      	str	r2, [r0, #4]
+    1cd2:	501f      	str	r7, [r3, r0]
+    1cd4:	6828      	ldr	r0, [r5, #0]
+    1cd6:	f7ff ffd9 	bl	1c8c <__retarget_lock_release_recursive>
+    1cda:	2000      	movs	r0, #0
+    1cdc:	b003      	add	sp, #12
+    1cde:	bc3c      	pop	{r2, r3, r4, r5}
+    1ce0:	4690      	mov	r8, r2
+    1ce2:	4699      	mov	r9, r3
+    1ce4:	46a2      	mov	sl, r4
+    1ce6:	46ab      	mov	fp, r5
+    1ce8:	bdf0      	pop	{r4, r5, r6, r7, pc}
+    1cea:	4b25      	ldr	r3, [pc, #148]	; (1d80 <__register_exitproc+0xf0>)
+    1cec:	2b00      	cmp	r3, #0
+    1cee:	d03d      	beq.n	1d6c <__register_exitproc+0xdc>
+    1cf0:	20c8      	movs	r0, #200	; 0xc8
+    1cf2:	0040      	lsls	r0, r0, #1
+    1cf4:	e000      	b.n	1cf8 <__register_exitproc+0x68>
+    1cf6:	bf00      	nop
+    1cf8:	2800      	cmp	r0, #0
+    1cfa:	d037      	beq.n	1d6c <__register_exitproc+0xdc>
+    1cfc:	22a4      	movs	r2, #164	; 0xa4
+    1cfe:	2300      	movs	r3, #0
+    1d00:	0052      	lsls	r2, r2, #1
+    1d02:	58a1      	ldr	r1, [r4, r2]
+    1d04:	6043      	str	r3, [r0, #4]
+    1d06:	6001      	str	r1, [r0, #0]
+    1d08:	50a0      	str	r0, [r4, r2]
+    1d0a:	3240      	adds	r2, #64	; 0x40
+    1d0c:	5083      	str	r3, [r0, r2]
+    1d0e:	3204      	adds	r2, #4
+    1d10:	5083      	str	r3, [r0, r2]
+    1d12:	3301      	adds	r3, #1
+    1d14:	9301      	str	r3, [sp, #4]
+    1d16:	2300      	movs	r3, #0
+    1d18:	2e00      	cmp	r6, #0
+    1d1a:	d0d6      	beq.n	1cca <__register_exitproc+0x3a>
+    1d1c:	009a      	lsls	r2, r3, #2
+    1d1e:	4692      	mov	sl, r2
+    1d20:	4482      	add	sl, r0
+    1d22:	464a      	mov	r2, r9
+    1d24:	2188      	movs	r1, #136	; 0x88
+    1d26:	4654      	mov	r4, sl
+    1d28:	5062      	str	r2, [r4, r1]
+    1d2a:	22c4      	movs	r2, #196	; 0xc4
+    1d2c:	0052      	lsls	r2, r2, #1
+    1d2e:	4691      	mov	r9, r2
+    1d30:	4481      	add	r9, r0
+    1d32:	464a      	mov	r2, r9
+    1d34:	3987      	subs	r1, #135	; 0x87
+    1d36:	4099      	lsls	r1, r3
+    1d38:	6812      	ldr	r2, [r2, #0]
+    1d3a:	468b      	mov	fp, r1
+    1d3c:	430a      	orrs	r2, r1
+    1d3e:	4694      	mov	ip, r2
+    1d40:	464a      	mov	r2, r9
+    1d42:	4661      	mov	r1, ip
+    1d44:	6011      	str	r1, [r2, #0]
+    1d46:	2284      	movs	r2, #132	; 0x84
+    1d48:	4641      	mov	r1, r8
+    1d4a:	0052      	lsls	r2, r2, #1
+    1d4c:	50a1      	str	r1, [r4, r2]
+    1d4e:	2e02      	cmp	r6, #2
+    1d50:	d1bb      	bne.n	1cca <__register_exitproc+0x3a>
+    1d52:	0002      	movs	r2, r0
+    1d54:	465c      	mov	r4, fp
+    1d56:	328d      	adds	r2, #141	; 0x8d
+    1d58:	32ff      	adds	r2, #255	; 0xff
+    1d5a:	6811      	ldr	r1, [r2, #0]
+    1d5c:	430c      	orrs	r4, r1
+    1d5e:	6014      	str	r4, [r2, #0]
+    1d60:	e7b3      	b.n	1cca <__register_exitproc+0x3a>
+    1d62:	0020      	movs	r0, r4
+    1d64:	304d      	adds	r0, #77	; 0x4d
+    1d66:	30ff      	adds	r0, #255	; 0xff
+    1d68:	50e0      	str	r0, [r4, r3]
+    1d6a:	e7a7      	b.n	1cbc <__register_exitproc+0x2c>
+    1d6c:	6828      	ldr	r0, [r5, #0]
+    1d6e:	f7ff ff8d 	bl	1c8c <__retarget_lock_release_recursive>
+    1d72:	2001      	movs	r0, #1
+    1d74:	4240      	negs	r0, r0
+    1d76:	e7b1      	b.n	1cdc <__register_exitproc+0x4c>
+    1d78:	20000640 	.word	0x20000640
+    1d7c:	00001d9c 	.word	0x00001d9c
+    1d80:	00000000 	.word	0x00000000
+    1d84:	00000bae 	.word	0x00000bae
+    1d88:	00000bb2 	.word	0x00000bb2
+    1d8c:	00000bb6 	.word	0x00000bb6
+    1d90:	00000bba 	.word	0x00000bba
+    1d94:	00000bbe 	.word	0x00000bbe
+    1d98:	00000bc2 	.word	0x00000bc2
+
+00001d9c <_global_impure_ptr>:
+    1d9c:	20000218                                ... 
+
+00001da0 <_init>:
+    1da0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    1da2:	46c0      	nop			; (mov r8, r8)
+    1da4:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    1da6:	bc08      	pop	{r3}
+    1da8:	469e      	mov	lr, r3
+    1daa:	4770      	bx	lr
+
+00001dac <__init_array_start>:
+    1dac:	00001c2d 	.word	0x00001c2d
+
+00001db0 <__frame_dummy_init_array_entry>:
+    1db0:	000000dd                                ....
+
+00001db4 <_fini>:
+    1db4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    1db6:	46c0      	nop			; (mov r8, r8)
+    1db8:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    1dba:	bc08      	pop	{r3}
+    1dbc:	469e      	mov	lr, r3
+    1dbe:	4770      	bx	lr
+
+00001dc0 <__fini_array_start>:
+    1dc0:	000000b5 	.word	0x000000b5

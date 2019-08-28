@@ -1,0 +1,6 @@
+﻿  smartStraightener.c
+P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener_rev2\SmartStraightener_rev2\smartStraightener.c(63,8): warning C4013:  'memset' undefined; assuming extern returning int
+P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener_rev2\SmartStraightener_rev2\smartStraightener.c(87,44): warning C4133:  'function': incompatible types - from 'record [200]' to 'float *'
+P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener_rev2\SmartStraightener_rev2\smartStraightener.c(191,18): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener_rev2\SmartStraightener_rev2\smartStraightener.c(198,18): warning C4244:  'return': conversion from 'int' to 'float', possible loss of data
+  SmartStraightener_rev2.vcxproj -> P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener_rev2\Debug\SmartStraightener_rev2.exe

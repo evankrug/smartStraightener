@@ -1,0 +1,6 @@
+[submodule "MorphLibrary"]
+	path = MorphLibrary
+	url = https://github.com/SpectrumBrands-HomeRD/MorphLibrary.git
+[submodule "test/Element-SAMD-Test/MorphConfigurations"]
+	path = test/Element-SAMD-Test/MorphConfigurations
+	url = https://github.com/SpectrumBrands-HomeRD/MorphConfigurations.git

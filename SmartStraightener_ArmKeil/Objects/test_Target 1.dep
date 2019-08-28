@@ -1,0 +1,35 @@
+Dependencies for Project 'test', Target 'Target 1': (DO NOT MODIFY !)
+F (.\src\main.c)(0x5D646917)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/DSP/Include-IC:/Users/245845/Downloads/Holtek/HT32_DFP/1.0.20/ARM/INC/Holtek/HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o ./objects/main.o -MD)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32f5xxxx_01.h)(0x5D2CF02A)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32_config.h)(0x5D2CF112)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5CEC2FB8)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5CEC2FBA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5CEC2FBA)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.h)(0x599E6558)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5CEC2FBC)
+I (src\smartStraightener.h)(0x5D65BD99)
+F (.\src\smartStraightener.c)(0x5D44BDD5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/DSP/Include-IC:/Users/245845/Downloads/Holtek/HT32_DFP/1.0.20/ARM/INC/Holtek/HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o ./objects/smartstraightener.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x5CEC2FBA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x5CEC2FB8)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x5CEC2FBC)
+I (C:\Keil_v5\ARM\ARMCLANG\include\time.h)(0x5CEC2FBA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x5CEC2FB8)
+I (src\smartStraightener.h)(0x5D65BD99)
+F (.\src\smartStraightener.h)(0x5D65BD99)()
+F (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\DSP\Lib\ARM\arm_cortexM0l_math.lib)(0x5D264786)()
+F (RTE\Device\HT32F52352\startup_ht32f52342_52.s)(0x5D447E82)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g-I.\RTE\_Target_1-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx--pd "__UVISION_VERSION SETA 528"--pd "_RTE_ SETA 1"--pd "USE_HT32F52342_52 SETA 1"--list .\listings\startup_ht32f52342_52.lst--xref -o .\objects\startup_ht32f52342_52.o--depend .\objects\startup_ht32f52342_52.d)
+F (RTE\Device\HT32F52352\system_ht32f5xxxx_01.c)(0x5CF09DD6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -Oz -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/_Target_1-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/Core/Include-IC:/Users/245845/Downloads/ARM/CMSIS/5.6.0/CMSIS/DSP/Include-IC:/Users/245845/Downloads/Holtek/HT32_DFP/1.0.20/ARM/INC/Holtek/HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o ./objects/system_ht32f5xxxx_01.o -MD)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32f5xxxx_01.h)(0x5D2CF02A)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32_config.h)(0x5D2CF112)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5CEC2FB8)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5CEC2FBA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5CEC2FBA)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.h)(0x599E6558)

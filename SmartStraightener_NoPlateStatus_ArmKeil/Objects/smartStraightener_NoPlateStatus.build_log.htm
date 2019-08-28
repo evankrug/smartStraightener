@@ -1,0 +1,141 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Evan Krug, Spectrum Brands, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.2.0
+Target DLL:      UL2CM3.DLL V1.162.16.0
+Dialog DLL:      TARMCM1.DLL V1.14.1.0
+ 
+<h2>Project:</h2>
+C:\Users\245845\Projects\hairstraigtenerrepo\SmartStraightener_NoPlateStatus_ArmKeil\smartStraightener_NoPlateStatus.uvprojx
+Project File Date:  08/28/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Target 1'
+assembling startup_ht32f52342_52.s...
+compiling SmartStraightener.c...
+SmartStraightener.h(61): warning:  #1295-D: Deprecated declaration resetPass - give arg types
+  void resetPass();
+SmartStraightener.h(64): warning:  #1295-D: Deprecated declaration checkPlateStatus - give arg types
+  void checkPlateStatus();
+SmartStraightener.h(68): warning:  #1295-D: Deprecated declaration getTempError - give arg types
+  float getTempError();
+SmartStraightener.h(71): warning:  #1295-D: Deprecated declaration getTime - give arg types
+  clock_t getTime();
+SmartStraightener.h(73): warning:  #1295-D: Deprecated declaration getElapsedTime - give arg types
+  int getElapsedTime();
+SmartStraightener.h(77): warning:  #1-D: last line of file ends without a newline
+  #endif
+SmartStraightener.c(31): warning:  #1295-D: Deprecated declaration resetPass - give arg types
+  void resetPass();
+SmartStraightener.c(37): warning:  #1295-D: Deprecated declaration getTempError - give arg types
+  float getTempError();
+SmartStraightener.c(39): warning:  #1295-D: Deprecated declaration checkPlateStatus - give arg types
+  void checkPlateStatus();
+SmartStraightener.c(40): warning:  #1295-D: Deprecated declaration getTime - give arg types
+  clock_t getTime();
+SmartStraightener.c(41): warning:  #1295-D: Deprecated declaration getElapsedTime - give arg types
+  int getElapsedTime();
+SmartStraightener.c(49): warning:  #223-D: function "memset" declared implicitly
+  	memset(currPass.passRecords, 0, sizeof(currPass.passRecords));  //clears the array of records in currPass
+SmartStraightener.c(67): warning:  #167-D: argument of type "record *" is incompatible with parameter of type "float *"
+  			float avg = average(currPass.passRecords);
+SmartStraightener.c(254): warning:  #42-D: operand types are incompatible ("float *" and "int")
+  	if (startTemp > MAX_TEMP)
+SmartStraightener.c(254): warning:  #152-D: conversion of nonzero integer to pointer
+  	if (startTemp > MAX_TEMP)
+SmartStraightener.c(255): warning:  #513-D: a value of type "int" cannot be assigned to an entity of type "float *"
+  		startTemp = MAX_TEMP;
+SmartStraightener.c(255): warning:  #152-D: conversion of nonzero integer to pointer
+  		startTemp = MAX_TEMP;
+SmartStraightener.c(256): warning:  #42-D: operand types are incompatible ("float *" and "int")
+  	if (startTemp < MIN_TEMP)
+SmartStraightener.c(256): warning:  #152-D: conversion of nonzero integer to pointer
+  	if (startTemp < MIN_TEMP)
+SmartStraightener.c(257): warning:  #513-D: a value of type "int" cannot be assigned to an entity of type "float *"
+  		startTemp = MIN_TEMP;
+SmartStraightener.c(257): warning:  #152-D: conversion of nonzero integer to pointer
+  		startTemp = MIN_TEMP;
+SmartStraightener.c(268): warning:  #940-D: missing return statement at end of non-void function "getElapsedTime" 
+  }
+SmartStraightener.c: 22 warnings, 0 errors
+compiling main.c...
+SmartStraightener.h(61): warning:  #1295-D: Deprecated declaration resetPass - give arg types
+  void resetPass();
+SmartStraightener.h(64): warning:  #1295-D: Deprecated declaration checkPlateStatus - give arg types
+  void checkPlateStatus();
+SmartStraightener.h(68): warning:  #1295-D: Deprecated declaration getTempError - give arg types
+  float getTempError();
+SmartStraightener.h(71): warning:  #1295-D: Deprecated declaration getTime - give arg types
+  clock_t getTime();
+SmartStraightener.h(73): warning:  #1295-D: Deprecated declaration getElapsedTime - give arg types
+  int getElapsedTime();
+SmartStraightener.h(77): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(26): warning:  #223-D: function "Sleep" declared implicitly
+  			Sleep(500);
+main.c(32): warning:  #223-D: function "Sleep" declared implicitly
+  			Sleep(500);
+main.c(35): warning:  #1-D: last line of file ends without a newline
+  }
+main.c: 9 warnings, 0 errors
+compiling system_ht32f5xxxx_01.c...
+linking...
+.\Objects\smartStraightener_NoPlateStatus.axf: Error: L6218E: Undefined symbol Sleep (referred from main.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\smartStraightener_NoPlateStatus.axf" - 1 Error(s), 31 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.3.0
+   * Component: DSP Variant: Library Version: 1.7.0
+
+Package Vendor: Holtek
+                http://mcu.holtek.com.tw/pack/Holtek.HT32_DFP.1.0.20.pack
+                Holtek.HT32_DFP.1.0.20
+                Holtek HT32 Family Support
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\DSP\Include
+  C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: ARM::CMSIS:DSP:Library:1.7.0
+      Library file:  CMSIS\DSP\Lib\ARM\arm_cortexM0l_math.lib
+      Include file:  CMSIS\DSP\Include\arm_math.h
+
+   * Component: Holtek::Device:Startup:1.0.1
+      Source file:   ARM\Startup\Holtek\HT32F5xxxx\startup_ht32f52342_52.s
+      Source file:   ARM\Startup\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.c
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

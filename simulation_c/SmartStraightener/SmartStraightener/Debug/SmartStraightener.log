@@ -1,0 +1,9 @@
+﻿  SmartStraightener.c
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(120,1): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(120,1): warning C4244:  'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(161,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(178,21): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(193,32): warning C4013:  'malloc' undefined; assuming extern returning int
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(208,37): warning C4013:  'realloc' undefined; assuming extern returning int
+C:\Users\245845\OneDrive - Spectrum Brands, Inc\Documents\Straightener project\testalgorithm\SmartStraightener.c(217,9): warning C4013:  'free' undefined; assuming extern returning int
+  SmartStraightener.vcxproj -> P:\CAE\Karl\Evan Krug\Straightener project\SmartStraightener\Debug\SmartStraightener.exe

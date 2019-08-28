@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MorphLibrary", "MorphLibrary\MorphLibrary.cproj", "{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10} = {B849F926-8CF5-4C20-8481-87AE08B1BB10}
+	EndProjectSection
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MorphTest-ATmega", "MorphTest\MorphTest-ATmega.cproj", "{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MorphTest-SAMD", "MorphTest-SAMD\MorphTest-SAMD.cproj", "{69786174-9F03-4C83-AB9E-FFF5F3607056}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "MorphLibrary-SAMD", "MorphLibrary-SAMD\MorphLibrary-SAMD.cproj", "{B849F926-8CF5-4C20-8481-87AE08B1BB10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|AVR = Debug|AVR
+		Release|ARM = Release|ARM
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Debug|ARM.ActiveCfg = Debug|AVR
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Debug|AVR.ActiveCfg = Debug|AVR
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Debug|AVR.Build.0 = Debug|AVR
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Release|ARM.ActiveCfg = Release|AVR
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Release|AVR.ActiveCfg = Release|AVR
+		{4D61FC1F-CC6D-40A8-8579-69CE62DD1A8B}.Release|AVR.Build.0 = Release|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Debug|ARM.ActiveCfg = Debug|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Debug|AVR.ActiveCfg = Debug|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Debug|AVR.Build.0 = Debug|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Release|ARM.ActiveCfg = Release|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Release|AVR.ActiveCfg = Release|AVR
+		{F96FF433-DCFD-450A-99AF-F6418BC5D1D3}.Release|AVR.Build.0 = Release|AVR
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Debug|ARM.ActiveCfg = Debug|ARM
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Debug|ARM.Build.0 = Debug|ARM
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Debug|AVR.ActiveCfg = Debug|ARM
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Release|ARM.ActiveCfg = Release|ARM
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Release|ARM.Build.0 = Release|ARM
+		{69786174-9F03-4C83-AB9E-FFF5F3607056}.Release|AVR.ActiveCfg = Release|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Debug|ARM.Build.0 = Debug|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Debug|AVR.ActiveCfg = Debug|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Release|ARM.ActiveCfg = Release|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Release|ARM.Build.0 = Release|ARM
+		{B849F926-8CF5-4C20-8481-87AE08B1BB10}.Release|AVR.ActiveCfg = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

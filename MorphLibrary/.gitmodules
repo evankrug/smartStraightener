@@ -1,0 +1,12 @@
+[submodule "MorphTest/MorphTest/MorphConfigurations/"]
+	path = MorphTest/MorphTest/MorphConfigurations
+	url = git://github.com/SpectrumBrands-HomeRD/MorphConfigurations.git
+[submodule "MorphTest-SAMD/MorphTest-SAMD/MorphConfigurations/"]
+	path = MorphTest-SAMD/MorphTest-SAMD/MorphConfigurations
+	url = git://github.com/SpectrumBrands-HomeRD/MorphConfigurations.git
+[submodule "MorphTest-SAMD/MorphConfigurations"]
+	path = MorphTest-SAMD/MorphConfigurations
+	url = https://github.com/SpectrumBrands-HomeRD/MorphConfigurations.git
+[submodule "MorphTest/MorphConfigurations"]
+	path = MorphTest/MorphConfigurations
+	url = https://github.com/SpectrumBrands-HomeRD/MorphConfigurations.git

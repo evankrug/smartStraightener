@@ -1,0 +1,33 @@
+Dependencies for Project 'Project', Target 'HT32': (DO NOT MODIFY !)
+F (..\main.c)(0x5CC48F42)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O2 --apcs=interwork --split_sections-I.\RTE\_HT32-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o .\ht32\52352\obj\main.o --omf_browse .\ht32\52352\obj\main.crf --depend .\ht32\52352\obj\main.d)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32f5xxxx_01.h)(0x5D2CF02A)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32_config.h)(0x5D2CF112)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.h)(0x599E6558)
+I (..\ht32_board_config.h)(0x5CC48F42)
+I (..\LED.h)(0x5CC48F42)
+F (..\LED.c)(0x5CC48F42)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O2 --apcs=interwork --split_sections-I.\RTE\_HT32-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o .\ht32\52352\obj\led.o --omf_browse .\ht32\52352\obj\led.crf --depend .\ht32\52352\obj\led.d)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32f5xxxx_01.h)(0x5D2CF02A)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32_config.h)(0x5D2CF112)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.h)(0x599E6558)
+I (..\LED.h)(0x5CC48F42)
+I (..\ht32_board_config.h)(0x5CC48F42)
+F (RTE\Device\HT32F52352\startup_ht32f52342_52.s)(0x5D65AF48)(--cpu Cortex-M0+ --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_HT32-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "USE_HT32F52342_52 SETA 1"--list .\ht32\52352\list\startup_ht32f52342_52.lst --xref -o .\ht32\52352\obj\startup_ht32f52342_52.o --depend .\ht32\52352\obj\startup_ht32f52342_52.d)
+F (RTE\Device\HT32F52352\system_ht32f5xxxx_01.c)(0x5CF09DD6)(-c --cpu Cortex-M0+ -D__EVAL -D__MICROLIB -g -O2 --apcs=interwork --split_sections-I.\RTE\_HT32-IC:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx-D__UVISION_VERSION="528" -D_RTE_ -DUSE_HT32F52342_52-o .\ht32\52352\obj\system_ht32f5xxxx_01.o --omf_browse .\ht32\52352\obj\system_ht32f5xxxx_01.crf --depend .\ht32\52352\obj\system_ht32f5xxxx_01.d)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32f5xxxx_01.h)(0x5D2CF02A)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\ht32_config.h)(0x5D2CF112)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D264786)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEC30B2)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D264786)
+I (C:\Users\245845\Downloads\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D264786)
+I (C:\Users\245845\Downloads\Holtek\HT32_DFP\1.0.20\ARM\INC\Holtek\HT32F5xxxx\system_ht32f5xxxx_01.h)(0x599E6558)

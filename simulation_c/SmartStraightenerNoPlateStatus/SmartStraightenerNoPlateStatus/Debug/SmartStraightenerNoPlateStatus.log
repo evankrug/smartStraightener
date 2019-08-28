@@ -1,0 +1,12 @@
+﻿  StraightenerCodeNoPlateStatus.c
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(89,44): warning C4133:  'function': incompatible types - from 'record [200]' to 'float *'
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(165,15): warning C4244:  'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(263,18): warning C4244:  '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(270,18): warning C4244:  'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(276,26): warning C4047:  '>': 'float *' differs in levels of indirection from 'int'
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(277,23): warning C4047:  '=': 'float *' differs in levels of indirection from 'int'
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(278,26): warning C4047:  '<': 'float *' differs in levels of indirection from 'int'
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(279,23): warning C4047:  '=': 'float *' differs in levels of indirection from 'int'
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(289,26): warning C4552:  '/': result of expression not used
+C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\SmartStraightenerNoPlateStatus\StraightenerCodeNoPlateStatus.c(290): warning C4716:  'getElapsedTime': must return a value
+  SmartStraightenerNoPlateStatus.vcxproj -> C:\Users\245845\Projects\hairstraigtenerrepo\simulation_c\SmartStraightenerNoPlateStatus\Debug\SmartStraightenerNoPlateStatus.exe
